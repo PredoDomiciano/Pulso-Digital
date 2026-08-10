@@ -1,6 +1,6 @@
 # Pulso Digital
 
-Blog acadêmico com painel de publicação para Pedro Henrique Barbosa Domiciano. O site foi pensado para ser publicado na Vercel e administrado pelo próprio navegador, sem banco de dados.
+Blog acadêmico com painel de publicação para Pedro Domiciano e Diogo Carvalho. O site foi pensado para ser publicado na Vercel e administrado pelo próprio navegador, sem banco de dados.
 
 ## Como os dados são salvos
 

@@ -21,13 +21,16 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <span className="footer-label">Projeto acadêmico</span>
-          <p>{siteConfig.author}<br />{siteConfig.course}<br />{siteConfig.institution}<br />{siteConfig.city}</p>
+          <span className="footer-label">Feito por</span>
+          <p className="footer-authors">
+            {siteConfig.authors.map((author) => <strong key={author}>{author}</strong>)}
+            <span>{siteConfig.institution}</span>
+          </p>
         </div>
       </div>
       <div className="container footer-bottom">
         <span>© {new Date().getFullYear()} {siteConfig.name}.</span>
-        <span>Conteúdo acadêmico por {siteConfig.author}.</span>
+        <span>Conteúdo por {siteConfig.author}.</span>
       </div>
     </footer>
   );

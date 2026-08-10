@@ -1,44 +1,119 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Sobre" };
 
 export default function SobrePage() {
   return (
-    <div className="inner-page">
+    <div className="inner-page about-page">
       <div className="container">
-        <div className="page-intro">
-          <span className="eyebrow">Sobre o projeto</span>
-          <h1>Conteúdo acadêmico com identidade própria.</h1>
-          <p>O {siteConfig.name} foi criado como um espaço de publicação acadêmica para reunir pesquisas, reflexões, experiências e conteúdos relacionados à tecnologia, inovação e negócios digitais.</p>
-        </div>
+        <header className="about-hero">
+          <div className="about-title">
+            <span className="eyebrow">Sobre o Pulso Digital</span>
+            <h1>O que aprendemos não precisa ficar preso na sala de aula.</h1>
+          </div>
 
-        <div className="about-grid">
-          <aside className="profile-card">
-            <div className="profile-avatar">PD</div>
-            <h2>{siteConfig.author}</h2>
-            <p>Estudante de tecnologia interessado em desenvolvimento de software, sistemas, banco de dados, automação e na relação entre tecnologia e negócios.</p>
-            <div className="info-list">
-              <div className="info-line"><span>Curso</span>{siteConfig.course}</div>
-              <div className="info-line"><span>Instituição</span>{siteConfig.institution}</div>
-              <div className="info-line"><span>Local</span>{siteConfig.city}</div>
+          <div className="about-lead">
+            <p>
+              Este é o nosso espaço para transformar pesquisas, trabalhos e
+              descobertas em conteúdo que vale a pena compartilhar.
+            </p>
+            <div className="about-origin">
+              <span>Projeto acadêmico</span>
+              <strong>{siteConfig.institution}</strong>
+              <small>{siteConfig.city}</small>
             </div>
-          </aside>
+          </div>
+        </header>
 
-          <section className="content-card">
-            <span className="eyebrow">Propósito</span>
-            <h2>Aprender, registrar e compartilhar.</h2>
-            <p>Este blog funciona como um registro de aprendizagem e também como um espaço de comunicação. A proposta é apresentar assuntos técnicos de maneira organizada, visual e compreensível, usando diferentes formatos de mídia quando eles ajudam a explicar melhor uma ideia.</p>
-            <p>As publicações podem reunir textos, imagens, vídeos, trechos de código, citações e conteúdos incorporados. Assim, cada matéria pode ser estruturada de acordo com o assunto abordado.</p>
-
-            <div className="values-grid">
-              <div className="value-box"><strong>Clareza</strong><span>Conteúdo organizado para facilitar leitura e compreensão.</span></div>
-              <div className="value-box"><strong>Tecnologia</strong><span>Temas ligados ao desenvolvimento e ao universo digital.</span></div>
-              <div className="value-box"><strong>Multimídia</strong><span>Uso de diferentes formatos para enriquecer as publicações.</span></div>
-              <div className="value-box"><strong>Evolução</strong><span>Um projeto que cresce a cada nova pesquisa e matéria.</span></div>
+        <section className="about-section">
+          <div className="about-section-heading">
+            <span className="about-index">01</span>
+            <span className="eyebrow">O projeto</span>
+            <h2>Um blog feito para organizar ideias e explicar bem.</h2>
+          </div>
+          <div className="about-copy">
+            <p className="about-copy-lead">
+              O {siteConfig.name} nasceu para reunir assuntos que fazem parte da
+              nossa formação em tecnologia e negócios — mas com uma linguagem
+              direta, que qualquer pessoa interessada possa acompanhar.
+            </p>
+            <p>
+              Por aqui, teoria e prática aparecem lado a lado. Cada publicação
+              parte de uma pergunta, de uma pesquisa ou de algo que aprendemos no
+              caminho. A ideia não é parecer complicado: é tornar o assunto mais
+              claro, útil e interessante.
+            </p>
+            <div className="about-course">
+              <span>Curso</span>
+              <strong>{siteConfig.course}</strong>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
+        <section className="about-section contributors-section">
+          <div className="about-section-heading">
+            <span className="about-index">02</span>
+            <span className="eyebrow">Quem escreve</span>
+            <h2>Duas pessoas, uma mesma curiosidade pelo digital.</h2>
+          </div>
+          <div className="contributors-list">
+            <article className="contributor">
+              <span className="contributor-initials" aria-hidden="true">PD</span>
+              <div>
+                <span className="contributor-role">Autor</span>
+                <h3>Pedro Domiciano</h3>
+                <p>
+                  Estudante de Tecnologia em Informática para Negócios e um dos
+                  responsáveis pelas pesquisas e publicações do blog.
+                </p>
+              </div>
+            </article>
+
+            <article className="contributor">
+              <span className="contributor-initials contributor-initials-alt" aria-hidden="true">DC</span>
+              <div>
+                <span className="contributor-role">Autor</span>
+                <h3>Diogo Carvalho</h3>
+                <p>
+                  Estudante de Tecnologia em Informática para Negócios e um dos
+                  responsáveis pelas pesquisas e publicações do blog.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section className="about-section principles-section">
+          <div className="about-section-heading">
+            <span className="about-index">03</span>
+            <span className="eyebrow">Nosso jeito</span>
+            <h2>Conteúdo pensado para ser lido, não apenas entregue.</h2>
+          </div>
+          <ol className="principles-list">
+            <li>
+              <span>01</span>
+              <div><strong>Começar pela ideia</strong><p>Antes do formato, vem a pergunta que queremos responder.</p></div>
+            </li>
+            <li>
+              <span>02</span>
+              <div><strong>Escrever com clareza</strong><p>Termos técnicos entram quando ajudam — e sempre com contexto.</p></div>
+            </li>
+            <li>
+              <span>03</span>
+              <div><strong>Compartilhar o processo</strong><p>O blog acompanha o que aprendemos e evolui junto com a gente.</p></div>
+            </li>
+          </ol>
+        </section>
+
+        <aside className="about-contact">
+          <div>
+            <span className="eyebrow">Continue a conversa</span>
+            <h2>Tem uma pauta, pergunta ou sugestão?</h2>
+          </div>
+          <Link className="button accent" href="/contato">Fale com a gente</Link>
+        </aside>
       </div>
     </div>
   );
