@@ -1,5 +1,6 @@
 import { createCipheriv, createDecipheriv, createHash, randomBytes, randomUUID } from "node:crypto";
 import { del, list, put } from "@vercel/blob";
+import { basePosts } from "@/data/base-posts";
 import type { Post } from "@/types/post";
 
 const POSTS_PREFIX = "pulso/posts/";
@@ -42,7 +43,7 @@ export async function getAllStoredPosts(): Promise<Post[]> {
         .map((blob) => readPublicJson<Post>(blob.url, blob.uploadedAt).catch(() => null)),
     );
 
-    const latest = new Map<string, Post>();
+    const latest = new Map<string, Post>(basePosts.map((post) => [post.id, post]));
     for (const post of posts) {
       if (!post) continue;
       const current = latest.get(post.id);
@@ -52,7 +53,7 @@ export async function getAllStoredPosts(): Promise<Post[]> {
     return [...latest.values()].sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
   } catch (error) {
     console.error("Erro ao carregar publicações do Vercel Blob:", error);
-    return [];
+    return basePosts;
   }
 }
 
@@ -62,10 +63,10 @@ export async function getStoredPostById(id: string): Promise<Post | null> {
     const newest = blobs
       .filter((blob) => blob.pathname.endsWith(".json"))
       .sort((a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime())[0];
-    return newest ? await readPublicJson<Post>(newest.url, newest.uploadedAt) : null;
+    return newest ? await readPublicJson<Post>(newest.url, newest.uploadedAt) : basePosts.find((post) => post.id === id) || null;
   } catch (error) {
     console.error("Erro ao carregar publicação do Vercel Blob:", error);
-    return null;
+    return basePosts.find((post) => post.id === id) || null;
   }
 }
 

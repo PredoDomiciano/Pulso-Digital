@@ -78,7 +78,7 @@ export function AdminDashboard() {
                     <div className="admin-thumb">{post.cover_url && <img src={post.cover_url} alt=""/>}</div>
                     <div className="admin-item-copy"><strong>{post.title}</strong><span>{post.category || "Geral"} • {post.status === "published" ? formatDate(post.published_at) : "Rascunho"}</span></div>
                     <span className={`status-badge ${post.status}`}>{post.status === "published" ? "Publicado" : "Rascunho"}</span>
-                    <div className="item-actions"><Link href={`/admin/editar/${post.id}`} className="icon-button" title="Editar"><EditIcon width={16} height={16}/></Link><button className="icon-button" title="Excluir" onClick={() => deletePost(post)}><TrashIcon width={16} height={16}/></button></div>
+                    <div className="item-actions"><Link href={`/admin/editar/${post.id}`} className="icon-button" title="Editar"><EditIcon width={16} height={16}/></Link>{!post.id.startsWith("base-") && <button className="icon-button" title="Excluir" onClick={() => deletePost(post)}><TrashIcon width={16} height={16}/></button>}</div>
                   </div>
                 ))}
               </div>

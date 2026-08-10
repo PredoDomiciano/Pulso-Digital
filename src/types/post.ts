@@ -3,6 +3,8 @@ export type BlockType =
   | "heading"
   | "image"
   | "video"
+  | "audio"
+  | "link"
   | "code"
   | "quote"
   | "embed";

@@ -33,6 +33,25 @@ export function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
           const embed = block.url ? youtubeEmbed(block.url) : null;
           return <figure key={block.id}>{embed ? <div className="video-wrap"><iframe src={embed} title={block.caption || "Vídeo"} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> : block.url ? <div className="video-wrap"><video src={block.url} controls /></div> : null}{block.caption && <figcaption>{block.caption}</figcaption>}</figure>;
         }
+        if (block.type === "audio") return (
+          <figure className="audio-block" key={block.id}>
+            <div className="audio-copy">
+              <span>Ouça</span>
+              <strong>{block.title || "Conteúdo em áudio"}</strong>
+              {block.caption && <p>{block.caption}</p>}
+            </div>
+            {block.url && <audio src={block.url} controls preload="metadata">Seu navegador não oferece suporte ao player de áudio.</audio>}
+          </figure>
+        );
+        if (block.type === "link" && block.url) {
+          const external = /^https?:\/\//i.test(block.url);
+          return (
+            <a className="resource-link" href={block.url} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} key={block.id}>
+              <span><small>{external ? "Link externo" : "No Pulso Digital"}</small><strong>{block.title || block.url}</strong>{block.caption && <em>{block.caption}</em>}</span>
+              <ExternalIcon width={19} height={19}/>
+            </a>
+          );
+        }
         if (block.type === "embed") return <figure key={block.id}>{block.url && <div className="embed-wrap"><iframe src={block.url} title={block.title || "Conteúdo incorporado"} loading="lazy" /></div>}{block.caption && <figcaption>{block.caption}</figcaption>}{block.url && <a className="read-link" href={block.url} target="_blank" rel="noreferrer" style={{ marginTop: 10 }}>Abrir conteúdo <ExternalIcon width={16} height={16}/></a>}</figure>;
         return null;
       })}

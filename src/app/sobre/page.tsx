@@ -45,10 +45,11 @@ export default function SobrePage() {
               caminho. A ideia não é parecer complicado: é tornar o assunto mais
               claro, útil e interessante.
             </p>
-            <div className="about-course">
-              <span>Curso</span>
-              <strong>{siteConfig.course}</strong>
-            </div>
+            <dl className="about-details">
+              <div><dt>Curso</dt><dd>{siteConfig.course}</dd></div>
+              <div><dt>Disciplina</dt><dd>{siteConfig.discipline}</dd></div>
+              <div><dt>Projeto</dt><dd>{siteConfig.name}</dd></div>
+            </dl>
           </div>
         </section>
 
@@ -62,7 +63,7 @@ export default function SobrePage() {
             <article className="contributor">
               <span className="contributor-initials" aria-hidden="true">PD</span>
               <div>
-                <span className="contributor-role">Autor</span>
+                <span className="contributor-role">Aluno e autor</span>
                 <h3>Pedro Domiciano</h3>
                 <p>
                   Estudante de Tecnologia em Informática para Negócios e um dos
@@ -72,10 +73,10 @@ export default function SobrePage() {
             </article>
 
             <article className="contributor">
-              <span className="contributor-initials contributor-initials-alt" aria-hidden="true">DC</span>
+              <span className="contributor-initials contributor-initials-alt" aria-hidden="true">DT</span>
               <div>
-                <span className="contributor-role">Autor</span>
-                <h3>Diogo Carvalho</h3>
+                <span className="contributor-role">Aluno e autor</span>
+                <h3>Diogo Teodoro</h3>
                 <p>
                   Estudante de Tecnologia em Informática para Negócios e um dos
                   responsáveis pelas pesquisas e publicações do blog.

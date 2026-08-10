@@ -25,6 +25,7 @@ export function Footer() {
           <p className="footer-authors">
             {siteConfig.authors.map((author) => <strong key={author}>{author}</strong>)}
             <span>{siteConfig.institution}</span>
+            <span>{siteConfig.discipline}</span>
           </p>
         </div>
       </div>
