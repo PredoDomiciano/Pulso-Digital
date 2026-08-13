@@ -1,11 +1,13 @@
 import { createCipheriv, createDecipheriv, createHash, randomBytes, randomUUID } from "node:crypto";
 import { del, list, put } from "@vercel/blob";
 import { basePosts } from "@/data/base-posts";
+import { getPostCategories, uniqueCategories } from "@/lib/categories";
 import type { Post } from "@/types/post";
 
 const POSTS_PREFIX = "pulso/posts/";
 const IMAGES_PREFIX = "pulso/images/";
 const CONTACT_PREFIX = "pulso/contact/";
+const CATEGORIES_PREFIX = "pulso/config/categories/";
 
 type ContactMessage = {
   id: string;
@@ -20,6 +22,11 @@ type EncryptedEnvelope = {
   iv: string;
   tag: string;
   data: string;
+};
+
+type CategoryConfig = {
+  categories: string[];
+  updated_at: string;
 };
 
 async function blobsWithPrefix(prefix: string) {
@@ -92,6 +99,48 @@ export async function saveStoredPost(post: Post) {
 export async function deleteStoredPost(id: string) {
   const blobs = await blobsWithPrefix(`${POSTS_PREFIX}${id}/`);
   if (blobs.length) await del(blobs.map((item) => item.url));
+}
+
+export async function getStoredCategories(): Promise<string[]> {
+  const derived = uniqueCategories((await getAllStoredPosts()).flatMap((post) => getPostCategories(post)));
+
+  try {
+    const blobs = await blobsWithPrefix(CATEGORIES_PREFIX);
+    const newest = blobs
+      .filter((blob) => blob.pathname.endsWith(".json"))
+      .sort((a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime())[0];
+
+    if (!newest) return derived;
+    const config = await readPublicJson<CategoryConfig>(newest.url, newest.uploadedAt);
+    return uniqueCategories([...(Array.isArray(config.categories) ? config.categories : []), ...derived]);
+  } catch (error) {
+    console.error("Erro ao carregar categorias do Vercel Blob:", error);
+    return derived;
+  }
+}
+
+export async function saveStoredCategories(categories: string[]) {
+  const oldBlobs = await blobsWithPrefix(CATEGORIES_PREFIX);
+  const config: CategoryConfig = {
+    categories: uniqueCategories(categories),
+    updated_at: new Date().toISOString(),
+  };
+  const pathname = `${CATEGORIES_PREFIX}${Date.now()}-${randomUUID()}.json`;
+  const blob = await put(pathname, JSON.stringify(config, null, 2), {
+    access: "public",
+    addRandomSuffix: false,
+    contentType: "application/json; charset=utf-8",
+  });
+
+  if (oldBlobs.length) {
+    try {
+      await del(oldBlobs.map((item) => item.url));
+    } catch (error) {
+      console.warn("As categorias foram salvas, mas versões antigas não puderam ser removidas:", error);
+    }
+  }
+
+  return config.categories;
 }
 
 export async function uploadPostImage(file: File) {

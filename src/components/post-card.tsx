@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowIcon } from "@/components/icons";
 import { formatDate } from "@/lib/utils";
+import { getPrimaryCategory } from "@/lib/categories";
 import type { Post } from "@/types/post";
 
 export function PostCard({ post }: { post: Post }) {
@@ -10,8 +11,8 @@ export function PostCard({ post }: { post: Post }) {
         {post.cover_url ? <img src={post.cover_url} alt="" /> : <div className="media-placeholder"><div className="media-placeholder-shape" /></div>}
       </Link>
       <div className="post-card-body">
-        <span className="category-label">{post.category || "Geral"}</span>
         <h3><Link href={`/publicacoes/${post.slug}`}>{post.title}</Link></h3>
+        <span className="category-label post-card-category">{getPrimaryCategory(post)}</span>
         <p>{post.excerpt || "Leia a publicação completa."}</p>
         <div className="post-meta">
           <span>{formatDate(post.published_at)}</span><span className="dot"/><span>{post.reading_time} min de leitura</span>

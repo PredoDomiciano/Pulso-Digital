@@ -8,6 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedPosts();
   return [
     { url: base, lastModified: new Date(), priority: 1 },
+    { url: `${base}/publicacoes`, lastModified: new Date(), priority: .9 },
     { url: `${base}/sobre`, lastModified: new Date(), priority: .7 },
     { url: `${base}/contato`, lastModified: new Date(), priority: .6 },
     ...posts.map((post) => ({ url: `${base}/publicacoes/${post.slug}`, lastModified: new Date(post.updated_at), priority: .8 })),

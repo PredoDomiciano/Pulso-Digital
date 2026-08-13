@@ -27,6 +27,7 @@ export type Post = {
   slug: string;
   excerpt: string | null;
   category: string | null;
+  categories?: string[] | null;
   tags: string[] | null;
   cover_url: string | null;
   content: ContentBlock[];

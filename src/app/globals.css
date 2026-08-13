@@ -382,3 +382,59 @@ main { flex: 1; }
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Publicações: cards com capa controlada e título visível logo abaixo */
+.post-card { display: flex; flex-direction: column; height: 100%; }
+.post-card-media {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  flex: 0 0 auto;
+}
+.post-card-media img { width: 100%; height: 100%; object-fit: cover; }
+.post-card-body { display: flex; flex: 1; flex-direction: column; }
+.post-card h3 { margin: 0 0 10px; }
+.post-card-category { margin-bottom: 13px; }
+.post-card .post-meta { margin-top: auto; }
+
+.publications-page { padding: 68px 0 96px; }
+.publications-hero { max-width: 760px; margin-bottom: 38px; }
+.publications-hero h1 { margin: 10px 0 14px; font-size: clamp(3rem, 7vw, 5.7rem); letter-spacing: -.065em; line-height: .96; }
+.publications-hero p { max-width: 650px; margin: 0; color: var(--muted); font-size: 1.02rem; line-height: 1.7; }
+.publications-toolbar { display: grid; gap: 18px; margin-bottom: 30px; }
+.publications-toolbar .search-box { max-width: 560px; }
+.publications-result-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 20px; }
+.publications-result-head strong { font-size: 1.35rem; letter-spacing: -.025em; }
+.publications-result-head span { color: var(--muted); font-size: .88rem; }
+
+.category-manager > .panel-head { align-items: flex-start; }
+.category-manager > .panel-head p { margin: 6px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.55; }
+.category-create { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; margin-bottom: 18px; }
+.category-admin-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px 0 18px; border-top: 1px solid var(--line); }
+.category-assignment { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--surface-solid); }
+.category-assignment-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px; border-bottom: 1px solid var(--line); }
+.category-assignment-head > div:first-child { display: grid; gap: 4px; }
+.category-assignment-head span { color: var(--muted); font-size: .78rem; }
+.category-assignment-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.category-post-picker { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 14px; max-height: 430px; overflow: auto; }
+.category-post-picker > p { color: var(--muted); margin: 6px; }
+.category-post-option { display: grid; grid-template-columns: auto 50px minmax(0, 1fr); gap: 11px; align-items: center; padding: 10px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); cursor: pointer; transition: border-color .2s, background .2s, transform .2s; }
+.category-post-option:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
+.category-post-option.selected { border-color: color-mix(in srgb, var(--accent) 58%, var(--line)); background: var(--accent-soft); }
+.category-post-option input { width: 17px; height: 17px; accent-color: var(--accent); }
+.category-post-thumb { width: 50px; height: 50px; border-radius: 10px; overflow: hidden; background: var(--surface-2); }
+.category-post-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.category-post-copy { min-width: 0; display: grid; gap: 4px; }
+.category-post-copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .88rem; }
+.category-post-copy small { color: var(--muted); font-size: .72rem; }
+.category-empty, .category-status { color: var(--muted); font-size: .86rem; line-height: 1.55; }
+.category-status { margin-top: 13px; color: var(--accent); font-weight: 700; }
+
+@media (max-width: 720px) {
+  .publications-page { padding-top: 48px; }
+  .publications-result-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .category-create { grid-template-columns: 1fr; }
+  .category-assignment-head { align-items: flex-start; flex-direction: column; }
+  .category-post-picker { grid-template-columns: 1fr; }
+}

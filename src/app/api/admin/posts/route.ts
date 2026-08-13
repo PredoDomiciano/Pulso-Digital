@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { isAdminSession } from "@/lib/auth";
 import { getAllStoredPosts, saveStoredPost } from "@/lib/blob-storage";
 import { siteConfig } from "@/lib/site";
+import { uniqueCategories } from "@/lib/categories";
 import { readingTime, slugify } from "@/lib/utils";
 import type { ContentBlock, Post } from "@/types/post";
 
@@ -32,12 +33,14 @@ export async function POST(request: Request) {
   if (existing.some((post) => post.slug === slug)) return NextResponse.json({ error: "Esse endereço (slug) já está em uso." }, { status: 409 });
 
   const now = new Date().toISOString();
+  const primaryCategory = String(body.category || "").trim() || "Geral";
   const post: Post = {
     id: randomUUID(),
     title,
     slug,
     excerpt: String(body.excerpt || "").trim() || null,
-    category: String(body.category || "").trim() || "Geral",
+    category: primaryCategory,
+    categories: uniqueCategories([primaryCategory]),
     tags: Array.isArray(body.tags) ? body.tags.map(String).map((tag: string) => tag.trim()).filter(Boolean) : [],
     cover_url: String(body.cover_url || "").trim() || null,
     content,

@@ -10,6 +10,7 @@ export const siteConfig = {
   city: "São José do Rio Preto - SP",
   nav: [
     { href: "/", label: "Início" },
+    { href: "/publicacoes", label: "Publicações" },
     { href: "/sobre", label: "Sobre" },
     { href: "/contato", label: "Contato" },
   ],

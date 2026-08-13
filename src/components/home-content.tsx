@@ -5,18 +5,19 @@ import Link from "next/link";
 import { SearchIcon, ArrowIcon, PlusIcon } from "@/components/icons";
 import { PostCard } from "@/components/post-card";
 import { formatDate } from "@/lib/utils";
+import { getPostCategories, getPrimaryCategory, postHasCategory, uniqueCategories } from "@/lib/categories";
 import type { Post } from "@/types/post";
 
 export function HomeContent({ posts }: { posts: Post[] }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("Todos");
-  const categories = useMemo(() => ["Todos", ...Array.from(new Set(posts.map((p) => p.category).filter(Boolean) as string[]))], [posts]);
+  const categories = useMemo(() => ["Todos", ...uniqueCategories(posts.flatMap((post) => getPostCategories(post)))], [posts]);
 
   const filtered = useMemo(() => {
     const normalized = query.toLowerCase().trim();
     return posts.filter((post) => {
-      const categoryMatches = category === "Todos" || post.category === category;
-      const searchMatches = !normalized || [post.title, post.excerpt, post.category, ...(post.tags || [])]
+      const categoryMatches = category === "Todos" || postHasCategory(post, category);
+      const searchMatches = !normalized || [post.title, post.excerpt, ...getPostCategories(post), ...(post.tags || [])]
         .filter(Boolean).join(" ").toLowerCase().includes(normalized);
       return categoryMatches && searchMatches;
     });
@@ -59,7 +60,7 @@ export function HomeContent({ posts }: { posts: Post[] }) {
                     {featured.cover_url ? <img src={featured.cover_url} alt="" /> : <div className="media-placeholder"><div className="media-placeholder-shape" /></div>}
                   </Link>
                   <div className="featured-content">
-                    <span className="category-label">{featured.category || "Geral"}</span>
+                    <span className="category-label">{getPrimaryCategory(featured)}</span>
                     <h3><Link href={`/publicacoes/${featured.slug}`}>{featured.title}</Link></h3>
                     <p>{featured.excerpt || "Leia a publicação completa."}</p>
                     <div className="post-meta"><span>{formatDate(featured.published_at)}</span><span className="dot"/><span>{featured.reading_time} min de leitura</span></div>

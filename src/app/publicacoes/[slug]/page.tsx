@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ContentRenderer } from "@/components/content-renderer";
 import { ShareButton } from "@/components/share-button";
 import { getPostBySlug } from "@/lib/posts";
+import { getPrimaryCategory } from "@/lib/categories";
 import { formatDate } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
@@ -28,7 +29,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <article className="article-shell">
       <header className="article-head">
-        <span className="category-label">{post.category || "Geral"}</span>
+        <span className="category-label">{getPrimaryCategory(post)}</span>
         <h1>{post.title}</h1>
         {post.excerpt && <p className="lead">{post.excerpt}</p>}
         <div className="post-meta" style={{ marginTop: 20 }}><span>Por {post.author}</span><span className="dot"/><span>{formatDate(post.published_at)}</span><span className="dot"/><span>{post.reading_time} min de leitura</span></div>

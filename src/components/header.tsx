@@ -24,7 +24,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={pathname === item.href ? "active" : ""}
+              className={pathname === item.href || (item.href !== "/" && pathname.startsWith(`${item.href}/`)) ? "active" : ""}
               onClick={() => setOpen(false)}
             >
               {item.label}
