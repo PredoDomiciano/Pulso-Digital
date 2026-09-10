@@ -76,6 +76,11 @@ export const postRealidadeVirtual: Post = {
       text: "Sobre isso vem o rastreamento. Sistemas modernos oferecem seis graus de liberdade: além de girar a cabeça em três eixos, é possível se deslocar em três direções, andando de fato pelo ambiente. Isso é obtido por câmeras no próprio aparelho, que observam o entorno e calculam a posição em relação a pontos fixos, combinadas com sensores inerciais de resposta rápida. Equipamentos mais simples oferecem apenas três graus de liberdade — giram, mas não acompanham deslocamento —, o que limita bastante a sensação de estar no espaço.",
     },
     {
+      id: "rv-funciona-2b",
+      type: "paragraph",
+      text: "Dá para experimentar essa diferença sem nenhum equipamento. O AR Explorer, mini-jogo que desenvolvemos e apresentamos na publicação sobre realidade aumentada, usa apenas os sensores de orientação do celular: você gira o aparelho e a cena acompanha, mas andar pela sala não muda nada do que se vê. É exatamente a limitação dos três graus de liberdade — suficiente para olhar em volta, insuficiente para produzir a sensação de estar dentro do lugar.",
+    },
+    {
       id: "rv-funciona-3",
       type: "paragraph",
       text: "O fator mais crítico, porém, é o tempo. O intervalo entre mover a cabeça e ver a imagem correspondente precisa ser muito curto, na casa de poucos milissegundos, e a taxa de atualização precisa ser alta e estável — em torno de noventa quadros por segundo nos equipamentos atuais. Quando esse atraso cresce, o sistema vestibular percebe uma incoerência entre o movimento sentido e o movimento visto, e o corpo responde com desconforto. Praticamente toda a engenharia de realidade virtual é uma corrida contra a latência.",
@@ -280,6 +285,13 @@ export const postRealidadeVirtual: Post = {
       title: "Revisite o conceito de multimídia",
       url: "/publicacoes/multimidia-integracao-de-formatos",
       caption: "Os princípios de combinação de formatos que a imersão leva ao limite.",
+    },
+    {
+      id: "rv-link-explorer",
+      type: "link",
+      title: "Jogar o AR Explorer",
+      url: "https://dong0s.github.io/ar-explorer/",
+      caption: "Nosso mini-jogo de janela mágica: sinta na prática o limite dos três graus de liberdade.",
     },
     {
       id: "rv-link-webxr",

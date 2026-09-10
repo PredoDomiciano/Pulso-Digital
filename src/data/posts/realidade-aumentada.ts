@@ -14,7 +14,7 @@ export const postRealidadeAumentada: Post = {
   status: "published",
   featured: false,
   author: siteConfig.author,
-  reading_time: 15,
+  reading_time: 16,
   published_at: "2026-09-08T12:00:00.000Z",
   created_at: "2026-09-08T12:00:00.000Z",
   updated_at: "2026-09-10T12:00:00.000Z",
@@ -44,6 +44,30 @@ export const postRealidadeAumentada: Post = {
       id: "ra-conceito-3",
       type: "paragraph",
       text: "Vale o teste: um adesivo animado que acompanha o rosto na câmera cumpre os dois primeiros critérios, mas trabalha em duas dimensões, colado à imagem. Um aplicativo que coloca uma peça de mobiliário no chão e a mantém no mesmo ponto quando você anda ao redor cumpre os três. Não se trata de decidir qual é melhor — filtros têm valor expressivo evidente —, e sim de perceber que o segundo caso exige que o dispositivo tenha construído algum entendimento da geometria do ambiente.",
+    },
+    { id: "ra-heading-explorer", type: "heading", text: "Experimente: AR Explorer, um exercício nosso" },
+    {
+      id: "ra-explorer-1",
+      type: "paragraph",
+      text: "Para aplicar esses critérios em algo concreto, desenvolvemos o AR Explorer, um mini-jogo em primeira pessoa que roda direto no navegador, sem instalação. Você fica parado no centro de um cenário e gira o próprio celular para olhar ao redor; uma mira no centro da tela funciona como cursor, e encarar um objeto por alguns instantes revela um cartão com sua descrição. Setas no chão levam de um cenário a outro. No computador, o mesmo controle é feito arrastando o mouse.",
+    },
+    {
+      id: "ra-explorer-2",
+      type: "paragraph",
+      text: "Tecnicamente, ele usa a interface de orientação do dispositivo — os sensores de giro detalhados na próxima seção — para converter o movimento do aparelho em rotação de uma câmera tridimensional montada com a biblioteca Three.js. É o que se costuma chamar de janela mágica: o telefone se comporta como uma abertura móvel para uma cena que existe ao seu redor. São três graus de liberdade, porque o sistema acompanha para onde você olha, mas não o seu deslocamento pelo espaço.",
+    },
+    {
+      id: "ra-explorer-3",
+      type: "paragraph",
+      text: "Aplicando os três critérios listados acima com honestidade, o AR Explorer cumpre o segundo critério — é interativo em tempo real — e trabalha em três dimensões, mas não combina imagem real e virtual: o cenário é inteiramente sintético, sem imagem da câmera ao fundo, e não há registro em relação a superfícies do seu ambiente. Ele fica, portanto, mais próximo do extremo virtual do espectro do que da realidade aumentada registrada. E é justamente por isso que serve como exercício: dá para sentir, na prática, o que o rastreamento de orientação resolve sozinho e o que ainda falta para que um objeto pareça mesmo apoiado na sua mesa.",
+    },
+    {
+      id: "ra-explorer-link",
+      type: "link",
+      title: "Jogar o AR Explorer",
+      url: "https://dong0s.github.io/ar-explorer/",
+      caption:
+        "Mini-jogo de exploração desenvolvido pelos autores do Pulso Digital. Abra no celular e toque em Ativar sensores para usar o giroscópio; no computador, arraste o mouse para olhar ao redor.",
     },
     {
       id: "ra-quote",
