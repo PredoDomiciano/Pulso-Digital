@@ -10,7 +10,7 @@ export const postMultimidia: Post = {
   category: "Fundamentos",
   tags: ["multimídia", "áudio", "vídeo", "interatividade", "design de conteúdo"],
   cover_url:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Headset_computer_with_phone_as_mouse.webp/1280px-Headset_computer_with_phone_as_mouse.webp.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Classical_spectacular_laser_effects.jpg/1280px-Classical_spectacular_laser_effects.jpg",
   status: "published",
   featured: false,
   author: siteConfig.author,
@@ -335,6 +335,13 @@ export const postMultimidia: Post = {
       title: "Adobe Blog — ambiente de edição multimídia",
       url: "https://blog.adobe.com/jp/publish/2022/09/07/cc-video-adex",
       caption: "Fonte da imagem utilizada na matéria.",
+    },
+    {
+      id: "multimidia-ref-capa",
+      type: "link",
+      title: "Wikimedia Commons — Classical spectacular laser effects",
+      url: "https://commons.wikimedia.org/wiki/File:Classical_spectacular_laser_effects.jpg",
+      caption: "Fonte da imagem de capa: fotografia de fir0002 (flagstaffotos), licença GFDL 1.2.",
     },
     {
       id: "multimidia-ref-6",

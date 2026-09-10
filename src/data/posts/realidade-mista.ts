@@ -9,7 +9,8 @@ export const postRealidadeMista: Post = {
     "Entre o mundo real e o mundo totalmente virtual existe um espectro inteiro. Entenda o continuum da virtualidade, o que diferencia realidade mista de realidade aumentada e por que compreender a cena mudou tudo.",
   category: "Realidade Estendida",
   tags: ["realidade mista", "XR", "continuum da virtualidade", "computação espacial", "passthrough"],
-  cover_url: "https://upload.wikimedia.org/wikipedia/commons/7/7f/HoloLens_2.jpeg",
+  cover_url:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/MicrosoftHoloLensRoomScan.JPG/1280px-MicrosoftHoloLensRoomScan.JPG",
   status: "published",
   featured: false,
   author: siteConfig.author,
@@ -356,9 +357,9 @@ export const postRealidadeMista: Post = {
     {
       id: "rm-ref-5",
       type: "link",
-      title: "Wikimedia Commons — HoloLens 2",
-      url: "https://commons.wikimedia.org/wiki/File:HoloLens_2.jpeg",
-      caption: "Fonte da imagem de capa.",
+      title: "Wikimedia Commons — HoloLens room scan",
+      url: "https://commons.wikimedia.org/wiki/File:MicrosoftHoloLensRoomScan.JPG",
+      caption: "Fonte da imagem de capa: fotografia de Kai Kowalewski, licença CC BY-SA 4.0.",
     },
     {
       id: "rm-ref-6",
