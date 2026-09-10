@@ -14,7 +14,7 @@ export const postRealidadeVirtual: Post = {
   status: "published",
   featured: false,
   author: siteConfig.author,
-  reading_time: 15,
+  reading_time: 17,
   published_at: "2026-09-09T12:00:00.000Z",
   created_at: "2026-09-09T12:00:00.000Z",
   updated_at: "2026-09-10T12:00:00.000Z",
@@ -78,7 +78,7 @@ export const postRealidadeVirtual: Post = {
     {
       id: "rv-funciona-2b",
       type: "paragraph",
-      text: "Dá para experimentar essa diferença sem nenhum equipamento. O AR Explorer, mini-jogo que desenvolvemos e apresentamos na publicação sobre realidade aumentada, usa apenas os sensores de orientação do celular: você gira o aparelho e a cena acompanha, mas andar pela sala não muda nada do que se vê. É exatamente a limitação dos três graus de liberdade — suficiente para olhar em volta, insuficiente para produzir a sensação de estar dentro do lugar.",
+      text: "Dá para experimentar essa diferença sem nenhum equipamento. O AR Explorer, mini-jogo que desenvolvemos e apresentamos mais adiante nesta matéria, usa apenas os sensores de orientação do celular: você gira o aparelho e a cena acompanha, mas andar pela sala não muda nada do que se vê. É exatamente a limitação dos três graus de liberdade — suficiente para olhar em volta, insuficiente para produzir a sensação de estar dentro do lugar.",
     },
     {
       id: "rv-funciona-3",
@@ -111,6 +111,35 @@ export const postRealidadeVirtual: Post = {
       id: "rv-codigo-2",
       type: "paragraph",
       text: "Repare na altura da câmera: um metro e sessenta, aproximadamente a altura dos olhos de uma pessoa em pé. Em realidade virtual, esse número deixa de ser detalhe estético e vira decisão de projeto, porque escala errada destrói a sensação de presença — um ambiente construído em escala equivocada faz o usuário se sentir criança ou gigante sem entender por quê. Projetar para RV é, em boa medida, projetar para um corpo com medidas.",
+    },
+    { id: "rv-heading-explorer", type: "heading", text: "Experimente: AR Explorer, um exercício nosso" },
+    {
+      id: "rv-explorer-1",
+      type: "paragraph",
+      text: "Uma cena como a do exemplo acima não precisa ficar no papel. Desenvolvemos o AR Explorer, um mini-jogo em primeira pessoa que roda direto no navegador, sem instalação e sem óculos. Você fica parado no centro de um cenário e gira o próprio celular para olhar ao redor; uma mira no centro da tela funciona como cursor, e encarar um objeto por alguns instantes revela um cartão com sua descrição. Setas no chão levam de um cenário a outro. No computador, o mesmo controle é feito arrastando o mouse.",
+    },
+    {
+      id: "rv-explorer-2",
+      type: "paragraph",
+      text: "Ele usa a interface de orientação do dispositivo para converter o movimento do aparelho em rotação de uma câmera tridimensional montada com a biblioteca Three.js. É o que se costuma chamar de janela mágica: o telefone se comporta como uma abertura móvel para um mundo que existe ao seu redor. O ambiente é inteiramente sintético — não há imagem da câmera ao fundo —, o que o coloca do lado virtual do espectro, e não no da realidade aumentada, apesar do nome.",
+    },
+    {
+      id: "rv-explorer-3",
+      type: "paragraph",
+      text: "O valor dele aqui é mostrar onde a imersão começa e onde ela para. O rastreamento de orientação já entrega bastante: a cena responde ao corpo, a exploração é natural e ninguém precisa aprender um controle novo. Mas faltam três coisas para que isso vire realidade virtual no sentido pleno. Falta a estereoscopia, porque a imagem é única e plana, sem a profundidade que dois pontos de vista produzem. Faltam os três graus de liberdade de translação: andar pela sala não muda nada do que se vê. E falta o isolamento do campo visual, já que a moldura do telefone e a sala em volta continuam ali, lembrando o tempo todo onde você está de verdade.",
+    },
+    {
+      id: "rv-explorer-4",
+      type: "paragraph",
+      text: "É por isso que a janela mágica raramente produz presença. Ela entrega a primeira das duas ilusões descritas no início deste texto — a de olhar para um lugar — mas não a segunda, a de estar nele. Comparar essa sensação com a de um visor completo, ainda que emprestado por alguns minutos, é o exercício mais direto para entender por que latência, campo de visão e liberdade de movimento aparecem em todas as discussões técnicas da área.",
+    },
+    {
+      id: "rv-explorer-link",
+      type: "link",
+      title: "Jogar o AR Explorer",
+      url: "https://dong0s.github.io/ar-explorer/",
+      caption:
+        "Mini-jogo de exploração desenvolvido pelos autores do Pulso Digital. Abra no celular e toque em Ativar sensores para usar o giroscópio; no computador, arraste o mouse para olhar ao redor.",
     },
     { id: "rv-heading-video-1", type: "heading", text: "Comece pelo panorama em vídeo" },
     {
@@ -285,13 +314,6 @@ export const postRealidadeVirtual: Post = {
       title: "Revisite o conceito de multimídia",
       url: "/publicacoes/multimidia-integracao-de-formatos",
       caption: "Os princípios de combinação de formatos que a imersão leva ao limite.",
-    },
-    {
-      id: "rv-link-explorer",
-      type: "link",
-      title: "Jogar o AR Explorer",
-      url: "https://dong0s.github.io/ar-explorer/",
-      caption: "Nosso mini-jogo de janela mágica: sinta na prática o limite dos três graus de liberdade.",
     },
     {
       id: "rv-link-webxr",

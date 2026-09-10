@@ -13,7 +13,7 @@ export const postRealidadeMista: Post = {
   status: "published",
   featured: false,
   author: siteConfig.author,
-  reading_time: 15,
+  reading_time: 16,
   published_at: "2026-09-10T12:00:00.000Z",
   created_at: "2026-09-10T12:00:00.000Z",
   updated_at: "2026-09-10T12:00:00.000Z",
@@ -111,6 +111,35 @@ export const postRealidadeMista: Post = {
       id: "rm-codigo-2",
       type: "paragraph",
       text: "O detalhe conceitual está na linha da âncora. Sem ela, o objeto seria posicionado em coordenadas relativas ao aparelho e derivaria conforme o rastreamento acumulasse pequenos erros. Com ela, o sistema assume a responsabilidade de manter aquele ponto fixo em relação ao mundo, corrigindo a posição sempre que o mapa interno do ambiente for refinado. É uma diferença invisível no código e decisiva na experiência.",
+    },
+    { id: "rm-heading-experimente", type: "heading", text: "Experimente: plante um objeto na sua sala" },
+    {
+      id: "rm-experimente-1",
+      type: "paragraph",
+      text: "Esse código não precisa ficar na teoria. O grupo que mantém os padrões de web imersiva publica exemplos oficiais que rodam sem instalação, e um deles é exatamente uma demonstração de teste de interseção. Abra a página em um celular Android com Chrome atualizado e suporte a ARCore, toque em iniciar, aponte a câmera para o chão e mova o aparelho devagar por alguns segundos. Um retículo aparece grudado na superfície real; toque na tela e uma flor virtual é plantada ali.",
+    },
+    {
+      id: "rm-experimente-2",
+      type: "paragraph",
+      text: "O que observar é mais importante do que o efeito. Repare que o retículo demora a aparecer em piso liso, uniforme ou mal iluminado, e surge rápido em superfícies com textura — é o rastreamento visual procurando pontos de referência, como descrito na publicação sobre realidade aumentada. Depois de plantar o objeto, ande ao redor dele e agache: se ele permanecer no mesmo ponto do chão em vez de deslizar junto com a câmera, você acabou de ver o registro em três dimensões funcionando.",
+    },
+    {
+      id: "rm-experimente-3",
+      type: "paragraph",
+      text: "Repare também no que falta. Passe a mão na frente da flor: em quase todos os aparelhos ela continua desenhada por cima da sua mão, porque não há oclusão. Esse é o degrau exato entre uma sobreposição bem registrada e a realidade mista completa — o sistema sabe onde está o chão, mas não sabe que existe um obstáculo entre você e o objeto. É a diferença que a malha do ambiente e o sensor de profundidade resolvem.",
+    },
+    {
+      id: "rm-experimente-link",
+      type: "link",
+      title: "Demonstração oficial de WebXR: teste de interseção",
+      url: "https://immersive-web.github.io/webxr-samples/hit-test.html",
+      caption:
+        "Exemplo mantido pelo grupo de web imersiva. Funciona em Chrome no Android com ARCore; o Safari do iPhone ainda não oferece sessões de realidade aumentada na web.",
+    },
+    {
+      id: "rm-experimente-4",
+      type: "paragraph",
+      text: "Em visores, a demonstração mais citada dessa ideia é First Encounters, experiência gratuita que a Meta distribuiu com o Quest 3: antes de começar, o aparelho pede que você escaneie o cômodo; durante o jogo, criaturas atravessam as suas paredes reais, que se despedaçam e revelam um cenário alienígena atrás delas. É a demonstração mais literal possível do argumento desta matéria — a planta do seu quarto vira o mapa da fase, e o conteúdo só existe em relação a ela.",
     },
     { id: "rm-heading-video-1", type: "heading", text: "As três realidades, lado a lado" },
     {
@@ -302,6 +331,13 @@ export const postRealidadeMista: Post = {
       title: "W3C — WebXR Hit Test e âncoras",
       url: "https://immersive-web.github.io/hit-test/",
       caption: "Especificação usada como base para o exemplo de código.",
+    },
+    {
+      id: "rm-ref-samples",
+      type: "link",
+      title: "Immersive Web — exemplos oficiais de WebXR",
+      url: "https://immersive-web.github.io/webxr-samples/",
+      caption: "Coleção de demonstrações executáveis, incluindo a de teste de interseção usada nesta matéria.",
     },
     {
       id: "rm-ref-3",
