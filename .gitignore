@@ -8,3 +8,6 @@ node_modules
 
 # artefatos de build do TypeScript
 tsconfig.tsbuildinfo
+
+# cache do Python
+__pycache__/
