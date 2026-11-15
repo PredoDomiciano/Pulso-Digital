@@ -15,36 +15,21 @@ export const postMinaProcedural: Post = {
   status: "published",
   featured: false,
   author: siteConfig.author,
-  reading_time: 16,
+  reading_time: 5,
   published_at: "2026-11-12T15:00:00.000Z",
   created_at: "2026-11-12T15:00:00.000Z",
-  updated_at: "2026-11-15T14:00:00.000Z",
+  updated_at: "2026-11-15T16:00:00.000Z",
   content: [
     {
       id: "pcg-intro",
       type: "paragraph",
-      text: "Toda vez que a personagem do Grandmaster Alchemist desce uma escada na mina, um andar novo passa a existir. Ele não estava guardado em lugar nenhum: as paredes, os túneis, os minérios, os baús e os monstros são calculados naquele instante, em cerca de onze milésimos de segundo. Se ela sair e voltar, o andar será outro. São cem andares que ninguém desenhou à mão — e, mesmo assim, nenhum deles pode prender o jogador em um beco sem saída nem esconder a escada de descida atrás de uma parede.",
-    },
-    {
-      id: "pcg-intro-2",
-      type: "paragraph",
-      text: "Esta publicação continua a apresentação do jogo que desenvolvemos como Trabalho de Graduação e entra na parte que é o núcleo da pesquisa: o gerador procedural da mina. Vamos ver por que gerar em vez de desenhar, como uma seed transforma acaso em algo reproduzível, quatro técnicas de geração lado a lado, como verificamos cada andar e o que mostraram os testes automatizados com milhares de andares.",
+      text: "Toda vez que a personagem do Grandmaster Alchemist desce uma escada na mina, um andar novo passa a existir. Paredes, túneis, minérios, baús e monstros são calculados naquele instante, em cerca de onze milésimos de segundo, e se ela sair e voltar, o andar será outro. São cem andares que ninguém desenhou à mão — e nenhum deles pode prender o jogador em um beco sem saída nem esconder a escada atrás de uma parede. Esta publicação mostra como o gerador funciona e como ele foi testado.",
     },
     { id: "pcg-heading-por-que", type: "heading", text: "Por que gerar em vez de desenhar" },
     {
       id: "pcg-por-que-1",
       type: "paragraph",
-      text: "Geração procedural de conteúdo é a criação de conteúdo de jogo — mapas, fases, itens, missões — por algoritmo, com pouca ou nenhuma intervenção humana direta. A definição é de Noor Shaker, Julian Togelius e Mark Nelson, no livro de referência da área. As vantagens são diretas: menos trabalho manual, mais conteúdo do que uma equipe conseguiria produzir e rejogabilidade, porque cada partida é diferente da anterior.",
-    },
-    {
-      id: "pcg-por-que-2",
-      type: "paragraph",
-      text: "Para uma equipe de duas pessoas, cem andares desenhados à mão seriam inviáveis dentro do prazo de um Trabalho de Graduação. Mas o motivo não é só economia. A mina é o lado arriscado do ciclo do jogo, o lugar para onde se volta várias vezes atrás de minérios e materiais; se cada visita fosse igual à anterior, o jogador decoraria o caminho e a exploração viraria tarefa. Um andar novo a cada entrada mantém a tensão de não saber o que há na próxima curva.",
-    },
-    {
-      id: "pcg-por-que-3",
-      type: "paragraph",
-      text: "A ideia é antiga nos jogos. Rogue, de 1980, gerava masmorras em texto a cada partida e deu nome a todo um gênero. Diablo, em 1996, levou as masmorras aleatórias ao grande público. Spelunky, Minecraft e No Man's Sky mostraram, cada um a seu modo, que o algoritmo pode produzir de fases curtas e desafiadoras a mundos praticamente infinitos. O desafio, em todos eles, é o mesmo: o acaso precisa ser controlado o bastante para que o resultado seja sempre jogável.",
+      text: "Geração procedural é a criação de conteúdo de jogo por algoritmo, com pouca intervenção humana direta. Para uma equipe de duas pessoas, cem andares desenhados à mão seriam inviáveis no prazo de um Trabalho de Graduação. Mas o motivo não é só economia: a mina é visitada muitas vezes, e um andar novo a cada entrada mantém a tensão de não saber o que há na próxima curva. O desafio é sempre o mesmo: controlar o acaso para que o resultado seja jogável.",
     },
     {
       id: "pcg-video-1",
@@ -56,38 +41,18 @@ export const postMinaProcedural: Post = {
     {
       id: "pcg-seed-1",
       type: "paragraph",
-      text: "Computadores não sorteiam números de verdade: eles usam geradores pseudoaleatórios, fórmulas que produzem sequências que parecem aleatórias a partir de um número inicial, a seed, ou semente. A mesma seed produz sempre a mesma sequência e, portanto, o mesmo mapa. Isso tem duas consequências práticas. Para depurar, basta anotar a seed de um andar com problema e gerá-lo de novo quantas vezes for preciso. E para testar, é possível gerar mil andares diferentes simplesmente usando mil seeds diferentes.",
-    },
-    {
-      id: "pcg-seed-2",
-      type: "paragraph",
-      text: "No jogo, cada entrada em um andar usa uma seed nova, e por isso o mapa muda a cada visita. O que fica salvo no arquivo da mina é só o progresso do jogador: o andar mais fundo alcançado, os checkpoints liberados a cada cinco andares e os guardiões já vencidos. Não é preciso guardar mapas — basta saber até onde a personagem chegou.",
+      text: "Computadores não sorteiam de verdade: usam fórmulas que produzem sequências aparentemente aleatórias a partir de um número inicial, a seed. A mesma seed gera sempre o mesmo mapa. Isso facilita depurar, já que basta anotar a seed de um andar com problema, e testar, já que mil seeds geram mil andares diferentes.",
     },
     { id: "pcg-heading-strategy", type: "heading", text: "Quatro técnicas atrás da mesma porta" },
     {
       id: "pcg-strategy-1",
       type: "paragraph",
-      text: "Para comparar técnicas de forma justa, separamos o gerador em duas partes. A primeira, que muda de técnica para técnica, decide apenas quais células da grade viram chão. A segunda é comum a todas: escolher entrada e saída, validar o andar e posicionar minérios, inimigos e baús. Isso é o padrão de projeto Strategy: algoritmos intercambiáveis atrás de uma mesma interface. Trocar a técnica é trocar uma linha de código, e as diferenças medidas nos testes vêm só da escavação.",
-    },
-    {
-      id: "pcg-strategy-2",
-      type: "paragraph",
-      text: "A caminhada aleatória é a mais simples: um escavador parte do centro da grade e anda em direções sorteadas, abrindo chão por onde passa, até atingir a área desejada. Tudo o que ele escava está conectado por construção, já que é o mesmo caminho. O resultado tende a ser uma mancha central com galerias curtas.",
-    },
-    {
-      id: "pcg-strategy-3",
-      type: "paragraph",
-      text: "O particionamento binário do espaço, conhecido pela sigla BSP, divide a área ao meio repetidamente, ora na vertical, ora na horizontal, até que os pedaços fiquem pequenos. Cada pedaço final recebe uma sala retangular, e as salas irmãs são ligadas por corredores. A conectividade também é garantida, mas o resultado é regular: parece um prédio, não uma caverna.",
-    },
-    {
-      id: "pcg-strategy-4",
-      type: "paragraph",
-      text: "O autômato celular começa com ruído: cada célula vira rocha com uma certa probabilidade, perto de 45%. Depois, aplica seis vezes seguidas uma regra local: uma célula vira rocha se ela e suas oito vizinhas somam cinco ou mais rochas, e vira chão caso contrário. A cada passada, o ruído se organiza em formas orgânicas, com paredes arredondadas e salões irregulares — exatamente o aspecto de uma caverna natural. A técnica foi avaliada por Johnson, Yannakakis e Togelius para gerar cavernas infinitas em tempo real.",
+      text: "Separamos o gerador em duas partes. A primeira decide quais células viram chão e muda de técnica para técnica; a segunda, comum a todas, posiciona entrada, saída, minérios, inimigos e baús. Comparamos quatro técnicas. A caminhada aleatória é um escavador que anda em direções sorteadas e deixa tudo conectado. O BSP divide a área ao meio repetidamente e liga salas retangulares por corredores, com cara de prédio. O autômato celular começa com ruído e aplica seis vezes uma regra local — uma célula vira rocha se ela e as oito vizinhas somam cinco ou mais rochas —, produzindo cavernas orgânicas.",
     },
     {
       id: "pcg-strategy-5",
       type: "paragraph",
-      text: "O problema do autômato é que nada na regra garante conectividade. Ele pode produzir bolsões de chão cercados de rocha por todos os lados — e, se a saída cair em um deles, o andar é impossível. A quarta técnica, a híbrida, resolve isso. Ela parte do autômato celular, elimina os bolsões com menos de 30 células, que não valem um túnel, liga cada região restante à principal por um túnel entre os pontos mais próximos e, por fim, alarga qualquer passagem com menos de três células de largura, para que a personagem e os monstros possam lutar e desviar nelas.",
+      text: "O problema do autômato é que nada garante conectividade: ele pode criar bolsões isolados e esconder a saída em um deles. A quarta técnica, a híbrida, parte do autômato, elimina bolsões pequenos, liga as regiões restantes por túneis e alarga passagens com menos de três células, para que haja espaço para lutar e desviar.",
     },
     {
       id: "pcg-video-2",
@@ -97,30 +62,15 @@ export const postMinaProcedural: Post = {
     },
     { id: "pcg-heading-validacao", type: "heading", text: "Gerar e testar: a busca em largura" },
     {
-      id: "pcg-validacao-1",
-      type: "paragraph",
-      text: "Shaker, Togelius e Nelson distinguem dois tipos de gerador. Os construtivos produzem o resultado em uma única passagem e confiam no próprio algoritmo. Os do tipo gerar e testar produzem um candidato, verificam se ele atende a critérios de validade e, se não atender, descartam e tentam de novo. Usamos as duas ideias: as técnicas escavam, e uma etapa comum verifica cada andar antes de entregá-lo ao jogo.",
-    },
-    {
       id: "pcg-validacao-2",
       type: "paragraph",
-      text: "A verificação usa a busca em largura, um algoritmo clássico de grafos. Partindo de uma célula, ela visita todas as vizinhas, depois as vizinhas das vizinhas, e assim por diante, como uma onda que se espalha pelo chão. Repetida a partir de cada célula ainda não visitada, ela identifica as regiões conectadas do mapa; partindo da entrada, mede em quantos passos se chega à saída pelo caminho mais curto. Um andar só é aceito se três condições forem atendidas ao mesmo tempo.",
-    },
-    {
-      id: "pcg-validacao-3",
-      type: "paragraph",
-      text: "Pelo menos 25% da grade precisa ser chão, para que o andar não seja um corredor apertado. A maior região conectada precisa reunir pelo menos 95% de todo o chão, para que quase nada fique isolado. E a distância entre entrada e saída precisa alcançar 60% da maior dimensão da grade, para que a escada de descida não fique ao lado da chegada. Se o andar falhar, uma nova tentativa é feita com uma seed derivada da original, até o limite de 30 tentativas.",
-    },
-    {
-      id: "pcg-validacao-4",
-      type: "paragraph",
-      text: "Validade não é o mesmo que qualidade, e por isso medimos também a conformidade ao level design, isto é, ao que o andar precisa ter para ser bom de jogar: ao menos uma área aberta de 5 por 5 células para combate, bifurcações no caminho, para haver escolha, e nenhuma passagem de largura única entre a entrada e a saída, onde a personagem ficaria encurralada sem espaço para esquivar.",
+      text: "Cada andar é verificado antes de chegar ao jogo pela busca em largura, um algoritmo que se espalha pelo chão como uma onda, identifica as regiões conectadas e mede o caminho mais curto entre entrada e saída. Um andar só é aceito se tiver ao menos 25% de chão, se a maior região conectada reunir 95% dele e se a saída estiver longe o bastante da entrada. Também medimos a conformidade ao level design: uma área aberta para combate, bifurcações e nenhuma passagem estreita no caminho principal.",
     },
     { id: "pcg-heading-experimento", type: "heading", text: "O experimento: mil andares por técnica" },
     {
       id: "pcg-experimento-1",
       type: "paragraph",
-      text: "Para comparar as técnicas, uma rotina automatizada no editor da Unity gerou mil andares com cada uma, todos com seeds distintas e na profundidade fixa do andar 50, em uma grade de 96 por 69 células. Para cada andar, a rotina registrou se ele foi válido na primeira tentativa, quantas tentativas foram necessárias, o tempo de geração, a área escavada, a distância entre entrada e saída, os becos sem saída e a conformidade ao level design. Os testes rodaram em um computador com processador AMD Ryzen 5 4500, 32 GB de memória e Windows 11, em uma única thread.",
+      text: "Uma rotina automatizada no editor da Unity gerou mil andares com cada técnica, todos no andar 50, em uma grade de 96 por 69 células, registrando validade, tentativas, tempo, área escavada, distâncias e becos sem saída.",
     },
     {
       id: "pcg-image-tecnicas",
@@ -134,28 +84,13 @@ export const postMinaProcedural: Post = {
     {
       id: "pcg-resultados-1",
       type: "paragraph",
-      text: "Todas as técnicas chegaram a 100% de andares válidos, mas por caminhos diferentes. O autômato celular puro falhou na primeira tentativa em 16,4% dos casos — exatamente o risco de regiões isoladas que a literatura aponta —, precisou de até cinco tentativas e teve só 77,7% de andares conformes, porque deixou passagens estreitas demais no caminho. Ou seja, ele produz as cavernas mais bonitas, mas não as mais jogáveis.",
-    },
-    {
-      id: "pcg-resultados-2",
-      type: "paragraph",
-      text: "A caminhada aleatória e o BSP foram os mais rápidos, com 3,44 e 3,07 milissegundos em média, e sempre válidos. O custo apareceu na forma: escavaram menos área, 2.517 e 2.837 células, e abriram menos galerias, com 30,3 e 41,3 becos sem saída em média. Becos, aqui, não são defeito: são os cantos onde ficam baús e minérios e que tornam a exploração interessante. O BSP, além disso, produz a planta regular de salas e corredores que destoa de uma mina natural, e afasta demais a entrada da saída: 208,1 passos em média, contra 121,8 na caminhada aleatória e cerca de 150 nas técnicas de caverna.",
-    },
-    {
-      id: "pcg-resultados-3",
-      type: "paragraph",
-      text: "A técnica híbrida reuniu o melhor dos dois lados: validade de 100% já na primeira tentativa, conformidade de 100%, a maior área escavada, com 4.409 células contra 3.689 do autômato, e uma quantidade de galerias próxima à dele, com 70,8 becos em média contra 82,2. Seu custo foi o maior tempo médio, 11,45 milissegundos, contra 10,93 do autômato — ainda assim muito baixo para uma geração feita durante a transição entre andares, quando a tela já está escurecendo. Por esses resultados, o híbrido é a técnica usada no jogo.",
+      text: "Todas chegaram a 100% de andares válidos, por caminhos diferentes. O autômato puro falhou na primeira tentativa em 16,4% dos casos e só teve 77,7% de andares conformes: faz as cavernas mais bonitas, não as mais jogáveis. A caminhada aleatória e o BSP foram os mais rápidos, com cerca de 3 milissegundos, mas escavaram menos e abriram menos galerias. A híbrida teve validade e conformidade de 100% já na primeira tentativa e a maior área escavada, a um custo de 11,45 milissegundos — por isso é a técnica do jogo.",
     },
     { id: "pcg-heading-validacao-final", type: "heading", text: "Do andar 1 ao andar 100" },
     {
       id: "pcg-final-1",
       type: "paragraph",
-      text: "A comparação usou uma profundidade fixa, mas no jogo os andares crescem: a grade vai de 72 por 54 células no andar 1 a 120 por 84 no andar 100, e as quantidades acompanham — de 12 a 37 minérios, de 5 a 20 inimigos, de 1 a 5 baús. Para validar o gerador em todas essas configurações, a técnica híbrida gerou outros mil andares, com dez seeds para cada profundidade de 1 a 100.",
-    },
-    {
-      id: "pcg-final-2",
-      type: "paragraph",
-      text: "Todos os mil foram válidos na primeira tentativa e conformes ao level design, sem nenhuma seed inválida. O tempo médio foi de 11,43 milissegundos, com mínimo de 5,91 e máximo de 29,90, e cresceu com o tamanho da grade: 6,49 milissegundos em média no andar 1, 12,13 no andar 50 e 17,27 no andar 100. Mesmo o pior caso equivale a menos de dois quadros de um jogo rodando a 60 quadros por segundo — nenhuma interrupção perceptível. Somando a comparação e a validação final, a técnica adotada passou por 2.000 gerações sem precisar de uma única segunda tentativa.",
+      text: "No jogo, a grade cresce de 72 por 54 células no andar 1 para 120 por 84 no andar 100. A técnica híbrida gerou mais mil andares, dez para cada profundidade, e todos foram válidos na primeira tentativa. O tempo médio foi de 11,43 milissegundos, e o pior caso, 29,90, equivale a menos de dois quadros a 60 quadros por segundo: nenhuma interrupção perceptível.",
     },
     {
       id: "pcg-image-andares",
@@ -168,12 +103,7 @@ export const postMinaProcedural: Post = {
     {
       id: "pcg-alem-1",
       type: "paragraph",
-      text: "Nem tudo na mina é procedural, e essa é uma decisão de projeto. Os andares múltiplos de dez são substituídos por arenas de tamanho fixo, desenhadas para as lutas contra chefes e guardiões: corredor de entrada, área redonda com quatro pilares e, ao norte, a sala do selo de descida, que só abre depois da vitória. Um chefe precisa de um palco previsível, em que o jogador possa aprender os padrões de ataque; uma caverna sorteada atrapalharia justamente essa leitura.",
-    },
-    {
-      id: "pcg-alem-2",
-      type: "paragraph",
-      text: "Outras camadas são aplicadas por cima do mapa gerado, sem mexer no algoritmo testado. O bioma de cada faixa de vinte andares troca a paleta das peças, as luzes e os enfeites — cristais, lava, poças tóxicas, constelações —, e acrescenta perigos próprios. Os minérios mudam a cada faixa e nunca se repetem entre elas. Nos andares mais profundos, salas seladas por obsidiana são esculpidas depois da geração e só abrem com uma picareta de nível alto. E a força dos inimigos cresce com a profundidade: a vida aumenta 12% e o dano 8% a cada andar.",
+      text: "Nem tudo é procedural. Os andares múltiplos de dez são arenas fixas para chefes e guardiões, porque uma luta importante precisa de um palco previsível em que o jogador aprenda os padrões de ataque.",
     },
     {
       id: "pcg-image-chefes",
@@ -186,7 +116,7 @@ export const postMinaProcedural: Post = {
     {
       id: "pcg-podcast-context",
       type: "paragraph",
-      text: "Geração procedural é uma das ferramentas que permitem a equipes pequenas produzir jogos grandes, e não por acaso é tão comum no cenário independente. O episódio abaixo discute esse ecossistema: como estúdios pequenos se organizam, onde publicam, como financiam o desenvolvimento e quais escolhas técnicas e de escopo fazem diferença para chegar ao lançamento.",
+      text: "A geração procedural é uma das ferramentas que permitem a equipes pequenas fazer jogos grandes. O episódio abaixo discute o ecossistema dos jogos independentes: organização, publicação e financiamento.",
     },
     {
       id: "pcg-podcast",
@@ -199,29 +129,19 @@ export const postMinaProcedural: Post = {
     {
       id: "pcg-limites-1",
       type: "paragraph",
-      text: "Três limites precisam ficar claros. Primeiro, a rotina mede o gerador de andares comuns em todas as profundidades, inclusive nas múltiplas de dez, que no jogo viram arenas fixas; as arenas não entraram na amostra. Segundo, os tempos foram medidos no editor e cobrem a geração lógica do mapa, sem a montagem das peças gráficas e dos objetos na cena, que também tem custo. Terceiro, nenhum número da tabela mede diversão.",
-    },
-    {
-      id: "pcg-limites-2",
-      type: "paragraph",
-      text: "Esse último ponto é o mais importante. Validade e conformidade garantem que o andar é jogável e segue as regras que definimos, mas não dizem se ele é interessante, se a distribuição de monstros é justa ou se o jogador sente vontade de descer mais um. Responder a isso exige testes com pessoas de fora da equipe, que estão entre os próximos passos do projeto. O gerador remove o pior caso; o bom caso ainda depende de design e de iteração.",
+      text: "Nenhum desses números mede diversão. Validade garante que o andar é jogável, não que é interessante — isso exige testes com pessoas de fora da equipe, um dos próximos passos.",
     },
     { id: "pcg-heading-serie", type: "heading", text: "A mina como hipermídia" },
     {
       id: "pcg-serie-1",
       type: "paragraph",
-      text: "Há um paralelo direto com a publicação sobre hipermídia. Lá, o conteúdo é uma rede de nós ligados por links, e a liberdade de navegar exige que nenhum nó fique inalcançável — um link quebrado é um beco sem saída. Aqui, cada andar é um grafo de células ligadas por vizinhança, e a busca em largura é exatamente o mesmo algoritmo que um robô de busca usa para percorrer as páginas de um site. Verificar a mina é, no fundo, verificar se todos os links funcionam.",
-    },
-    {
-      id: "pcg-serie-2",
-      type: "paragraph",
-      text: "E há uma diferença que vale notar. Na hipermídia, alguém escreve os nós e os links; na mina, o algoritmo escreve, e o papel humano passa a ser o de definir as regras e os critérios que separam um resultado aceitável de um inaceitável. É uma mudança de função que aparece cada vez mais em outras áreas — de quem produz cada peça para quem projeta o sistema que produz e o teste que o fiscaliza.",
+      text: "Na hipermídia, um link quebrado é um beco sem saída. Aqui, cada andar é um grafo de células, e a busca em largura é o mesmo algoritmo que um robô de busca usa para percorrer um site: verificar a mina é verificar se todos os links funcionam.",
     },
     { id: "pcg-heading-conclusao", type: "heading", text: "Para fechar" },
     {
       id: "pcg-conclusao",
       type: "paragraph",
-      text: "Cem andares que ninguém desenhou só funcionam porque alguém desenhou com cuidado as regras que os produzem e os testes que os aprovam. A comparação mostrou que a técnica mais bonita não era a mais jogável e que a mais rápida não era a mais interessante; a híbrida venceu por combinar a forma orgânica do autômato com garantias de conectividade e largura, a um custo de poucos milissegundos. É esse equilíbrio entre acaso e controle que faz cada descida na mina ser nova sem nunca ser injusta.",
+      text: "Cem andares que ninguém desenhou só funcionam porque alguém desenhou com cuidado as regras que os produzem e os testes que os aprovam. A técnica híbrida venceu por combinar a forma orgânica do autômato com garantias de conectividade, e é esse equilíbrio entre acaso e controle que faz cada descida ser nova sem nunca ser injusta.",
     },
     { id: "pcg-heading-links", type: "heading", text: "Links para continuar" },
     {
@@ -291,7 +211,7 @@ export const postMinaProcedural: Post = {
     {
       id: "pcg-ref-7",
       type: "paragraph",
-      text: "Os dados das tabelas vêm dos testes automatizados do próprio projeto, executados no editor da Unity e registrados no artigo do Trabalho de Graduação. As imagens dos mapas e dos chefes são de elaboração própria.",
+      text: "Os números citados vêm dos testes automatizados do próprio projeto, executados no editor da Unity e registrados no artigo do Trabalho de Graduação. As imagens dos mapas e dos chefes são de elaboração própria.",
     },
   ],
 };

@@ -14,52 +14,27 @@ export const postRealidadeMista: Post = {
   status: "published",
   featured: false,
   author: siteConfig.author,
-  reading_time: 16,
+  reading_time: 5,
   published_at: "2026-09-10T12:00:00.000Z",
   created_at: "2026-09-10T12:00:00.000Z",
-  updated_at: "2026-11-15T14:00:00.000Z",
+  updated_at: "2026-11-15T16:00:00.000Z",
   content: [
     {
       id: "rm-intro",
       type: "paragraph",
-      text: "Uma bola virtual quica na sua mesa, rola até a borda, cai no chão e para embaixo da cadeira. Você se abaixa e ela continua lá, no mesmo ponto, mesmo depois de você sair da sala e voltar meia hora depois. Nada disso é possível se o sistema apenas desenhar imagens sobre a câmera: para que a bola quique na mesa, o computador precisa saber que existe uma mesa, onde ela começa, onde termina e o que há embaixo. Essa compreensão do ambiente é o que caracteriza a realidade mista.",
-    },
-    {
-      id: "rm-intro-2",
-      type: "paragraph",
-      text: "Esta publicação encerra a série sobre realidades estendidas do Pulso Digital. As anteriores trataram da realidade aumentada, que sobrepõe camadas ao mundo, e da realidade virtual, que substitui o mundo. Falta o território do meio — o mais interessante conceitualmente e, não por acaso, o mais bagunçado em termos de vocabulário, porque cada empresa usa o termo realidade mista de um jeito diferente conforme o produto que precisa vender.",
+      text: "Uma bola virtual quica na sua mesa, rola até a borda, cai e para embaixo da cadeira — e continua lá quando você volta meia hora depois. Para isso, o computador precisa saber que existe uma mesa, onde ela começa e o que há embaixo. Essa compreensão do ambiente caracteriza a realidade mista, tema que encerra a série do Pulso Digital sobre realidades estendidas, depois da aumentada, que sobrepõe camadas ao mundo, e da virtual, que o substitui.",
     },
     { id: "rm-heading-problema", type: "heading", text: "Um termo com definições concorrentes" },
     {
       id: "rm-problema-1",
       type: "paragraph",
-      text: "Se você procurar realidade mista em diferentes materiais, vai encontrar pelo menos três significados. O primeiro, acadêmico e mais antigo, trata a realidade mista como todo o espectro entre o real e o virtual, com a realidade aumentada como um de seus casos. O segundo, comercial, usa o termo para nomear experiências em que objetos virtuais interagem com a geometria real, distinguindo-as das sobreposições simples. O terceiro, mais recente, chama de realidade mista o modo em que um óculos fechado mostra o ambiente por câmeras e acrescenta conteúdo por cima.",
-    },
-    {
-      id: "rm-problema-2",
-      type: "paragraph",
-      text: "Nenhuma dessas definições está errada, e discutir qual é a verdadeira rende pouco. O caminho mais produtivo, especialmente em trabalho acadêmico, é declarar qual definição está sendo adotada e manter a coerência ao longo do texto. Aqui vamos usar o sentido acadêmico como referência conceitual — o espectro — e o sentido prático quando falarmos de aplicações, porque é assim que a indústria descreve os produtos que existem hoje.",
-    },
-    {
-      id: "rm-problema-3",
-      type: "paragraph",
-      text: "Existe ainda um termo guarda-chuva que resolve parte da confusão: realidade estendida, ou XR, usado para se referir a todas essas tecnologias em conjunto sem precisar escolher um ponto do espectro. É útil em títulos, currículos e nomes de disciplinas. É inútil quando se quer precisão técnica, porque não diz nada sobre o que o sistema realmente faz — e a diferença entre desenhar uma imagem na tela e entender a geometria de uma sala é enorme.",
+      text: "O termo tem pelo menos três sentidos. No acadêmico, realidade mista é todo o espectro entre o real e o virtual. No comercial, são experiências em que objetos virtuais interagem com a geometria real. No mais recente, é o modo em que um óculos fechado mostra o ambiente por câmeras e acrescenta conteúdo. Em um trabalho acadêmico, o melhor é declarar qual definição se adota e mantê-la.",
     },
     { id: "rm-heading-continuum", type: "heading", text: "O continuum da virtualidade" },
     {
       id: "rm-continuum-1",
       type: "paragraph",
-      text: "Em 1994, dois pesquisadores propuseram uma taxonomia que continua sendo a melhor ferramenta para organizar esse campo. Em vez de categorias separadas, eles descreveram uma linha contínua. Em uma ponta está o ambiente real, sem nenhum elemento sintético. Na outra, o ambiente virtual, sem nenhum elemento real. Tudo o que existe entre os dois extremos é realidade mista.",
-    },
-    {
-      id: "rm-continuum-2",
-      type: "paragraph",
-      text: "Caminhando a partir do mundo real, o primeiro trecho é a realidade aumentada: o ambiente domina e recebe acréscimos digitais. Mais adiante aparece a virtualidade aumentada, o caso simétrico e menos citado, em que o ambiente é predominantemente virtual e recebe elementos capturados do mundo real — a imagem das suas mãos, um objeto físico digitalizado, uma pessoa transmitida em vídeo dentro de uma sala sintética.",
-    },
-    {
-      id: "rm-continuum-3",
-      type: "paragraph",
-      text: "A força dessa taxonomia está em substituir a pergunta binária — é virtual ou é real? — por três perguntas graduais. Quanto do que vejo é sintético? Quanto conhecimento o sistema tem do ambiente físico? E quanto os dois lados interagem entre si? Sistemas muito diferentes podem ocupar posições próximas nesse espectro, e sistemas com o mesmo nome comercial podem estar em pontos bem distantes.",
+      text: "Em 1994, Paul Milgram e Fumio Kishino propuseram uma linha contínua: em uma ponta, o ambiente real; na outra, o totalmente virtual; e tudo o que fica entre elas é realidade mista. Perto do real está a realidade aumentada. Perto do virtual está a virtualidade aumentada, em que um cenário sintético recebe elementos do mundo real, como a imagem das suas mãos. A pergunta deixa de ser se algo é real ou virtual e passa a ser quanto do que se vê é sintético e quanto os dois lados interagem.",
     },
     {
       id: "rm-image-continuum",
@@ -79,49 +54,18 @@ export const postRealidadeMista: Post = {
     {
       id: "rm-cena-1",
       type: "paragraph",
-      text: "A diferença prática entre uma sobreposição e uma experiência mista está na compreensão de cena. O aparelho não apenas detecta planos: ele reconstrói uma malha tridimensional do ambiente, identifica que aquele plano horizontal a setenta centímetros do chão é uma mesa, que aquele retângulo vertical é uma parede e que existe um vão entre os dois. A partir daí, conteúdo digital pode se comportar como matéria — colidir, apoiar, cair, ricochetear, ser escondido.",
-    },
-    {
-      id: "rm-cena-2",
-      type: "paragraph",
-      text: "Disso decorrem quatro capacidades que definem a categoria. A primeira é a oclusão correta: objetos virtuais desaparecem atrás de objetos reais, e não flutuam por cima de tudo. A segunda é a física compartilhada: a gravidade e as colisões usam a geometria real como referência. A terceira é a iluminação coerente, com sombras projetadas sobre superfícies físicas. A quarta é a persistência: âncoras espaciais que permitem que um conteúdo permaneça no mesmo lugar entre sessões e, em alguns sistemas, seja visto por várias pessoas ao mesmo tempo.",
+      text: "A diferença entre uma sobreposição e uma experiência mista está na compreensão da cena. O aparelho reconstrói uma malha tridimensional do ambiente e entende que um plano a setenta centímetros do chão é uma mesa e que um retângulo vertical é uma parede. A partir daí, o conteúdo digital se comporta como matéria. Quatro capacidades definem a categoria: oclusão, para que objetos reais escondam os virtuais; física compartilhada, com colisões na geometria real; iluminação coerente; e persistência, com âncoras que mantêm um conteúdo no mesmo lugar entre sessões.",
     },
     {
       id: "rm-cena-3",
       type: "paragraph",
-      text: "A persistência é o recurso mais transformador e o menos visível. Ela transforma o espaço físico em um sistema de arquivos: um conteúdo pode morar em um lugar. O manual fica preso à máquina, a anotação fica na parede da sala de reunião, a instrução fica no equipamento onde o procedimento acontece. É o momento em que a informação deixa de ser algo que se busca e passa a ser algo que se encontra ao chegar — uma inversão que reorganiza completamente a arquitetura da informação discutida na publicação sobre hipermídia.",
-    },
-    {
-      id: "rm-cena-4",
-      type: "paragraph",
-      text: "Há também a interação com objetos reais. Sistemas mais avançados reconhecem não só a geometria, mas o que as coisas são: uma janela, uma porta, um teclado físico. Isso permite comportamentos específicos — mostrar o teclado real dentro de um ambiente virtual para que a pessoa consiga digitar, projetar telas de trabalho sobre a mesa onde ela realmente está, avisar quando alguém entra no cômodo. O ambiente físico deixa de ser cenário e vira parte da interface.",
-    },
-    { id: "rm-heading-codigo", type: "heading", text: "Ancorando conteúdo no espaço" },
-    {
-      id: "rm-codigo-1",
-      type: "paragraph",
-      text: "No navegador, esse comportamento aparece em duas funcionalidades complementares: o teste de interseção, que descobre onde um raio lançado a partir do dispositivo encontra uma superfície real, e as âncoras, que fixam um ponto do espaço para que o conteúdo permaneça estável. Em linhas gerais, o fluxo é este: a página abre uma sessão imersiva pedindo essas duas funcionalidades; a cada quadro, lança um raio a partir do aparelho e verifica se ele tocou alguma superfície; quando toca, cria uma âncora naquele ponto e posiciona o objeto virtual nela.",
-    },
-    {
-      id: "rm-codigo-2",
-      type: "paragraph",
-      text: "O detalhe conceitual está na âncora. Sem ela, o objeto seria posicionado em coordenadas relativas ao aparelho e derivaria conforme o rastreamento acumulasse pequenos erros. Com ela, o sistema assume a responsabilidade de manter aquele ponto fixo em relação ao mundo, corrigindo a posição sempre que o mapa interno do ambiente for refinado. É uma diferença invisível para quem usa e decisiva na experiência.",
+      text: "A persistência é a mais transformadora: o manual fica preso à máquina, a anotação fica na parede da sala de reunião. A informação deixa de ser algo que se busca e passa a ser algo que se encontra ao chegar.",
     },
     { id: "rm-heading-experimente", type: "heading", text: "Experimente: plante um objeto na sua sala" },
     {
       id: "rm-experimente-1",
       type: "paragraph",
-      text: "Esse fluxo não precisa ficar na teoria. O grupo que mantém os padrões de web imersiva publica exemplos oficiais que rodam sem instalação, e um deles é exatamente uma demonstração de teste de interseção. Abra a página em um celular Android com Chrome atualizado e suporte a ARCore, toque em iniciar, aponte a câmera para o chão e mova o aparelho devagar por alguns segundos. Um retículo aparece grudado na superfície real; toque na tela e uma flor virtual é plantada ali.",
-    },
-    {
-      id: "rm-experimente-2",
-      type: "paragraph",
-      text: "O que observar é mais importante do que o efeito. Repare que o retículo demora a aparecer em piso liso, uniforme ou mal iluminado, e surge rápido em superfícies com textura — é o rastreamento visual procurando pontos de referência, como descrito na publicação sobre realidade aumentada. Depois de plantar o objeto, ande ao redor dele e agache: se ele permanecer no mesmo ponto do chão em vez de deslizar junto com a câmera, você acabou de ver o registro em três dimensões funcionando.",
-    },
-    {
-      id: "rm-experimente-3",
-      type: "paragraph",
-      text: "Repare também no que falta. Passe a mão na frente da flor: em quase todos os aparelhos ela continua desenhada por cima da sua mão, porque não há oclusão. Esse é o degrau exato entre uma sobreposição bem registrada e a realidade mista completa — o sistema sabe onde está o chão, mas não sabe que existe um obstáculo entre você e o objeto. É a diferença que a malha do ambiente e o sensor de profundidade resolvem.",
+      text: "O grupo que mantém os padrões de web imersiva publica exemplos que rodam sem instalação. Em um celular Android com Chrome e suporte a ARCore, abra a demonstração de teste de interseção, aponte a câmera para o chão e mova o aparelho devagar. Um marcador aparece grudado na superfície; toque na tela e uma flor virtual é plantada ali. Ande ao redor da flor: se ela não deslizar, você está vendo a âncora funcionando. Passe a mão na frente dela e verá o que falta — sem oclusão, ela continua desenhada por cima.",
     },
     {
       id: "rm-experimente-link",
@@ -134,7 +78,7 @@ export const postRealidadeMista: Post = {
     {
       id: "rm-experimente-4",
       type: "paragraph",
-      text: "Em visores, a demonstração mais citada dessa ideia é First Encounters, experiência gratuita que a Meta distribuiu com o Quest 3: antes de começar, o aparelho pede que você escaneie o cômodo; durante o jogo, criaturas atravessam as suas paredes reais, que se despedaçam e revelam um cenário alienígena atrás delas. É a demonstração mais literal possível do argumento desta matéria — a planta do seu quarto vira o mapa da fase, e o conteúdo só existe em relação a ela.",
+      text: "Em visores, o exemplo mais citado é First Encounters, distribuído com o Quest 3: o aparelho escaneia o cômodo e, durante o jogo, criaturas atravessam as suas paredes reais. A planta do seu quarto vira o mapa da fase.",
     },
     { id: "rm-heading-video-1", type: "heading", text: "As três realidades, lado a lado" },
     {
@@ -147,17 +91,7 @@ export const postRealidadeMista: Post = {
     {
       id: "rm-passthrough-1",
       type: "paragraph",
-      text: "Durante anos, realidade mista era sinônimo de visores transparentes, que projetavam luz sobre lentes translúcidas para que o conteúdo aparecesse sobre a visão direta do ambiente. Essa abordagem preserva a nitidez natural do mundo, mas enfrenta limitações físicas duras: o campo em que a imagem pode ser projetada é estreito, o preto não existe — só é possível somar luz, nunca subtraí-la — e o custo de fabricação permanece alto.",
-    },
-    {
-      id: "rm-passthrough-2",
-      type: "paragraph",
-      text: "A alternativa que se popularizou faz o caminho oposto. O óculos é fechado, como o de realidade virtual, e o ambiente chega até os olhos por câmeras externas, reconstruído em tempo real nas telas internas. Isso resolve o problema do contraste, permite escurecer completamente o ambiente quando conveniente e usa o mesmo hardware para as duas modalidades. Em troca, tudo passa a depender da qualidade dessa reconstrução: resolução, cor, distorção de perspectiva e, sobretudo, atraso.",
-    },
-    {
-      id: "rm-passthrough-3",
-      type: "paragraph",
-      text: "O atraso é o ponto crítico. Se a imagem do mundo chega alguns milissegundos depois do movimento da cabeça, o desconforto aparece — o mesmo conflito sensorial descrito na publicação sobre realidade virtual, agora aplicado à visão do próprio ambiente. Por isso a cadeia de captura, processamento e exibição é otimizada de forma agressiva, e por isso executar tarefas cotidianas com passthrough, como andar pela casa ou pegar um copo, ainda exige mais atenção do que fazer o mesmo com os olhos livres.",
+      text: "Por anos, realidade mista exigiu visores transparentes, que projetam luz sobre lentes translúcidas: o mundo fica nítido, mas o campo de imagem é estreito e não existe preto, já que só é possível somar luz. A alternativa que se popularizou é o passthrough: o óculos é fechado e o ambiente chega aos olhos por câmeras externas. Isso resolve o contraste, mas tudo passa a depender da reconstrução, sobretudo do atraso — se a imagem do mundo chega alguns milissegundos depois do movimento da cabeça, volta o desconforto descrito na publicação sobre realidade virtual.",
     },
     {
       id: "rm-image-iss",
@@ -177,44 +111,13 @@ export const postRealidadeMista: Post = {
     {
       id: "rm-aplicacoes-1",
       type: "paragraph",
-      text: "O caso mais maduro é a assistência remota em campo. Um técnico diante de um equipamento compartilha exatamente o que está vendo com um especialista distante, que desenha setas e marcações sobre a peça real. Como as anotações ficam ancoradas ao objeto, elas permanecem no lugar certo quando o técnico se move. Isso reduz deslocamento de especialistas, encurta o tempo de parada de máquinas e deixa um registro do procedimento.",
-    },
-    {
-      id: "rm-aplicacoes-2",
-      type: "paragraph",
-      text: "Na montagem e na inspeção industrial, a sobreposição do modelo tridimensional sobre a peça física permite verificar se o que foi construído corresponde ao projeto. Na construção civil, o mesmo princípio confere instalações antes do fechamento das paredes. Em ambientes extremos — plataformas, submarinos, a Estação Espacial Internacional — visores de realidade mista foram testados justamente porque permitem seguir procedimentos complexos com as mãos livres e receber orientação de quem está a milhares de quilômetros.",
-    },
-    {
-      id: "rm-aplicacoes-3",
-      type: "paragraph",
-      text: "Na saúde, protótipos sobrepõem imagens de exames à anatomia do paciente durante o planejamento cirúrgico. Em design e arquitetura, modelos em escala real convivem com o espaço físico do escritório, permitindo discutir uma peça com colegas presentes na mesma sala. Na educação técnica, o conteúdo pode ficar ancorado ao equipamento do laboratório, aparecendo apenas quando o estudante se aproxima — uma forma de instrução que não existe em nenhum outro meio.",
-    },
-    {
-      id: "rm-aplicacoes-4",
-      type: "paragraph",
-      text: "Há também um uso mais prosaico e possivelmente o mais comum no dia a dia: telas virtuais. Trabalhar com três monitores que não ocupam espaço físico, posicionados onde se quiser, mantendo a visão do teclado real e da sala ao redor. Não é uma aplicação glamourosa, mas resolve um problema concreto de quem trabalha em espaço pequeno ou em deslocamento, e por isso costuma ser o primeiro uso que sobrevive ao entusiasmo inicial.",
-    },
-    { id: "rm-heading-historia", type: "heading", text: "Como chegamos até aqui" },
-    {
-      id: "rm-historia-1",
-      type: "paragraph",
-      text: "A trajetória da realidade mista é mais curta que a da realidade virtual, porque depende de uma capacidade que só amadureceu recentemente: reconstruir o ambiente em tempo real com hardware portátil. Nos anos 1990 e 2000, os experimentos usavam câmeras externas, marcadores espalhados pela sala e computadores presos ao corpo em mochilas. Funcionavam em laboratório, dentro de um espaço preparado, e não sobreviviam fora dele.",
-    },
-    {
-      id: "rm-historia-2",
-      type: "paragraph",
-      text: "Duas ondas técnicas mudaram esse quadro. A primeira foi a chegada de sensores de profundidade baratos, popularizados por acessórios de videogame no início dos anos 2010, que colocaram câmeras capazes de medir distância nas mãos de pesquisadores e estudantes. A segunda foi o avanço do processamento móvel, que permitiu executar mapeamento e reconstrução dentro do próprio aparelho, sem depender de um computador conectado por cabo.",
-    },
-    {
-      id: "rm-historia-3",
-      type: "paragraph",
-      text: "Em meados da década de 2010 apareceu o primeiro visor autônomo de uso profissional com compreensão de cena, capaz de mapear a sala, reconhecer superfícies e manter conteúdo ancorado sem preparação prévia do ambiente. Ele era caro e tinha campo de visão estreito, mas provou o conceito e definiu boa parte do vocabulário usado até hoje — hologramas, âncoras espaciais, malha do ambiente. Os anos seguintes trouxeram a alternativa por passthrough e, com ela, a popularização da categoria.",
+      text: "O caso mais maduro é a assistência remota: um técnico compartilha o que vê, e um especialista distante desenha marcações que ficam ancoradas à peça real. Na indústria e na construção, o modelo tridimensional sobre a peça física confere se o que foi feito corresponde ao projeto. A NASA testou visores assim na Estação Espacial Internacional. E há o uso mais comum no dia a dia: telas virtuais, posicionadas onde se quiser, sem perder de vista o teclado e a sala.",
     },
     { id: "rm-heading-podcast", type: "heading", text: "Ouça: a engenharia por trás dos visores" },
     {
       id: "rm-podcast-context",
       type: "paragraph",
-      text: "Boa parte das decisões técnicas descritas aqui — latência, otimização de renderização, compromissos entre qualidade e desempenho — passou pelas mãos de um pequeno grupo de engenheiros. O episódio abaixo conta a trajetória de John Carmack, programador responsável por marcos da computação gráfica em jogos e, durante quase uma década, diretor de tecnologia de uma das principais empresas de visores imersivos. É uma boa forma de entender por que essa área é dominada por obsessões com milissegundos.",
+      text: "O episódio abaixo conta a trajetória de John Carmack, programador de marcos da computação gráfica e, por quase uma década, diretor de tecnologia de uma das principais empresas de visores imersivos — uma boa forma de entender por que essa área vive obcecada por milissegundos.",
     },
     {
       id: "rm-podcast",
@@ -228,60 +131,19 @@ export const postRealidadeMista: Post = {
     {
       id: "rm-limites-1",
       type: "paragraph",
-      text: "O primeiro problema é óptico. Visores transparentes ainda oferecem uma janela estreita de conteúdo, e visores de passthrough entregam uma imagem do mundo inferior à visão natural em resolução, cor e profundidade. Nenhuma das duas abordagens resolve simultaneamente contraste, campo de visão, peso e custo. É um problema de física e de fabricação, não de software, e por isso avança de forma lenta e incremental.",
-    },
-    {
-      id: "rm-limites-2",
-      type: "paragraph",
-      text: "O segundo é de compartilhamento. Para que duas pessoas vejam o mesmo objeto no mesmo lugar, os dois aparelhos precisam concordar sobre um sistema de coordenadas comum do ambiente. Isso exige compartilhar mapas espaciais, que são representações detalhadas de espaços frequentemente privados. Quem armazena esses mapas, por quanto tempo e com que garantias é uma questão em aberto, e ela cresce à medida que os aparelhos passam a reconhecer não só a geometria, mas o conteúdo dos ambientes.",
-    },
-    {
-      id: "rm-limites-3",
-      type: "paragraph",
-      text: "O terceiro é de interface. Ainda não existe consenso sobre como organizar informação em um espaço tridimensional habitado. Janelas flutuantes reproduzem o desktop no ar sem aproveitar o espaço; conteúdo espalhado pela sala vira bagunça; nada garante que o usuário lembre onde deixou o quê. É o mesmo problema de arquitetura da informação discutido na publicação sobre hipermídia, agora sem os apoios visuais que a web levou trinta anos para consolidar.",
-    },
-    {
-      id: "rm-limites-4",
-      type: "paragraph",
-      text: "Por fim, há a questão social. Usar um visor em ambiente compartilhado altera a interação com quem está por perto: não se sabe se a pessoa está vendo você, gravando ou completamente em outro lugar. Alguns fabricantes tentaram resolver isso exibindo os olhos do usuário em uma tela externa, com resultados desconfortáveis. Provavelmente a solução será mais cultural do que técnica — convenções sobre quando é aceitável estar com o aparelho no rosto, como já aconteceu com o celular à mesa.",
-    },
-    {
-      id: "rm-limites-5",
-      type: "paragraph",
-      text: "Existe ainda um limite de conteúdo parecido com o da realidade aumentada, porém mais severo. Uma experiência mista precisa se comportar bem em ambientes que o autor nunca viu: salas pequenas, mesas bagunçadas, tetos baixos, corredores estreitos. Isso exige projetar para o desconhecido, com conteúdo que se adapta ao espaço disponível e degrada com elegância quando o ambiente não colabora — um problema de projeto bem mais difícil do que compor uma cena fixa.",
-    },
-    { id: "rm-heading-vocabulario", type: "heading", text: "XR, metaverso e computação espacial" },
-    {
-      id: "rm-vocabulario-1",
-      type: "paragraph",
-      text: "Três termos circulam junto com realidade mista e merecem distinção. Realidade estendida, ou XR, é o guarda-chuva que reúne todas as modalidades e não indica nenhuma capacidade específica. Metaverso descreve a ideia de espaços virtuais persistentes, compartilhados e interoperáveis, com economia e identidade próprias — um conceito social e econômico que pode ou não usar realidade mista, e que atravessou um ciclo intenso de expectativa e frustração nos últimos anos.",
-    },
-    {
-      id: "rm-vocabulario-2",
-      type: "paragraph",
-      text: "Computação espacial é o termo mais recente e talvez o mais útil dos três. Ele desloca o foco do dispositivo para o paradigma: computar levando em conta o espaço físico, com informações ancoradas em lugares e interfaces operadas por movimento do corpo. Sob essa ótica, um visor é apenas um dos aparelhos possíveis — um robô de armazém que mapeia o galpão, um carro que projeta orientações no para-brisa e um celular que mede um cômodo também praticam computação espacial.",
-    },
-    {
-      id: "rm-vocabulario-3",
-      type: "paragraph",
-      text: "Uma dica prática para trabalhos acadêmicos: prefira descrever a capacidade em vez de discutir a sigla. Dizer que o sistema detecta superfícies, mantém âncoras persistentes e aplica oclusão informa muito mais do que classificá-lo como realidade mista, e evita a discussão estéril sobre qual rótulo é o correto. As siglas mudam conforme o marketing; as capacidades técnicas continuam sendo verificáveis e comparáveis.",
+      text: "Nenhuma abordagem óptica resolve ao mesmo tempo contraste, campo de visão, peso e custo. Para duas pessoas verem o mesmo objeto no mesmo lugar, os aparelhos precisam compartilhar mapas de espaços muitas vezes privados, e ainda não está claro quem guarda esses dados. Também falta consenso sobre como organizar informação em uma sala sem virar bagunça.",
     },
     { id: "rm-heading-serie", type: "heading", text: "Fechando a série" },
     {
       id: "rm-serie-1",
       type: "paragraph",
-      text: "As seis publicações do Pulso Digital formam um percurso único. Mídia estabeleceu que toda mensagem precisa de um caminho e que o caminho transforma a mensagem. Multimídia mostrou como combinar formatos sem sobrecarregar quem recebe. Hipermídia introduziu a rede de conteúdos e o percurso escolhido por quem navega. As três realidades levaram essas mesmas questões para fora da tela: a aumentada ancorando conteúdo em objetos, a virtual substituindo o campo sensorial inteiro, a mista fazendo os dois mundos reagirem um ao outro.",
-    },
-    {
-      id: "rm-serie-2",
-      type: "paragraph",
-      text: "O que se repete em todos os casos é o critério de avaliação. Nenhuma tecnologia é boa por ser nova: ela é boa quando resolve um problema de comunicação que os meios anteriores resolviam mal. Um infográfico bem-feito continua superior a um modelo tridimensional desnecessário. Um texto bem escrito continua superior a um vídeo que não acrescenta imagem. E uma experiência imersiva só se justifica quando a informação depende de espaço, escala ou presença — exatamente o que nenhuma página consegue transmitir.",
+      text: "As seis publicações formam um percurso. Mídia mostrou que o caminho transforma a mensagem; multimídia, como combinar formatos; hipermídia, como organizar conteúdos em rede. As três realidades levaram essas questões para fora da tela. Em todos os casos, o critério é o mesmo: uma tecnologia é boa quando resolve um problema de comunicação que os meios anteriores resolviam mal.",
     },
     { id: "rm-heading-conclusao", type: "heading", text: "Para fechar" },
     {
       id: "rm-conclusao",
       type: "paragraph",
-      text: "Realidade mista é menos uma categoria de produto do que um grau de entendimento: o quanto o sistema compreende o espaço em que está e o quanto os dois lados conseguem interagir. Quando esse entendimento é raso, o resultado é decoração sobre a imagem da câmera. Quando é profundo, o ambiente físico vira suporte de informação, com âncoras, permanência e regras próprias — a versão espacial daquilo que a web fez com documentos há mais de trinta anos.",
+      text: "Realidade mista é menos uma categoria de produto do que um grau de entendimento: o quanto o sistema compreende o espaço e o quanto os dois lados interagem. Quando esse entendimento é profundo, o ambiente físico vira suporte de informação — a versão espacial do que a web fez com documentos.",
     },
     { id: "rm-heading-links", type: "heading", text: "Links para continuar" },
     {
@@ -319,13 +181,6 @@ export const postRealidadeMista: Post = {
       title: "Paul Milgram e Fumio Kishino — A Taxonomy of Mixed Reality Visual Displays (1994)",
       url: "https://cs.gmu.edu/~zduric/cs499/Readings/r76JBo-Milgram_IEICE_1994.pdf",
       caption: "Fonte da definição e do continuum apresentados nesta matéria.",
-    },
-    {
-      id: "rm-ref-2",
-      type: "link",
-      title: "W3C — WebXR Hit Test e âncoras",
-      url: "https://immersive-web.github.io/hit-test/",
-      caption: "Especificação usada como base para o exemplo de código.",
     },
     {
       id: "rm-ref-samples",

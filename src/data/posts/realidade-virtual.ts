@@ -14,41 +14,21 @@ export const postRealidadeVirtual: Post = {
   status: "published",
   featured: false,
   author: siteConfig.author,
-  reading_time: 17,
+  reading_time: 5,
   published_at: "2026-09-09T12:00:00.000Z",
   created_at: "2026-09-09T12:00:00.000Z",
-  updated_at: "2026-11-15T14:00:00.000Z",
+  updated_at: "2026-11-15T16:00:00.000Z",
   content: [
     {
       id: "rv-intro",
       type: "paragraph",
-      text: "A primeira vez que alguém coloca um óculos de realidade virtual e se vê na borda de um prédio, o corpo reage antes do raciocínio: os joelhos travam, a respiração muda, a mão procura apoio. A pessoa sabe que está em uma sala com piso firme e ainda assim recua. Esse descompasso entre o que se sabe e o que se sente é o fenômeno central da realidade virtual, e explicá-lo exige falar de óptica, de sensores, de tempo de resposta e, principalmente, de como o cérebro constrói a noção de estar em um lugar.",
-    },
-    {
-      id: "rv-intro-2",
-      type: "paragraph",
-      text: "Esta é a segunda publicação da série sobre realidades estendidas do Pulso Digital. A anterior tratou da realidade aumentada, que acrescenta camadas ao mundo visível. Aqui vamos ao extremo oposto do espectro: em vez de complementar o ambiente, a realidade virtual o substitui inteiramente. Se a multimídia combina formatos em uma tela, a realidade virtual ocupa todo o campo sensorial disponível — e é essa totalidade que muda a natureza da experiência.",
+      text: "A primeira vez que alguém coloca um óculos de realidade virtual e se vê na borda de um prédio, o corpo reage antes do raciocínio: os joelhos travam e a mão procura apoio, mesmo sabendo que o piso é firme. Esse descompasso entre o que se sabe e o que se sente é o centro da realidade virtual. Se a realidade aumentada, tema da publicação anterior, acrescenta camadas ao mundo, a realidade virtual o substitui por inteiro.",
     },
     { id: "rv-heading-conceito", type: "heading", text: "Imersão não é a mesma coisa que presença" },
     {
-      id: "rv-conceito-1",
-      type: "paragraph",
-      text: "Realidade virtual é um ambiente tridimensional gerado por computador, explorado em tempo real, no qual os movimentos do corpo produzem mudanças coerentes no que se vê e se ouve. A definição parece simples, mas esconde uma distinção importante entre dois conceitos que costumam ser tratados como sinônimos: imersão e presença.",
-    },
-    {
       id: "rv-conceito-2",
       type: "paragraph",
-      text: "Imersão é uma propriedade objetiva do sistema. Ela pode ser medida: quantos graus de campo de visão o aparelho cobre, quantos quadros por segundo entrega, com que precisão rastreia a cabeça e as mãos, se reproduz som espacial, se permite andar pelo ambiente. Dois equipamentos podem ser comparados nessas escalas, independentemente de quem os usa.",
-    },
-    {
-      id: "rv-conceito-3",
-      type: "paragraph",
-      text: "Presença é a resposta subjetiva a esse sistema: a sensação de realmente estar no lugar simulado e de que os acontecimentos ali são reais o suficiente para merecer reação. É a presença que faz alguém desviar de um objeto que não existe. Um equipamento muito imersivo pode falhar em produzir presença se o conteúdo for inconsistente, e um equipamento modesto pode produzi-la se a experiência for coerente. Imersão é a causa provável; presença é o efeito que interessa.",
-    },
-    {
-      id: "rv-conceito-4",
-      type: "paragraph",
-      text: "A presença se sustenta em duas ilusões complementares. A primeira é a de estar em um lugar, produzida pela coerência entre movimento do corpo e resposta da imagem. A segunda é a de que o que acontece ali é plausível, produzida pela coerência interna do cenário — objetos que reagem quando tocados, personagens que percebem sua chegada, sons que vêm da direção certa. Quebrar qualquer uma delas derruba a experiência instantaneamente, e a recuperação é lenta.",
+      text: "Realidade virtual é um ambiente tridimensional gerado por computador, no qual os movimentos do corpo produzem mudanças coerentes no que se vê e se ouve. Imersão é uma propriedade medível do sistema: campo de visão, quadros por segundo, precisão do rastreamento, som espacial. Presença é a resposta subjetiva — a sensação de realmente estar ali. Ela depende de duas ilusões: a de estar em um lugar, que vem da coerência entre corpo e imagem, e a de que o que acontece é plausível, que vem da coerência do cenário. Quebrar qualquer uma derruba a experiência.",
     },
     {
       id: "rv-quote",
@@ -68,64 +48,23 @@ export const postRealidadeVirtual: Post = {
     {
       id: "rv-funciona-1",
       type: "paragraph",
-      text: "A base óptica é a estereoscopia. Cada olho recebe uma imagem ligeiramente diferente, calculada a partir de dois pontos de vista separados por uma distância próxima à das pupilas humanas. O cérebro funde as duas imagens e extrai profundidade. Entre as telas e os olhos há lentes que ampliam o campo de visão e permitem focar em uma superfície que está a poucos centímetros do rosto — e que introduzem distorções corrigidas por software antes da imagem ser exibida.",
-    },
-    {
-      id: "rv-funciona-2",
-      type: "paragraph",
-      text: "Sobre isso vem o rastreamento. Sistemas modernos oferecem seis graus de liberdade: além de girar a cabeça em três eixos, é possível se deslocar em três direções, andando de fato pelo ambiente. Isso é obtido por câmeras no próprio aparelho, que observam o entorno e calculam a posição em relação a pontos fixos, combinadas com sensores inerciais de resposta rápida. Equipamentos mais simples oferecem apenas três graus de liberdade — giram, mas não acompanham deslocamento —, o que limita bastante a sensação de estar no espaço.",
-    },
-    {
-      id: "rv-funciona-2b",
-      type: "paragraph",
-      text: "Dá para experimentar essa diferença sem nenhum equipamento. O AR Explorer, mini-jogo que desenvolvemos e apresentamos mais adiante nesta matéria, usa apenas os sensores de orientação do celular: você gira o aparelho e a cena acompanha, mas andar pela sala não muda nada do que se vê. É exatamente a limitação dos três graus de liberdade — suficiente para olhar em volta, insuficiente para produzir a sensação de estar dentro do lugar.",
-    },
-    {
-      id: "rv-funciona-3",
-      type: "paragraph",
-      text: "O fator mais crítico, porém, é o tempo. O intervalo entre mover a cabeça e ver a imagem correspondente precisa ser muito curto, na casa de poucos milissegundos, e a taxa de atualização precisa ser alta e estável — em torno de noventa quadros por segundo nos equipamentos atuais. Quando esse atraso cresce, o sistema vestibular percebe uma incoerência entre o movimento sentido e o movimento visto, e o corpo responde com desconforto. Praticamente toda a engenharia de realidade virtual é uma corrida contra a latência.",
-    },
-    {
-      id: "rv-funciona-4",
-      type: "paragraph",
-      text: "Manter alta resolução, alto quadro por segundo e campo de visão amplo ao mesmo tempo é caro em processamento. Daí vêm técnicas de otimização engenhosas, como renderizar em qualidade máxima apenas a região para onde os olhos estão apontados, degradando a periferia — algo que passa despercebido porque a visão humana funciona exatamente assim. Outra técnica reprojeta o último quadro disponível conforme a nova posição da cabeça, para que nenhuma falha momentânea de desempenho vire um solavanco visual.",
+      text: "Cada olho recebe uma imagem ligeiramente diferente, e o cérebro funde as duas para extrair profundidade; lentes permitem focar em telas a poucos centímetros do rosto. Câmeras no próprio aparelho e sensores de movimento oferecem seis graus de liberdade: girar a cabeça e também andar pelo ambiente. Aparelhos simples oferecem só três, giram mas não acompanham o deslocamento. O fator mais crítico é o tempo: a imagem precisa responder ao movimento em poucos milissegundos, a cerca de noventa quadros por segundo. Quando o atraso cresce, o ouvido interno percebe a incoerência e o corpo reage com desconforto.",
     },
     {
       id: "rv-funciona-5",
       type: "paragraph",
-      text: "O áudio faz metade do trabalho e recebe um décimo da atenção. Som espacial calcula como cada fonte sonora chegaria a cada ouvido, considerando direção, distância e obstáculos, o que permite localizar algo atrás de você sem precisar ver. Em experiências bem construídas, é o som que orienta a atenção, sugere o tamanho do ambiente e produz boa parte da carga emocional — exatamente como no cinema, mas com a diferença de acompanhar o giro da sua cabeça.",
-    },
-    { id: "rv-heading-codigo", type: "heading", text: "Uma cena virtual em poucas linhas" },
-    {
-      id: "rv-codigo-1",
-      type: "paragraph",
-      text: "Assim como acontece com a realidade aumentada, o navegador já é capaz de apresentar ambientes virtuais sem instalação de aplicativo. Com uma biblioteca como a A-Frame, uma cena mínima cabe em poucas linhas: um céu, um piso, um objeto a três metros de distância, um som preso a esse objeto e uma câmera na altura dos olhos, que responde ao movimento da cabeça. Quem abre a página no computador navega com mouse e teclado; quem abre em um aparelho compatível entra no modo imersivo pelo botão que a própria biblioteca adiciona.",
-    },
-    {
-      id: "rv-codigo-2",
-      type: "paragraph",
-      text: "O número mais importante dessa cena é a altura da câmera: um metro e sessenta, aproximadamente a altura dos olhos de uma pessoa em pé. Em realidade virtual, esse número deixa de ser detalhe estético e vira decisão de projeto, porque escala errada destrói a sensação de presença — um ambiente construído em escala equivocada faz o usuário se sentir criança ou gigante sem entender por quê. Projetar para RV é, em boa medida, projetar para um corpo com medidas.",
+      text: "O áudio faz metade do trabalho: o som espacial calcula como cada fonte chega a cada ouvido, o que permite localizar algo atrás de você sem ver. Em boas experiências, é o som que orienta a atenção e sugere o tamanho do ambiente.",
     },
     { id: "rv-heading-explorer", type: "heading", text: "Experimente: AR Explorer, um exercício nosso" },
     {
       id: "rv-explorer-1",
       type: "paragraph",
-      text: "Uma cena como essa não precisa ficar no papel. Desenvolvemos o AR Explorer, um mini-jogo em primeira pessoa que roda direto no navegador, sem instalação e sem óculos. Você fica parado no centro de um cenário e gira o próprio celular para olhar ao redor; uma mira no centro da tela funciona como cursor, e encarar um objeto por alguns instantes revela um cartão com sua descrição. Setas no chão levam de um cenário a outro. No computador, o mesmo controle é feito arrastando o mouse.",
-    },
-    {
-      id: "rv-explorer-2",
-      type: "paragraph",
-      text: "Ele usa a interface de orientação do dispositivo para converter o movimento do aparelho em rotação de uma câmera tridimensional montada com a biblioteca Three.js. É o que se costuma chamar de janela mágica: o telefone se comporta como uma abertura móvel para um mundo que existe ao seu redor. O ambiente é inteiramente sintético — não há imagem da câmera ao fundo —, o que o coloca do lado virtual do espectro, e não no da realidade aumentada, apesar do nome.",
+      text: "Desenvolvemos o AR Explorer, um mini-jogo em primeira pessoa que roda no navegador, sem instalação e sem óculos. Você gira o celular para olhar ao redor, e encarar um objeto por alguns instantes revela sua descrição; no computador, basta arrastar o mouse. O telefone funciona como uma janela para um mundo inteiramente sintético — por isso, apesar do nome, ele está do lado virtual do espectro.",
     },
     {
       id: "rv-explorer-3",
       type: "paragraph",
-      text: "O valor dele aqui é mostrar onde a imersão começa e onde ela para. O rastreamento de orientação já entrega bastante: a cena responde ao corpo, a exploração é natural e ninguém precisa aprender um controle novo. Mas faltam três coisas para que isso vire realidade virtual no sentido pleno. Falta a estereoscopia, porque a imagem é única e plana, sem a profundidade que dois pontos de vista produzem. Faltam os três graus de liberdade de translação: andar pela sala não muda nada do que se vê. E falta o isolamento do campo visual, já que a moldura do telefone e a sala em volta continuam ali, lembrando o tempo todo onde você está de verdade.",
-    },
-    {
-      id: "rv-explorer-4",
-      type: "paragraph",
-      text: "É por isso que a janela mágica raramente produz presença. Ela entrega a primeira das duas ilusões descritas no início deste texto — a de olhar para um lugar — mas não a segunda, a de estar nele. Comparar essa sensação com a de um visor completo, ainda que emprestado por alguns minutos, é o exercício mais direto para entender por que latência, campo de visão e liberdade de movimento aparecem em todas as discussões técnicas da área.",
+      text: "O jogo mostra onde a imersão começa e onde para. Ele entrega a primeira ilusão, a de olhar para um lugar, mas não a de estar nele: falta a estereoscopia, andar pela sala não muda nada do que se vê, e a moldura do telefone lembra o tempo todo onde você está de verdade. São exatamente os três graus de liberdade que faltam.",
     },
     {
       id: "rv-explorer-link",
@@ -146,22 +85,7 @@ export const postRealidadeVirtual: Post = {
     {
       id: "rv-historia-1",
       type: "paragraph",
-      text: "A pré-história da realidade virtual começa fora da computação. No início dos anos 1960, o cineasta Morton Heilig patenteou uma cabine chamada Sensorama, que combinava filme estereoscópico, som, vibração, vento e até cheiro para simular um passeio de motocicleta. Não havia interatividade nem computador: era cinema multissensorial. Ainda assim, a intuição estava correta — quanto mais sentidos coerentes, mais convincente a experiência.",
-    },
-    {
-      id: "rv-historia-2",
-      type: "paragraph",
-      text: "Em 1965, Ivan Sutherland descreveu em um breve ensaio a ideia de um display definitivo capaz de controlar a existência da matéria, e três anos depois construiu o primeiro visor de cabeça com rastreamento. Nas décadas seguintes, a pesquisa avançou em simuladores de voo militares e em laboratórios acadêmicos, com equipamentos caríssimos. Foi nos anos 1980 que a expressão realidade virtual se popularizou, impulsionada por uma empresa pioneira que vendia luvas e capacetes e por uma cobertura de imprensa entusiasmada.",
-    },
-    {
-      id: "rv-historia-3",
-      type: "paragraph",
-      text: "O início dos anos 1990 trouxe duas linhas paralelas: as salas de projeção do tipo CAVE, que colocavam o usuário dentro de imagens projetadas nas paredes e no chão, e as tentativas de levar realidade virtual ao consumidor final. Essas últimas fracassaram de forma retumbante. Consoles e arcades da época não tinham desempenho para sustentar imagens estáveis, e o resultado foram experiências desconfortáveis, caras e de baixa resolução. O tema virou sinônimo de promessa não cumprida e praticamente sumiu do debate público por quinze anos.",
-    },
-    {
-      id: "rv-historia-4",
-      type: "paragraph",
-      text: "O renascimento veio em 2012, com um protótipo financiado coletivamente que aproveitava componentes baratos de celular — telas pequenas de alta densidade e sensores inerciais — para resolver a equação de custo. Dois anos depois, a compra dessa empresa por uma gigante de redes sociais levou capital e atenção ao setor. A década seguinte trouxe aparelhos autônomos, sem cabos nem computador dedicado, rastreamento por câmeras internas e catálogos consideráveis de conteúdo. A tecnologia deixou de ser inviável, embora ainda não tenha se tornado cotidiana.",
+      text: "Nos anos 1960, o cineasta Morton Heilig criou o Sensorama, uma cabine com filme estereoscópico, vento, vibração e cheiro. Em 1965, Ivan Sutherland imaginou o display definitivo e, três anos depois, construiu o primeiro visor com rastreamento. A expressão realidade virtual se popularizou nos anos 1980, e as tentativas de levá-la ao consumidor nos anos 1990 fracassaram por falta de desempenho. O renascimento veio em 2012, com um protótipo que aproveitava telas e sensores baratos de celular, e a década seguinte trouxe aparelhos autônomos, sem cabos nem computador.",
     },
     {
       id: "rv-video-2",
@@ -173,22 +97,7 @@ export const postRealidadeVirtual: Post = {
     {
       id: "rv-enjoo-1",
       type: "paragraph",
-      text: "O desconforto em realidade virtual tem uma explicação bem estabelecida: o conflito sensorial. Os olhos informam que o corpo está se movendo; o ouvido interno informa que está parado. Diante de sinais contraditórios, o organismo reage com sintomas semelhantes aos do enjoo de movimento — náusea, suor frio, tontura, dor de cabeça. O efeito varia muito entre pessoas e tende a diminuir com exposição gradual, mas ignorá-lo exclui parte do público.",
-    },
-    {
-      id: "rv-enjoo-2",
-      type: "paragraph",
-      text: "Boa parte da solução está no projeto, não no equipamento. Locomoção por teletransporte, em que o usuário aponta um destino e aparece nele, evita o deslocamento contínuo que mais causa conflito. Reduzir temporariamente o campo de visão durante movimentos rápidos diminui o estímulo periférico, que é o principal gatilho. Manter um ponto de referência fixo — o painel de um veículo, um nariz virtual, uma grade discreta — ajuda o cérebro a se ancorar.",
-    },
-    {
-      id: "rv-enjoo-3",
-      type: "paragraph",
-      text: "Existem regras negativas igualmente importantes. Nunca mover a câmera sem que o usuário tenha comandado o movimento. Nunca inclinar o horizonte artificialmente. Nunca acelerar ou frear de forma brusca. E nunca sacrificar a taxa de quadros por um efeito visual bonito: uma cena mais simples que roda de forma estável é preferível a uma cena impressionante que engasga. Em realidade virtual, desempenho é uma questão de saúde do usuário, não apenas de qualidade percebida.",
-    },
-    {
-      id: "rv-enjoo-4",
-      type: "paragraph",
-      text: "Há ainda um conflito óptico mais sutil, entre convergência e foco. Os olhos convergem para a distância simulada do objeto, mas continuam focando na tela física a poucos centímetros. Essa incoerência contribui para fadiga visual em sessões longas e é um dos problemas que as próximas gerações de óptica pretendem resolver. Enquanto isso, a recomendação prática permanece: sessões curtas, pausas frequentes e cuidado redobrado com público infantil.",
+      text: "O enjoo virtual vem de um conflito sensorial: os olhos dizem que o corpo se move, o ouvido interno diz que está parado. A solução está mais no projeto do que no equipamento. Teletransporte em vez de deslocamento contínuo, campo de visão reduzido em movimentos rápidos e um ponto de referência fixo ajudam o cérebro. E há regras negativas: nunca mover a câmera sem comando do usuário, nunca inclinar o horizonte e nunca sacrificar a taxa de quadros por um efeito bonito. Em realidade virtual, desempenho é questão de saúde.",
     },
     {
       id: "rv-image-zero",
@@ -202,44 +111,13 @@ export const postRealidadeVirtual: Post = {
     {
       id: "rv-aplicacoes-1",
       type: "paragraph",
-      text: "O treinamento é o caso mais sólido. Simular um procedimento perigoso, caro ou raro permite repetição ilimitada sem risco: emergências em plataformas, manutenção de aeronaves, operação de equipamentos pesados, atendimento a acidentes. O valor aparece justamente quando a prática real é inviável. Some-se a isso a possibilidade de registrar cada decisão do treinando e revisar o desempenho em detalhe, algo difícil em um treinamento presencial convencional.",
-    },
-    {
-      id: "rv-aplicacoes-2",
-      type: "paragraph",
-      text: "Na saúde, há aplicações consolidadas em reabilitação motora, em que ambientes virtuais transformam exercícios repetitivos em tarefas com objetivo e retorno imediato, e no tratamento de fobias por exposição gradual e controlada. Também há uso relevante em manejo de dor durante procedimentos, com evidência de que a atenção deslocada para um ambiente envolvente reduz o desconforto relatado. Em todos esses casos, a aplicação exige acompanhamento profissional e validação clínica.",
-    },
-    {
-      id: "rv-aplicacoes-3",
-      type: "paragraph",
-      text: "Em arquitetura e engenharia, percorrer um projeto em escala real antes da construção revela problemas que a planta esconde: pé-direito opressivo, circulação estreita, iluminação mal resolvida. Na educação, a realidade virtual funciona melhor em conteúdos espaciais — geografia, anatomia, astronomia, história com reconstituição de sítios — e menos em conteúdos abstratos, que não ganham nada por serem vistos em três dimensões.",
-    },
-    {
-      id: "rv-aplicacoes-4",
-      type: "paragraph",
-      text: "Nos jogos e no entretenimento, a realidade virtual encontrou seu público mais fiel, e é ali que boa parte da linguagem foi inventada: formas de mirar, de pegar objetos, de se locomover, de conversar com personagens. Já as promessas de escritórios e reuniões virtuais permanentes encontraram resistência prática — o custo de vestir um aparelho para uma reunião de trinta minutos raramente compensa quando uma chamada de vídeo resolve.",
-    },
-    { id: "rv-heading-interacao", type: "heading", text: "Como se interage quando não existe mouse" },
-    {
-      id: "rv-interacao-1",
-      type: "paragraph",
-      text: "Uma das dificuldades mais subestimadas da realidade virtual é a interface. Décadas de convenções — janelas, menus suspensos, botões, cursor — foram criadas para uma superfície plana operada a distância. Dentro de um ambiente tridimensional, quase nada disso funciona bem: menus flutuantes atrapalham a visão, textos pequenos ficam ilegíveis e o cursor perde sentido quando o ponteiro é a própria mão. Boa parte do vocabulário precisa ser reinventada.",
-    },
-    {
-      id: "rv-interacao-2",
-      type: "paragraph",
-      text: "As soluções que se firmaram partem da imitação de gestos reais. Pegar objetos com a mão, apertar botões físicos virtuais, puxar alavancas, apontar com um raio luminoso para alcançar o que está longe. Rastreamento de mãos sem controles avançou bastante e permite pinçar o ar para selecionar, ainda que perca a resposta tátil que um gatilho oferece. A regra prática é aproveitar o conhecimento que o corpo já tem: se o gesto precisa ser explicado, provavelmente há um gesto melhor.",
-    },
-    {
-      id: "rv-interacao-3",
-      type: "paragraph",
-      text: "Texto continua sendo o ponto fraco. Digitar em teclados virtuais é lento e cansativo, ler blocos longos incomoda pela resolução e pela distância focal fixa, e formulários são um suplício. Por isso experiências bem projetadas reduzem a entrada de texto ao mínimo, preferem voz quando possível e deixam tarefas densas de leitura ou escrita para fora do ambiente imersivo. Reconhecer o que a realidade virtual faz mal é tão importante quanto explorar o que ela faz bem.",
+      text: "O treinamento é o caso mais sólido: simular emergências, manutenção de aeronaves ou equipamentos pesados permite repetir sem risco. Na saúde, há usos em reabilitação motora, tratamento de fobias e controle da dor, sempre com acompanhamento profissional. Em arquitetura, percorrer um projeto em escala real revela problemas que a planta esconde. Nos jogos, a realidade virtual encontrou seu público mais fiel e inventou boa parte da própria linguagem. Já as reuniões virtuais permanentes esbarraram no custo de vestir um aparelho para algo que uma chamada de vídeo resolve.",
     },
     { id: "rv-heading-podcast", type: "heading", text: "Ouça: realidade virtual antes de virar produto de prateleira" },
     {
       id: "rv-podcast-context",
       type: "paragraph",
-      text: "Vale ouvir uma conversa gravada no momento em que a realidade virtual voltava a ser levada a sério, mas ainda era uma aposta. O episódio abaixo, de 2016, discute o Oculus Rift e o estado da tecnologia naquele período: expectativas, limitações de hardware, o que já funcionava e o que ainda parecia distante. Escutar hoje é um exercício interessante de comparação — algumas previsões se cumpriram, outras envelheceram mal, e é justamente isso que torna o registro útil.",
+      text: "O episódio abaixo, de 2016, discute o Oculus Rift quando a realidade virtual ainda era uma aposta. Ouvir hoje é um exercício de comparação: algumas previsões se cumpriram, outras envelheceram mal.",
     },
     {
       id: "rv-podcast",
@@ -253,39 +131,13 @@ export const postRealidadeVirtual: Post = {
     {
       id: "rv-limites-1",
       type: "paragraph",
-      text: "O primeiro obstáculo é o corpo. Um aparelho na cabeça pesa, esquenta, desarruma o cabelo, não combina com óculos de grau em alguns modelos e isola socialmente quem o usa. Sessões longas cansam mesmo sem enjoo. Nenhum desses problemas é intransponível, mas todos juntos explicam por que a realidade virtual costuma ser usada em blocos curtos e ocasionais, e não como ambiente permanente de trabalho.",
-    },
-    {
-      id: "rv-limites-2",
-      type: "paragraph",
-      text: "O segundo é econômico. Produzir conteúdo tridimensional interativo custa muito mais do que produzir vídeo ou texto, e o público disponível é uma fração do público de qualquer plataforma tradicional. Esse desequilíbrio cria um ciclo conhecido: pouca gente compra porque há pouco conteúdo, e há pouco conteúdo porque pouca gente compra. Aparelhos autônomos mais baratos reduziram a barreira de entrada, mas não a eliminaram.",
-    },
-    {
-      id: "rv-limites-3",
-      type: "paragraph",
-      text: "O terceiro é ético e ainda pouco discutido. Ambientes imersivos coletam dados de um tipo novo: para onde você olha, quanto tempo, como seu corpo se move, como reage a estímulos. Esses sinais dizem muito sobre atenção, preferência e estado emocional, e são difíceis de anonimizar, porque padrões de movimento funcionam quase como assinatura. Discutir quem guarda esses dados e para quê é tão importante quanto discutir resolução e campo de visão.",
-    },
-    {
-      id: "rv-limites-4",
-      type: "paragraph",
-      text: "Há também a acessibilidade, geralmente tratada como detalhe. Experiências que exigem ficar em pé, girar o corpo, usar as duas mãos ou enxergar bem com os dois olhos excluem parte do público por padrão. Alternativas existem — modos sentados, controles reconfiguráveis, legendas espaciais, pistas sonoras redundantes — e custam pouco quando previstas desde o início do projeto.",
-    },
-    { id: "rv-heading-serie", type: "heading", text: "Realidade virtual como multimídia levada ao limite" },
-    {
-      id: "rv-serie-1",
-      type: "paragraph",
-      text: "Retomando a série: multimídia é a combinação de formatos em uma mesma experiência, e a realidade virtual é o caso extremo dessa combinação. Imagem, som, movimento e interação deixam de ocupar uma janela e passam a ocupar todo o campo perceptivo. Os princípios estudados antes continuam valendo, e alguns ficam ainda mais severos: excesso de estímulo simultâneo sobrecarrega, informação redundante cansa, e o que não tem função vira ruído em trezentos e sessenta graus.",
-    },
-    {
-      id: "rv-serie-2",
-      type: "paragraph",
-      text: "Muda, porém, a questão da atenção. Em uma página, o autor não controla para onde o leitor olha, mas sabe o que está na tela. Em um ambiente virtual, o usuário pode estar de costas para o acontecimento principal. Surge então um vocabulário próprio de direção: usar som para indicar direção, luz para atrair o olhar, movimento periférico para sugerir que algo aconteceu atrás. Dirigir a atenção sem tirar a liberdade é o problema central da narrativa imersiva.",
+      text: "O aparelho pesa, esquenta e isola quem o usa, por isso as sessões costumam ser curtas. Produzir conteúdo tridimensional é caro, e o público ainda é pequeno. Os ambientes imersivos também coletam dados novos — para onde você olha, como seu corpo se move —, e esses padrões funcionam quase como uma assinatura. E experiências que exigem ficar em pé ou usar as duas mãos excluem parte do público, quando modos sentados e controles reconfiguráveis custariam pouco.",
     },
     { id: "rv-heading-conclusao", type: "heading", text: "Para fechar" },
     {
       id: "rv-conclusao",
       type: "paragraph",
-      text: "A realidade virtual não é uma tela maior: é um deslocamento do lugar de onde se observa. Ela funciona quando a coerência entre corpo e imagem se mantém, e falha de forma bastante literal quando essa coerência se quebra. Depois de examinar o extremo que substitui o mundo e o extremo que apenas o complementa, resta o território mais interessante e mais confuso do vocabulário atual: aquele em que conteúdo digital e ambiente físico não apenas convivem, mas reagem um ao outro. É o tema da última publicação da série.",
+      text: "A realidade virtual não é uma tela maior: é um deslocamento do lugar de onde se observa. Ela funciona enquanto a coerência entre corpo e imagem se mantém. A última publicação da série trata do território em que digital e físico não só convivem, mas reagem um ao outro.",
     },
     { id: "rv-heading-links", type: "heading", text: "Links para continuar" },
     {
@@ -330,13 +182,6 @@ export const postRealidadeVirtual: Post = {
       title: "Mel Slater — Place illusion and plausibility in immersive virtual environments",
       url: "https://royalsocietypublishing.org/doi/10.1098/rstb.2009.0138",
       caption: "Artigo de referência sobre as duas ilusões que sustentam a sensação de presença.",
-    },
-    {
-      id: "rv-ref-3",
-      type: "link",
-      title: "A-Frame — documentação oficial",
-      url: "https://aframe.io/docs/1.5.0/introduction/",
-      caption: "Biblioteca usada no exemplo de código desta publicação.",
     },
     {
       id: "rv-ref-4",
