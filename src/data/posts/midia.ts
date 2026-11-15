@@ -13,52 +13,27 @@ export const postMidia: Post = {
   status: "published",
   featured: true,
   author: siteConfig.author,
-  reading_time: 15,
+  reading_time: 5,
   published_at: "2026-08-10T12:00:00.000Z",
   created_at: "2026-08-10T12:00:00.000Z",
-  updated_at: "2026-11-15T14:00:00.000Z",
+  updated_at: "2026-11-15T16:00:00.000Z",
   content: [
     {
       id: "midia-intro",
       type: "paragraph",
-      text: "Quando uma ideia deixa a cabeça de alguém e chega a outra pessoa, ela precisa de um caminho. Esse caminho pode ser a voz, uma folha impressa, uma transmissão de rádio, uma tela ou uma rede social. Em comunicação, chamamos esses suportes e canais de mídia. A palavra parece simples, mas carrega um problema interessante: ela descreve ao mesmo tempo um objeto físico, um conjunto de técnicas e uma instituição social. O papel é mídia, a televisão é mídia e o jornalismo também costuma ser chamado de mídia. Entender essas camadas é o primeiro passo para analisar qualquer produto de comunicação com alguma profundidade.",
-    },
-    {
-      id: "midia-intro-2",
-      type: "paragraph",
-      text: "Este texto abre a série de fundamentos do Pulso Digital. A proposta não é decorar definições, e sim construir um vocabulário que permita observar o próprio cotidiano com mais atenção. Ao longo da leitura você vai encontrar um percurso que vai do conceito básico até questões contemporâneas: a diferença entre suporte e veículo, a passagem da comunicação de massa para a comunicação em rede, o papel dos algoritmos na distribuição de conteúdo e os critérios práticos para escolher um meio quando você é quem precisa comunicar alguma coisa.",
+      text: "Quando uma ideia deixa a cabeça de alguém e chega a outra pessoa, ela precisa de um caminho: a voz, uma folha impressa, uma transmissão de rádio, uma tela. Em comunicação, chamamos esses caminhos de mídia. A palavra descreve ao mesmo tempo um objeto físico, um conjunto de técnicas e uma instituição social — o papel é mídia, a televisão é mídia e o jornalismo também. Este texto abre a série de fundamentos do Pulso Digital e propõe um vocabulário para observar o próprio cotidiano com mais atenção.",
     },
     { id: "midia-heading-conceito", type: "heading", text: "O que é mídia?" },
     {
       id: "midia-conceito",
       type: "paragraph",
-      text: "Mídia é o meio usado para registrar, transportar ou apresentar uma mensagem. A palavra vem do latim medium, que significa justamente aquilo que fica no meio, entre duas pontas. Em português, o termo pode indicar um suporte específico — como papel, rádio ou vídeo — e também o conjunto de veículos e plataformas que fazem a informação circular na sociedade. Quando alguém diz que trabalha com mídia, pode estar falando de produção audiovisual, de compra de espaço publicitário ou de jornalismo. O contexto define qual das camadas está em jogo.",
-    },
-    {
-      id: "midia-conceito-2",
-      type: "paragraph",
-      text: "Uma definição operacional ajuda: mídia é tudo aquilo que se coloca entre um emissor e um receptor para tornar a comunicação possível a distância, no tempo ou no espaço. A escrita permitiu que uma mensagem sobrevivesse ao seu autor. O rádio permitiu que uma voz cruzasse centenas de quilômetros. A internet permitiu as duas coisas ao mesmo tempo, com custo marginal próximo de zero. Cada nova mídia não apenas amplia o alcance: ela redefine quem pode falar, quanto custa falar e a que velocidade uma resposta pode chegar.",
-    },
-    {
-      id: "midia-tipos",
-      type: "paragraph",
-      text: "Os meios impressos trabalham principalmente com texto e imagem estática, exigem leitura ativa e permitem que o público controle o próprio ritmo. Rádio e podcasts usam o som e convivem bem com outras atividades, porque não disputam o campo visual. Cinema e televisão combinam imagem em movimento e áudio em uma sequência controlada por quem produz. Já os meios digitais reúnem tudo isso e ainda acrescentam busca, compartilhamento, comentários, métricas e atualização em tempo real. Não existe um meio superior aos outros: existem meios mais ou menos adequados a cada objetivo, público e situação de consumo.",
+      text: "A palavra vem do latim medium, aquilo que fica no meio, entre duas pontas. Uma definição operacional ajuda: mídia é tudo o que se coloca entre um emissor e um receptor para tornar a comunicação possível a distância, no tempo ou no espaço. A escrita permitiu que uma mensagem sobrevivesse ao autor; o rádio levou uma voz a centenas de quilômetros; a internet fez as duas coisas a custo quase zero. Cada nova mídia redefine quem pode falar, quanto custa falar e a que velocidade a resposta chega.",
     },
     { id: "midia-heading-camadas", type: "heading", text: "Suporte, canal e veículo: três camadas do mesmo fenômeno" },
     {
       id: "midia-camadas-1",
       type: "paragraph",
-      text: "Para não confundir conceitos, vale separar três camadas. O suporte é a materialidade que guarda a informação: papel, fita magnética, disco óptico, memória flash, servidor. O canal é o percurso físico ou eletrônico que leva a mensagem até o receptor: as ondas de rádio, o cabo de fibra óptica, a rede celular, o próprio ar quando alguém fala. O veículo é a organização que produz e distribui conteúdo com uma identidade reconhecível: uma emissora, um portal, uma revista, um perfil de criador de conteúdo.",
-    },
-    {
-      id: "midia-camadas-2",
-      type: "paragraph",
-      text: "Um mesmo conteúdo pode mudar de suporte sem mudar de veículo. Uma reportagem publicada no papel, replicada no site e narrada em um podcast continua sendo da mesma redação, mas ganha três formas diferentes. E é aí que aparece a parte mais interessante do estudo de mídia: a passagem de um suporte para outro nunca é neutra. O que se ganha em um formato — a possibilidade de reler um parágrafo difícil, por exemplo — pode se perder em outro, que oferece em troca entonação, trilha sonora ou a presença de um rosto na tela.",
-    },
-    {
-      id: "midia-camadas-3",
-      type: "paragraph",
-      text: "Existe ainda uma quarta camada, mais recente e cada vez mais decisiva: a plataforma. Ela não produz o conteúdo, mas define as regras de circulação — o formato aceito, o tempo máximo, a proporção da imagem, o que aparece primeiro e para quem. Quando um veículo tradicional publica em uma rede social, passa a operar dentro de restrições que não escreveu. Analisar mídia hoje significa levar em conta esse jogo entre quem produz, quem transporta e quem organiza a visibilidade.",
+      text: "O suporte é a materialidade que guarda a informação: papel, fita, memória flash, servidor. O canal é o percurso que leva a mensagem: ondas de rádio, fibra óptica, rede celular. O veículo é quem produz e distribui com identidade reconhecível: uma emissora, um portal, um criador de conteúdo. A mesma reportagem pode sair no papel, no site e em um podcast sem mudar de veículo — mas a troca de suporte nunca é neutra. Hoje existe ainda uma quarta camada, a plataforma, que não produz o conteúdo, mas define formato, duração e quem vê o quê.",
     },
     {
       id: "midia-image-radio",
@@ -72,17 +47,7 @@ export const postMidia: Post = {
     {
       id: "midia-historia-1",
       type: "paragraph",
-      text: "A história da mídia costuma ser contada em saltos técnicos que provocam mudanças sociais. A escrita separou a mensagem da presença de quem fala. A prensa de tipos móveis, no século XV, tornou possível reproduzir textos em escala e barateou o acesso ao conhecimento registrado. O jornal diário criou o hábito de acompanhar acontecimentos em intervalos regulares e ajudou a formar a ideia moderna de opinião pública. Cada uma dessas etapas foi acompanhada por desconfiança: houve quem afirmasse que a leitura silenciosa enfraqueceria a memória e que os jornais espalhariam boatos sem controle.",
-    },
-    {
-      id: "midia-historia-2",
-      type: "paragraph",
-      text: "No século XX, rádio e televisão inauguraram a comunicação de massa em sentido pleno: poucos emissores, audiências enormes e simultaneidade. A programação passou a organizar a rotina das famílias, e o horário nobre virou um bem econômico disputado. A publicidade financiou boa parte desse sistema, o que trouxe uma consequência estrutural: o produto vendido não era apenas o conteúdo para o público, mas também a atenção do público para os anunciantes. Essa lógica não desapareceu com a internet — ela foi automatizada e refinada.",
-    },
-    {
-      id: "midia-historia-3",
-      type: "paragraph",
-      text: "A digitalização acrescentou três características novas. A primeira é a convergência: texto, som e imagem passaram a ser representados pelo mesmo tipo de dado e podem ser processados pelo mesmo aparelho. A segunda é a interatividade: o receptor responde, corrige, remixa e redistribui. A terceira é a mensurabilidade: cada leitura, cada segundo de vídeo assistido e cada rolagem de tela viram números que realimentam decisões editoriais. É difícil entender a mídia contemporânea sem levar essas três características a sério ao mesmo tempo.",
+      text: "A escrita separou a mensagem da presença de quem fala. A prensa de tipos móveis, no século XV, barateou a reprodução de textos, e o jornal diário ajudou a formar a ideia moderna de opinião pública. No século XX, rádio e televisão inauguraram a comunicação de massa: poucos emissores, audiências enormes e simultaneidade, financiadas pela venda da atenção do público aos anunciantes. A digitalização trouxe convergência, interatividade e mensurabilidade: tudo vira o mesmo tipo de dado, o público responde e cada segundo assistido vira número.",
     },
     {
       id: "midia-quote",
@@ -93,34 +58,13 @@ export const postMidia: Post = {
     {
       id: "midia-quote-comentario",
       type: "paragraph",
-      text: "A frase de McLuhan é citada com frequência e entendida com pouca precisão. Ela não afirma que o conteúdo é irrelevante, e sim que o meio impõe uma escala, um ritmo e um padrão de relação entre as pessoas. Um comunicado enviado por carta, por telefone e por mensagem instantânea pode ter exatamente o mesmo texto e produzir efeitos completamente diferentes de urgência, formalidade e expectativa de resposta. Analisar mídia é justamente perceber esse efeito de forma, que age mesmo quando ninguém está prestando atenção nele.",
+      text: "A frase de McLuhan não diz que o conteúdo é irrelevante, e sim que o meio impõe escala, ritmo e um padrão de relação. O mesmo texto enviado por carta, telefone ou mensagem instantânea produz efeitos diferentes de urgência e formalidade.",
     },
     { id: "midia-heading-linguagem", type: "heading", text: "Cada meio impõe uma linguagem" },
     {
       id: "midia-linguagem-1",
       type: "paragraph",
-      text: "Todo meio tem restrições, e as restrições produzem linguagem. O rádio não mostra: por isso desenvolveu a descrição vívida, a locução ritmada e o uso de efeitos sonoros para situar o ouvinte. O jornal impresso tem espaço finito: por isso criou o lide, a hierarquia de títulos e a pirâmide invertida, que entrega o essencial nas primeiras linhas. A televisão vive da imagem em movimento: por isso privilegia acontecimentos que podem ser mostrados e tende a dar menos espaço a processos lentos, que não rendem cena.",
-    },
-    {
-      id: "midia-linguagem-2",
-      type: "paragraph",
-      text: "Nas plataformas digitais, as restrições são outras. O vídeo vertical nasceu do modo como seguramos o telefone. Os primeiros segundos de um conteúdo valem mais do que o restante, porque a decisão de continuar ou rolar a tela acontece rápido. Títulos precisam funcionar fora de contexto, já que muita gente lê apenas a chamada. Legendas se tornaram quase obrigatórias porque boa parte do consumo acontece sem som. Nada disso é acidente estético: é adaptação a um ambiente técnico e comportamental específico.",
-    },
-    {
-      id: "midia-linguagem-3",
-      type: "paragraph",
-      text: "Para quem produz, a lição prática é direta: transportar um conteúdo de um meio para outro exige reescrever, e não apenas copiar. Um texto acadêmico lido em voz alta raramente funciona como podcast. Um slide de apresentação raramente funciona como post. A pergunta correta não é como encaixar o material no formato, mas o que esse formato faz melhor do que qualquer outro e como aproveitar isso.",
-    },
-    { id: "midia-heading-tecnica", type: "heading", text: "Como um meio digital transporta uma mensagem" },
-    {
-      id: "midia-tecnica-1",
-      type: "paragraph",
-      text: "Na web, os diferentes tipos de mídia são declarados por marcações específicas, e cada uma delas carrega decisões de acessibilidade e desempenho. Uma imagem precisa de texto alternativo para quem usa leitor de tela. Um áudio precisa de controles visíveis para que o usuário decida quando ouvir. Um vídeo hospedado em outro serviço entra por um elemento incorporado, o que significa depender das regras desse serviço. Para cada tipo de conteúdo, o navegador recebe uma instrução diferente: a imagem chega acompanhada de uma descrição em texto, o áudio vem com controles e só carrega o arquivo quando o usuário pede, e o vídeo de outra plataforma entra por uma janela incorporada.",
-    },
-    {
-      id: "midia-tecnica-2",
-      type: "paragraph",
-      text: "Cada uma dessas instruções resolve um problema diferente. A imagem depende de uma descrição textual para não excluir parte do público. O áudio usa carregamento sob demanda para não consumir dados de quem não vai ouvir. O vídeo incorporado transfere para outra empresa a responsabilidade pela entrega, o que traz economia de infraestrutura e, ao mesmo tempo, dependência. Escolher uma mídia sempre implica escolher uma cadeia técnica com consequências práticas.",
+      text: "Todo meio tem restrições, e as restrições produzem linguagem. O rádio, que não mostra, desenvolveu a descrição vívida. O jornal, com espaço finito, criou o lide e a pirâmide invertida. Nas plataformas digitais, o vídeo é vertical porque seguramos o telefone assim, os primeiros segundos decidem tudo e as legendas viraram regra porque muita gente assiste sem som. Por isso, levar um conteúdo de um meio para outro exige reescrever, e não apenas copiar.",
     },
     { id: "midia-heading-videos", type: "heading", text: "Dois olhares em vídeo" },
     {
@@ -139,12 +83,7 @@ export const postMidia: Post = {
     {
       id: "midia-evolucao",
       type: "paragraph",
-      text: "Jornais, rádio e televisão consolidaram a comunicação de massa: poucos emissores falavam para grandes audiências, em geral com forte filtro editorial e alto custo de entrada. Na internet, o público também publica, responde e redistribui. Isso torna a comunicação mais rápida e participativa, amplia a diversidade de vozes e reduz a distância entre quem produz e quem consome. Em troca, aumenta a responsabilidade individual de conferir autoria, contexto e confiabilidade antes de compartilhar qualquer coisa.",
-    },
-    {
-      id: "midia-evolucao-2",
-      type: "paragraph",
-      text: "Vale evitar dois exageros comuns. O primeiro é o encantamento: imaginar que a internet resolveu sozinha o problema da concentração do poder de comunicar. Ela redistribuiu a produção, mas concentrou a distribuição em poucas plataformas globais. O segundo é o pessimismo: tratar todo conteúdo produzido fora das grandes redações como desinformação. Existem projetos independentes rigorosos e veículos tradicionais que erram. O critério útil não é a origem, e sim o método: fonte identificada, evidência verificável e correção pública quando há erro.",
+      text: "Na internet, o público também publica, responde e redistribui. A comunicação ficou mais rápida e diversa, mas a distribuição se concentrou em poucas plataformas, e quem decide o que aparece deixou de ser um editor para ser um sistema de recomendação, que ordena o conteúdo pelo comportamento de cada usuário. O resultado é uma grade personalizada e difícil de auditar. Nem encantamento nem pessimismo ajudam aqui: o critério útil não é a origem do conteúdo, e sim o método — fonte identificada, evidência verificável e correção pública.",
     },
     {
       id: "midia-image",
@@ -153,33 +92,17 @@ export const postMidia: Post = {
       alt: "Apresentação visual sobre diferentes canais de comunicação",
       caption: "Canais diferentes atendem públicos e situações diferentes. Imagem: CDC/Wikimedia Commons, domínio público.",
     },
-    { id: "midia-heading-algoritmo", type: "heading", text: "Mídia, plataforma e algoritmo" },
-    {
-      id: "midia-algoritmo-1",
-      type: "paragraph",
-      text: "Na comunicação de massa, a decisão sobre o que aparecia era tomada por editores e programadores de grade, em um processo humano, hierárquico e razoavelmente visível. Nas plataformas digitais, essa decisão passou a ser tomada por sistemas de recomendação que ordenam conteúdo com base em sinais de comportamento: o que você assistiu até o fim, o que curtiu, quanto tempo permaneceu, o que pessoas parecidas com você consumiram. O resultado é uma grade personalizada, diferente para cada usuário e difícil de auditar de fora.",
-    },
-    {
-      id: "midia-algoritmo-2",
-      type: "paragraph",
-      text: "Isso muda a natureza do trabalho de quem comunica. Não basta publicar bem: é preciso entender que o alcance depende de métricas valorizadas pela plataforma, que podem mudar sem aviso. Também muda a natureza do consumo. Quando cada pessoa vê uma seleção distinta, a experiência compartilhada de acompanhar o mesmo noticiário se fragmenta, e fica mais difícil concordar sobre quais são os fatos em disputa. Reconhecer esse mecanismo não exige demonizá-lo — exige apenas lembrar que a visibilidade é produzida por alguém e segundo algum critério.",
-    },
     { id: "midia-heading-criterios", type: "heading", text: "Critérios para escolher um meio" },
     {
       id: "midia-criterios-1",
       type: "paragraph",
-      text: "Quando você precisa comunicar algo — um trabalho acadêmico, um produto, um aviso institucional — a escolha do meio deveria vir depois de quatro perguntas. Quem é o público e onde ele já está? Qual é a complexidade da mensagem e quanto tempo de atenção ela exige? Que recursos existem para produzir e manter aquele formato? E como será possível saber se a comunicação funcionou? Responder a essas perguntas evita a armadilha mais comum, que é escolher o meio da moda e só depois procurar o que dizer nele.",
-    },
-    {
-      id: "midia-criterios-2",
-      type: "paragraph",
-      text: "Mensagens curtas e urgentes pedem canais de alta frequência e baixo atrito, como notificações e mensagens instantâneas. Explicações longas pedem texto ou vídeo com estrutura clara e possibilidade de retomada. Demonstrações de processo pedem imagem em movimento. Assuntos que dependem de confiança pessoal se beneficiam da voz, que transmite hesitação, ênfase e humanidade. E quase sempre a melhor resposta envolve combinar meios, respeitando o que cada um faz de melhor — que é exatamente o assunto da próxima publicação desta série.",
+      text: "Antes de escolher um meio, vale responder a quatro perguntas: quem é o público e onde ele está, quanta atenção a mensagem exige, que recursos existem para produzi-la e como saber se funcionou. Avisos urgentes pedem mensagens rápidas; explicações longas pedem texto ou vídeo bem estruturado; assuntos que dependem de confiança se beneficiam da voz. Quase sempre, a melhor resposta combina meios.",
     },
     { id: "midia-heading-audio", type: "heading", text: "O som também é mídia" },
     {
       id: "midia-audio-context",
       type: "paragraph",
-      text: "Um áudio consegue informar sem exigir atenção visual. Rádio, entrevistas, músicas e podcasts aproveitam ritmo, pausa, voz e efeitos sonoros para construir sentido. Essa característica explica por que o som acompanha tão bem deslocamentos, tarefas domésticas e treinos: ele ocupa um canal sensorial que costuma estar livre. A faixa abaixo permite experimentar esse meio diretamente na página.",
+      text: "O áudio informa sem exigir os olhos, por isso acompanha tão bem deslocamentos e tarefas. A faixa abaixo permite experimentar esse meio na própria página.",
     },
     {
       id: "midia-audio",
@@ -188,11 +111,10 @@ export const postMidia: Post = {
       url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
       caption: "Faixa externa do SoundHelix usada como exemplo de mídia sonora.",
     },
-    { id: "midia-heading-podcast", type: "heading", text: "Podcast: uma mídia inteira feita só de áudio" },
     {
       id: "midia-podcast-context",
       type: "paragraph",
-      text: "O podcast é um bom laboratório para tudo o que foi discutido até aqui. Ele herda a linguagem do rádio, mas troca a grade fixa pela escolha do ouvinte; usa um formato aberto de distribuição, o RSS, que não pertence a nenhuma plataforma; e sustenta conversas longas em um ambiente digital normalmente associado à pressa. O episódio indicado abaixo discute justamente a relação entre podcast, jornalismo e rádio tradicional, com participação de profissionais da CBN — um caso concreto de veículo consolidado se adaptando a um novo meio.",
+      text: "O podcast herda a linguagem do rádio, mas troca a grade fixa pela escolha do ouvinte e circula por um formato aberto, o RSS. O episódio abaixo discute podcast e jornalismo com profissionais da rádio CBN.",
     },
     {
       id: "midia-podcast",
@@ -206,56 +128,13 @@ export const postMidia: Post = {
     {
       id: "midia-critica-1",
       type: "paragraph",
-      text: "Letramento midiático é a capacidade de acessar, analisar, avaliar e produzir mensagens em diferentes meios. Na prática, ele começa com perguntas simples diante de qualquer conteúdo: quem produziu isso, com qual interesse, com base em qual evidência, o que foi deixado de fora e como eu poderia verificar de forma independente. Essas perguntas valem tanto para um vídeo viral quanto para uma reportagem premiada, e não pressupõem má-fé — apenas reconhecem que toda mensagem é construída a partir de escolhas.",
-    },
-    {
-      id: "midia-critica-2",
-      type: "paragraph",
-      text: "Há três hábitos que ajudam bastante. O primeiro é procurar a fonte primária: o estudo citado, o documento original, o vídeo completo. O segundo é a leitura lateral, que consiste em abrir outras abas para descobrir quem é o autor, em vez de julgar apenas pela aparência do site. O terceiro é desconfiar da própria concordância: conteúdos que confirmam o que já pensamos passam com menos exame, e é exatamente aí que a desinformação circula com mais facilidade.",
-    },
-    { id: "midia-heading-convergencia", type: "heading", text: "Convergência, multiplataforma e transmídia" },
-    {
-      id: "midia-convergencia-1",
-      type: "paragraph",
-      text: "Convergência é o processo pelo qual conteúdos que antes exigiam aparelhos diferentes passam a conviver no mesmo dispositivo e no mesmo formato de dado. O celular é o exemplo mais evidente: ele é rádio, televisão, jornal, cinema, correio, câmera e sala de aula. Mas convergência não significa apenas acúmulo técnico. Ela também descreve a aproximação entre indústrias que antes eram separadas — telecomunicações, informática e comunicação — e a mudança de comportamento de um público que espera encontrar o mesmo assunto em vários lugares.",
-    },
-    {
-      id: "midia-convergencia-2",
-      type: "paragraph",
-      text: "É útil distinguir três estratégias que costumam ser confundidas. Na estratégia multiplataforma, o mesmo conteúdo é replicado em vários canais, com ajustes de formato. Na estratégia crossmídia, cada canal apresenta uma parte do conteúdo e aponta para os demais, formando um percurso. Na narrativa transmídia, cada meio conta uma história própria, que se sustenta sozinha e ao mesmo tempo enriquece o conjunto — um filme, uma série, um jogo e uma história em quadrinhos que ampliam o mesmo universo sem repetir o que já foi mostrado.",
-    },
-    {
-      id: "midia-convergencia-3",
-      type: "paragraph",
-      text: "Para um projeto acadêmico ou profissional, escolher entre essas três estratégias é uma decisão de recursos, e não de ambição. Multiplataforma custa menos e mantém coerência. Crossmídia exige planejamento de percurso e pode perder quem entra pelo meio. Transmídia exige equipes, orçamento e tempo, porque cada peça precisa ter qualidade autônoma. O erro clássico é anunciar transmídia e entregar replicação.",
-    },
-    { id: "midia-heading-acessibilidade", type: "heading", text: "Uma mídia que exclui comunica menos" },
-    {
-      id: "midia-acessibilidade-1",
-      type: "paragraph",
-      text: "Toda escolha de meio decide, junto, quem consegue receber a mensagem. Um vídeo sem legenda exclui pessoas surdas e também quem assiste em ambiente barulhento. Uma imagem sem descrição textual exclui pessoas cegas e quem está com conexão ruim. Um áudio sem transcrição impede busca por palavra-chave e dificulta a citação em trabalhos acadêmicos. Um site pesado exclui quem tem plano de dados limitado ou aparelho antigo. Acessibilidade, nesse sentido, não é um recurso extra: é parte da definição de alcance.",
-    },
-    {
-      id: "midia-acessibilidade-2",
-      type: "paragraph",
-      text: "A boa notícia é que as medidas básicas são baratas quando entram desde o início. Escrever texto alternativo descritivo, oferecer legendas, manter contraste suficiente, permitir navegação por teclado, não depender apenas de cor para transmitir informação e disponibilizar transcrição de áudio resolvem a maior parte dos casos. Feitas no fim do processo, essas mesmas medidas viram retrabalho caro — motivo pelo qual costumam ser abandonadas justamente nos projetos que mais precisariam delas.",
-    },
-    { id: "midia-heading-etica", type: "heading", text: "Responsabilidade de quem publica" },
-    {
-      id: "midia-etica-1",
-      type: "paragraph",
-      text: "Publicar é um ato com consequências, e a facilidade técnica de publicar não reduz essa responsabilidade — aumenta. Três compromissos mínimos organizam bem o trabalho. O primeiro é a atribuição: dizer de onde veio cada dado, imagem ou trecho, respeitando licenças de uso. O segundo é a correção: quando um erro aparece, corrigi-lo de forma visível, em vez de apagar silenciosamente o rastro. O terceiro é a proporcionalidade: evitar transformar um caso isolado em tendência apenas porque ele rende engajamento.",
-    },
-    {
-      id: "midia-etica-2",
-      type: "paragraph",
-      text: "Esses compromissos aparecem inclusive em decisões pequenas deste blog. As imagens usadas aqui vêm de acervos com licença livre e trazem crédito na legenda. Os vídeos são incorporados a partir de seus canais originais, e não recortados sem contexto. Os episódios de podcast são carregados a partir do feed público do próprio programa. Nada disso é burocracia: é o que permite que alguém verifique o que estamos afirmando e chegue às mesmas fontes por conta própria.",
+      text: "Diante de qualquer conteúdo, algumas perguntas ajudam: quem produziu, com qual interesse, com base em qual evidência e o que ficou de fora. Três hábitos completam o método: procurar a fonte primária, pesquisar o autor em outras abas e desconfiar da própria concordância, porque é no que confirma nossas opiniões que a desinformação passa mais fácil.",
     },
     { id: "midia-heading-conclusao", type: "heading", text: "Para fechar" },
     {
       id: "midia-conclusao",
       type: "paragraph",
-      text: "Mídia é, ao mesmo tempo, técnica e instituição: um suporte que carrega mensagens e um sistema social que decide o que circula. Compreender essa dupla natureza permite sair da posição passiva de quem apenas recebe conteúdo e assumir a posição de quem escolhe, avalia e produz. O próximo passo natural é observar o que acontece quando vários meios deixam de operar isoladamente e passam a compor uma mesma experiência — o território da multimídia, tema da publicação seguinte.",
+      text: "Mídia é técnica e instituição: um suporte que carrega mensagens e um sistema que decide o que circula. Entender essa dupla natureza permite escolher, avaliar e produzir com consciência. O próximo passo é ver o que acontece quando vários meios passam a compor uma mesma experiência — o tema da multimídia.",
     },
     { id: "midia-heading-links", type: "heading", text: "Links para continuar" },
     {
@@ -307,13 +186,6 @@ export const postMidia: Post = {
       title: "Wikimedia Commons — Radio studio microphones",
       url: "https://commons.wikimedia.org/wiki/File:Radio_studio_microphones_(29392933201).jpg",
       caption: "Fonte da fotografia do estúdio de rádio.",
-    },
-    {
-      id: "midia-ref-5",
-      type: "link",
-      title: "MDN — HTML: áudio e vídeo",
-      url: "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio",
-      caption: "Documentação usada como base para o exemplo de código.",
     },
     {
       id: "midia-ref-6",

@@ -14,57 +14,26 @@ export const postMultimidia: Post = {
   status: "published",
   featured: false,
   author: siteConfig.author,
-  reading_time: 15,
+  reading_time: 5,
   published_at: "2026-08-09T12:00:00.000Z",
   created_at: "2026-08-09T12:00:00.000Z",
-  updated_at: "2026-11-15T14:00:00.000Z",
+  updated_at: "2026-11-15T16:00:00.000Z",
   content: [
     {
       id: "multimidia-intro",
       type: "paragraph",
-      text: "Uma videoaula usa fala, imagem, texto na tela e movimento. Um jogo acrescenta música, efeitos e interação. Uma reportagem digital pode misturar fotografia, mapa, entrevista e infográfico. Quando vários formatos se integram em uma mesma experiência, temos multimídia. O conceito é antigo — uma aula com quadro, voz e demonstração já era multimídia muito antes do computador —, mas foi a digitalização que tornou barato combinar formatos, distribuí-los em escala e medir o resultado.",
-    },
-    {
-      id: "multimidia-intro-2",
-      type: "paragraph",
-      text: "A publicação anterior desta série tratou de cada meio isoladamente. Aqui, o objeto de estudo é a combinação: o que muda quando som, imagem e texto disputam a mesma atenção, quais elementos compõem um produto multimídia, o que a pesquisa em aprendizagem descobriu sobre essa mistura e quais decisões técnicas sustentam uma experiência que funciona em telas, conexões e contextos muito diferentes.",
+      text: "Uma videoaula usa fala, imagem, texto na tela e movimento. Um jogo acrescenta música, efeitos e interação. Uma reportagem digital mistura fotografia, mapa, entrevista e infográfico. Quando vários formatos se integram em uma mesma experiência, temos multimídia. O conceito é antigo — uma aula com quadro, voz e demonstração já era multimídia —, mas foi a digitalização que tornou barato combinar formatos, distribuí-los em escala e medir o resultado.",
     },
     { id: "multimidia-heading-conceito", type: "heading", text: "O que torna um conteúdo multimídia?" },
     {
       id: "multimidia-conceito",
       type: "paragraph",
-      text: "Multimídia é a combinação planejada de dois ou mais meios de comunicação em uma mesma unidade de sentido. Os elementos mais comuns são texto, imagem estática, gráfico, áudio, vídeo, animação e interatividade. O importante não é apenas colocar tudo junto, mas fazer cada formato cumprir uma função dentro da mensagem. A palavra planejada carrega o peso da definição: acumular formatos sem critério produz ruído, não riqueza.",
-    },
-    {
-      id: "multimidia-elementos",
-      type: "paragraph",
-      text: "O texto organiza, detalha e permite releitura; a imagem sintetiza relações e cria impacto imediato; o áudio conduz atenção, marca ritmo e transmite emoção; o vídeo mostra processos que acontecem no tempo; a animação torna visível o que é abstrato ou invisível a olho nu; e a interação permite que o público participe, teste hipóteses e siga o próprio caminho. Uma boa composição evita repetição desnecessária e usa cada linguagem onde ela comunica melhor.",
+      text: "Multimídia é a combinação planejada de dois ou mais meios em uma mesma unidade de sentido. A palavra planejada é o centro da definição: acumular formatos sem critério produz ruído, não riqueza. Cada elemento tem um ponto forte. O texto dá precisão e pode ser pesquisado e relido; a imagem sintetiza relações em um instante; o áudio conduz a atenção e transmite emoção; o vídeo mostra processos no tempo; a animação torna visível o abstrato; e a interação deixa o público testar hipóteses e seguir o próprio caminho.",
     },
     {
       id: "multimidia-conceito-2",
       type: "paragraph",
-      text: "Uma pergunta prática ajuda a testar qualquer projeto: se eu remover este elemento, a mensagem perde alguma coisa? Se a resposta for não, provavelmente ele está ali por hábito ou por estética, e não por função. Vídeos de abertura que não informam, trilhas sonoras que competem com a narração e ilustrações puramente decorativas são os exemplos mais frequentes. Multimídia bem-feita é sempre uma decisão de subtração tanto quanto de acúmulo.",
-    },
-    { id: "multimidia-heading-elementos-detalhe", type: "heading", text: "Os elementos, um a um" },
-    {
-      id: "multimidia-detalhe-1",
-      type: "paragraph",
-      text: "O texto continua sendo o elemento mais eficiente para transmitir precisão. Ele é pesquisável, citável, traduzível, leve para transmitir e completamente sob o controle do leitor, que decide a velocidade. Por isso, mesmo em produtos audiovisuais, o texto sustenta a estrutura: roteiro, títulos, legendas, descrições e transcrições. Subestimar o texto costuma ser o erro inicial de quem se encanta com formatos mais vistosos.",
-    },
-    {
-      id: "multimidia-detalhe-2",
-      type: "paragraph",
-      text: "A imagem opera por reconhecimento imediato. Uma fotografia contextualiza em um instante aquilo que um parágrafo levaria trinta segundos para situar. Gráficos e infográficos vão além: transformam relações numéricas em relações espaciais, permitindo comparar grandezas de forma direta. Em compensação, imagens são ambíguas — precisam de legenda para fixar o sentido — e carregam custo de banda que pode inviabilizar o acesso em conexões lentas.",
-    },
-    {
-      id: "multimidia-detalhe-3",
-      type: "paragraph",
-      text: "O áudio ocupa um canal sensorial que costuma estar livre e cria proximidade. Voz humana transmite hesitação, ênfase e intenção; trilha e efeitos constroem ambiente e marcam transições. O vídeo, por sua vez, é o único formato que mostra transformação ao longo do tempo com fidelidade, o que o torna insubstituível para demonstrar procedimentos. Ambos, porém, impõem o ritmo de quem produziu: quem consome perde a liberdade de varrer o conteúdo rapidamente em busca de um trecho específico — a menos que existam capítulos, transcrição ou legendas.",
-    },
-    {
-      id: "multimidia-detalhe-4",
-      type: "paragraph",
-      text: "A interatividade é o elemento que mais distingue a multimídia digital da simples soma de mídias. Ela aparece em graus: navegar por um menu, filtrar um gráfico, arrastar um controle deslizante para ver um cenário mudar, responder a um exercício e receber correção imediata, ou operar uma simulação completa. Cada grau aumenta o envolvimento e também o custo de produção, de manutenção e de teste em dispositivos diferentes.",
+      text: "Uma pergunta testa qualquer projeto: se eu remover este elemento, a mensagem perde alguma coisa? Se a resposta for não, ele está ali por hábito. Vinhetas que não informam, trilhas que competem com a narração e ilustrações decorativas são os casos mais comuns. Multimídia bem-feita é tanto subtração quanto acúmulo.",
     },
     {
       id: "multimidia-image",
@@ -77,17 +46,7 @@ export const postMultimidia: Post = {
     {
       id: "multimidia-historia-1",
       type: "paragraph",
-      text: "A ideia de reunir formatos em um único suporte eletrônico é anterior à web. Nos anos 1980 e 1990, o CD-ROM popularizou enciclopédias, cursos e jogos que combinavam texto, som, vídeo em baixa resolução e navegação por menus. Eram experiências fechadas, distribuídas em disco, que já traziam a promessa central: aprender e se divertir escolhendo o próprio caminho. As limitações eram severas — pouco espaço, vídeo em janelas minúsculas e computadores que travavam com facilidade.",
-    },
-    {
-      id: "multimidia-historia-2",
-      type: "paragraph",
-      text: "A web dos primeiros anos, ao contrário, era leve e quase toda textual. A multimídia entrou aos poucos, por meio de plugins proprietários que reproduziam animação, som e vídeo dentro da página. Foi um período de fragmentação: cada formato exigia um programa diferente, e nem todo usuário conseguia ver o que o autor havia publicado. A padronização posterior, com elementos nativos de áudio e vídeo no HTML e codecs abertos, resolveu boa parte desse problema e tornou a multimídia parte da própria linguagem da web.",
-    },
-    {
-      id: "multimidia-historia-3",
-      type: "paragraph",
-      text: "O último capítulo dessa história é a distribuição por streaming adaptativo. Em vez de baixar um arquivo inteiro, o dispositivo recebe pequenos fragmentos e troca de qualidade conforme a conexão varia. É por isso que um vídeo pode começar borrado e melhorar em segundos. Esse mecanismo, invisível para quem assiste, é o que sustenta o consumo multimídia em redes móveis instáveis — e é também o que explica por que o mesmo conteúdo consome quantidades muito diferentes de dados em situações diferentes.",
+      text: "Nos anos 1980 e 1990, o CD-ROM popularizou enciclopédias e cursos que combinavam texto, som e vídeo em janelas minúsculas. A web dos primeiros anos era quase toda textual e dependeu de plugins proprietários até que o HTML passasse a reproduzir áudio e vídeo de forma nativa. Hoje, o streaming adaptativo entrega o vídeo em pequenos fragmentos e troca a qualidade conforme a conexão — é por isso que um vídeo começa borrado e melhora em segundos.",
     },
     {
       id: "multimidia-quote",
@@ -99,49 +58,13 @@ export const postMultimidia: Post = {
     {
       id: "multimidia-cognicao-1",
       type: "paragraph",
-      text: "A pesquisa em aprendizagem multimídia parte de uma premissa simples: temos dois canais de processamento, um visual e outro verbal, e ambos possuem capacidade limitada. Combinar palavra e imagem funciona porque distribui a carga entre os dois canais. Mas a mesma lógica explica os fracassos: quando os dois canais recebem a mesma informação ao mesmo tempo, ou quando um elemento decorativo disputa atenção com o conteúdo principal, o esforço aumenta e o aprendizado cai.",
-    },
-    {
-      id: "multimidia-cognicao-2",
-      type: "paragraph",
-      text: "Daí vêm recomendações práticas bastante estabelecidas. Aproximar o texto explicativo do elemento visual a que ele se refere, em vez de colocar a legenda longe da figura. Preferir narração a texto na tela quando já existe uma animação ocupando o canal visual — ler e olhar ao mesmo tempo sobrecarrega. Eliminar sons, imagens e efeitos que não cumprem função. Dividir conteúdos longos em segmentos controlados por quem assiste. Anunciar antes os conceitos que serão usados depois.",
-    },
-    {
-      id: "multimidia-cognicao-3",
-      type: "paragraph",
-      text: "Há um detalhe que costuma passar despercebido: a redundância nem sempre é ruim. Legendas repetem a narração e ainda assim ajudam, porque atendem quem não pode ouvir, quem está em ambiente barulhento e quem processa melhor lendo. O que prejudica é a redundância involuntária, aquela que não oferece escolha ao usuário — como um vídeo que exibe exatamente o mesmo parágrafo que a voz está lendo, sem que se possa desligar nenhum dos dois.",
-    },
-    { id: "multimidia-heading-tecnica", type: "heading", text: "Como a web declara cada formato" },
-    {
-      id: "multimidia-tecnica-1",
-      type: "paragraph",
-      text: "Do ponto de vista técnico, montar uma página multimídia é combinar elementos que o navegador entende nativamente. Três decisões são comuns: oferecer o mesmo vídeo em mais de um formato para aumentar a compatibilidade, incluir uma faixa de legendas e carregar imagens de forma preguiçosa, para que só sejam baixadas quando estiverem perto da área visível.",
-    },
-    {
-      id: "multimidia-tecnica-2",
-      type: "paragraph",
-      text: "Cada uma dessas decisões responde a uma restrição do mundo real. Formatos alternativos existem porque nem todo navegador reproduz o mesmo codec. Legendas existem porque parte do público não ouve ou não pode ativar o som. Imagens em vários tamanhos existem porque enviar um arquivo de dois mil pixels para uma tela de celular desperdiça dados e bateria. Multimídia bem executada é, em grande medida, um exercício de respeito às condições de quem está do outro lado.",
+      text: "A pesquisa em aprendizagem multimídia parte de uma premissa simples: temos um canal visual e um verbal, ambos com capacidade limitada. Combinar palavra e imagem funciona porque distribui a carga entre os dois. Daí vêm recomendações práticas: aproximar o texto da figura a que ele se refere, preferir narração a texto na tela quando já há uma animação, eliminar o que não cumpre função e dividir conteúdos longos em partes controladas por quem assiste. A redundância só atrapalha quando é imposta; legendas que o usuário pode ligar e desligar ajudam muita gente.",
     },
     { id: "multimidia-heading-aplicacoes", type: "heading", text: "Onde encontramos multimídia?" },
     {
       id: "multimidia-aplicacoes",
       type: "paragraph",
-      text: "Ela aparece em plataformas de ensino, redes sociais, streaming, publicidade, museus, apresentações, jogos e aplicativos. Na educação, pode demonstrar algo que seria difícil explicar apenas por escrito, como o funcionamento de um motor ou a divisão celular. No entretenimento, constrói atmosfera e participação. Em empresas, torna treinamentos, relatórios e dados mais compreensíveis para públicos que não dominam o vocabulário técnico.",
-    },
-    {
-      id: "multimidia-aplicacoes-2",
-      type: "paragraph",
-      text: "No jornalismo, os chamados especiais multimídia combinam texto longo, fotografia, vídeo curto, mapas e gráficos interativos para tratar de temas complexos. Em museus, totens e aplicativos de visita acrescentam áudio-guias, reconstituições e legendas em várias línguas. Na saúde e na indústria, simuladores treinam procedimentos de risco sem expor ninguém. O padrão comum é que a multimídia rende mais justamente quando o assunto é difícil de imaginar apenas com palavras.",
-    },
-    {
-      id: "multimidia-aplicacoes-3",
-      type: "paragraph",
-      text: "Vale observar um caso próximo da nossa realidade: a apresentação de um trabalho de curso. Slides costumam ser tratados como um documento projetado, cheios de texto que o apresentador lê em voz alta — exatamente a combinação que a pesquisa mostra ser menos eficiente, porque duplica a informação no mesmo canal. Um uso multimídia competente faria o contrário: slides com uma ideia visual por vez, a explicação na voz de quem apresenta e o detalhamento escrito em um material entregue depois, para leitura no ritmo de cada pessoa.",
-    },
-    {
-      id: "multimidia-aplicacoes-4",
-      type: "paragraph",
-      text: "O mesmo raciocínio vale para documentação técnica, treinamentos corporativos e conteúdo institucional. A pergunta não é quantos formatos cabem no projeto, mas qual formato responde melhor a cada tipo de dúvida do público. Procedimentos passo a passo pedem imagem e sequência; conceitos abstratos pedem analogia e diagrama; decisões controversas pedem voz humana e contexto; consultas rápidas pedem texto pesquisável. Um produto multimídia maduro combina essas respostas sem forçar ninguém a percorrer tudo.",
+      text: "Ela aparece em plataformas de ensino, streaming, publicidade, museus, jogos e jornalismo, e rende mais quando o assunto é difícil de imaginar só com palavras, como o funcionamento de um motor. Um caso próximo é a apresentação de trabalho: slides cheios de texto lido em voz alta duplicam a informação no mesmo canal. O uso competente faz o contrário — uma ideia visual por slide, a explicação na voz e o detalhamento em um material para ler depois.",
     },
     {
       id: "multimidia-image-tv",
@@ -155,17 +78,13 @@ export const postMultimidia: Post = {
     {
       id: "multimidia-producao-1",
       type: "paragraph",
-      text: "Um projeto multimídia costuma seguir quatro etapas. A primeira é definir objetivo e público, o que determina tudo o que vem depois. A segunda é o roteiro, que descreve não apenas o texto, mas o que aparece na tela, o que se ouve e o que o usuário pode fazer em cada momento. A terceira é a produção dos ativos: gravação, fotografia, ilustração, edição, trilha. A quarta é a montagem e o teste em dispositivos reais, com atenção a conexão lenta, tela pequena e uso sem som.",
+      text: "Um projeto multimídia passa por quatro etapas: definir objetivo e público, roteirizar, produzir os elementos e testar em aparelhos reais. A mais negligenciada é o roteiro. Um roteiro em duas colunas — o que se vê de um lado, o que se ouve do outro — resolve a maior parte dos problemas de sincronia e evita repetir a mesma informação nos dois canais.",
     },
+    { id: "multimidia-heading-mobile", type: "heading", text: "O celular mudou as regras" },
     {
-      id: "multimidia-producao-2",
+      id: "multimidia-mobile-1",
       type: "paragraph",
-      text: "A etapa mais negligenciada é o roteiro. Sem ele, a produção vira uma coleção de peças bonitas que não conversam entre si, e o ajuste final custa caro. Um roteiro simples, em duas colunas — de um lado o que se vê, do outro o que se ouve —, resolve a maior parte dos problemas de sincronia e evita a duplicação de informação entre canais. Para trabalhos acadêmicos, ele ainda tem uma vantagem prática: documenta as decisões e facilita a divisão de tarefas em grupo.",
-    },
-    {
-      id: "multimidia-producao-3",
-      type: "paragraph",
-      text: "Vale também planejar a manutenção. Conteúdo multimídia envelhece de formas específicas: links quebram, vídeos incorporados são removidos por seus autores, formatos caem em desuso e informações datadas permanecem no ar como se fossem atuais. Registrar as fontes, guardar os arquivos originais e revisar periodicamente os elementos externos é o que separa um projeto que dura de um que se degrada em poucos meses.",
+      text: "Hoje, a maior parte do consumo acontece em uma tela pequena, segurada com uma mão, com conexão instável e muitas vezes sem som. Infográficos precisam ser reorganizados em blocos verticais, arquivos precisam ser leves e a informação essencial precisa aparecer na imagem, com legendas e títulos, para quem assiste no silencioso. Em planos de dados limitados, cada megabyte é um custo direto para quem acessa.",
     },
     { id: "multimidia-heading-videos", type: "heading", text: "Dois vídeos para aprofundar" },
     {
@@ -184,7 +103,7 @@ export const postMultimidia: Post = {
     {
       id: "multimidia-audio-context",
       type: "paragraph",
-      text: "O áudio pode existir sozinho ou ser combinado com texto, imagem e vídeo. Em um produto multimídia ele ajuda a criar ambiente, marcar ritmo, orientar ações e tornar o conteúdo mais acessível para situações em que a tela não pode receber toda a atenção. Ouça a faixa abaixo prestando atenção em como o som sugere movimento e continuidade mesmo sem nenhuma imagem associada.",
+      text: "Ouça a faixa abaixo prestando atenção em como o som sugere movimento e continuidade mesmo sem nenhuma imagem associada.",
     },
     {
       id: "multimidia-audio",
@@ -197,7 +116,7 @@ export const postMultimidia: Post = {
     {
       id: "multimidia-podcast-context",
       type: "paragraph",
-      text: "Entre a gravação e o momento em que o vídeo aparece na tela existe uma cadeia técnica que quase ninguém vê: codificação, empacotamento, distribuição por rede, armazenamento em cache e adaptação de qualidade. O episódio abaixo conversa com engenheiros responsáveis por essa cadeia em uma das maiores operações de streaming do Brasil, e é uma boa amostra de como a multimídia deixa de ser um assunto de design para virar um assunto de infraestrutura quando a audiência cresce.",
+      text: "Entre a gravação e a tela existe uma cadeia técnica invisível: codificação, distribuição, cache e adaptação de qualidade. O episódio abaixo conversa com engenheiros de uma das maiores operações de streaming do Brasil.",
     },
     {
       id: "multimidia-podcast",
@@ -207,70 +126,17 @@ export const postMultimidia: Post = {
       caption:
         "Episódio em áudio do podcast Hipsters Ponto Tech (2022) sobre streaming, buffering e entrega de vídeo em larga escala. Fonte: feed público do programa.",
     },
-    { id: "multimidia-heading-mobile", type: "heading", text: "O celular mudou as regras" },
-    {
-      id: "multimidia-mobile-1",
-      type: "paragraph",
-      text: "A maior parte do consumo multimídia hoje acontece em uma tela de poucas polegadas, segurada com uma mão, em deslocamento, com conexão instável e frequentemente sem som. Cada uma dessas condições impõe uma decisão de projeto. A tela pequena obriga a repensar infográficos densos, que precisam ser reorganizados em blocos verticais em vez de simplesmente reduzidos. A mão única concentra a interação na parte inferior da tela. A conexão instável exige carregamento progressivo e arquivos leves.",
-    },
-    {
-      id: "multimidia-mobile-2",
-      type: "paragraph",
-      text: "O consumo sem som talvez seja a mudança mais profunda, porque contraria a lógica clássica do audiovisual. Vídeos que dependem inteiramente da narração para fazer sentido perdem a maior parte do público em ambientes públicos. A resposta prática não é abandonar a voz, e sim garantir que a informação essencial também apareça na imagem: legendas bem sincronizadas, títulos internos, gráficos com rótulos legíveis e uma abertura que explique o assunto sem depender do áudio.",
-    },
-    {
-      id: "multimidia-mobile-3",
-      type: "paragraph",
-      text: "Existe ainda um efeito econômico que costuma escapar. Em planos de dados limitados, cada megabyte transmitido é um custo direto para quem acessa. Um vídeo de abertura decorativo com dez megabytes pode representar uma fatia relevante do pacote mensal de um estudante. Reduzir peso, oferecer versões de menor resolução e evitar reprodução automática são decisões de acessibilidade econômica, não apenas de desempenho técnico.",
-    },
-    { id: "multimidia-heading-som", type: "heading", text: "Design sonoro: o elemento que ninguém percebe" },
-    {
-      id: "multimidia-som-1",
-      type: "paragraph",
-      text: "O som é o componente multimídia mais subestimado e, ao mesmo tempo, o que mais denuncia amadorismo quando é mal resolvido. Uma imagem levemente tremida passa despercebida; um áudio com eco, ruído de fundo ou volume irregular faz o público abandonar o conteúdo em segundos. Isso acontece porque o ouvido é muito sensível a inconsistências: variações bruscas de volume e reverberação exigem esforço constante de decodificação, mesmo que a pessoa não saiba nomear o que está incomodando.",
-    },
-    {
-      id: "multimidia-som-2",
-      type: "paragraph",
-      text: "Um design sonoro mínimo trabalha com três camadas. A voz é a camada principal e deve estar sempre inteligível, gravada perto da fonte e em ambiente com pouca reflexão — um cômodo com cortina, tapete e móveis já é melhor que uma sala vazia. A trilha é a camada de ambiente, que sustenta o ritmo e deve permanecer bem abaixo da voz, entrando e saindo em transições. Os efeitos são a camada de pontuação: marcam mudanças de seção, confirmam ações e orientam a atenção sem depender da imagem.",
-    },
-    {
-      id: "multimidia-som-3",
-      type: "paragraph",
-      text: "Há ainda a questão dos direitos. Usar uma música conhecida como trilha é o caminho mais rápido para ter um trabalho bloqueado ou desmonetizado nas plataformas. Existem acervos de trilhas e efeitos com licença livre ou aberta, e a prática correta é registrar a origem e a licença de cada faixa, exatamente como se faz com uma citação bibliográfica. Em projeto acadêmico, essa documentação vale nota; fora dele, evita problema jurídico.",
-    },
-    { id: "multimidia-heading-metricas", type: "heading", text: "Como saber se a experiência funcionou" },
-    {
-      id: "multimidia-metricas-1",
-      type: "paragraph",
-      text: "Produzir multimídia sem avaliar o resultado é confiar na intuição estética de quem produziu. Existem indicadores acessíveis mesmo em projetos pequenos. Para vídeo, a curva de retenção mostra em que segundo as pessoas param de assistir, e quedas abruptas costumam apontar exatamente o trecho arrastado ou confuso. Para páginas, a profundidade de rolagem indica até onde o conteúdo foi consumido. Para áudio, a proporção de ouvintes que chegam ao fim diz muito sobre a duração adequada.",
-    },
-    {
-      id: "multimidia-metricas-2",
-      type: "paragraph",
-      text: "Números, porém, não explicam causas. Por isso vale combinar métricas com um teste simples de usabilidade: pedir a cinco pessoas do público-alvo que usem o material enquanto narram em voz alta o que estão tentando fazer. Esse tipo de teste revela problemas que nenhuma estatística mostra, como um botão que ninguém encontra, uma legenda ambígua ou uma explicação que parecia óbvia para quem escreveu e não é para quem lê pela primeira vez.",
-    },
-    {
-      id: "multimidia-metricas-3",
-      type: "paragraph",
-      text: "Um cuidado final: escolher a métrica errada distorce o produto. Otimizar apenas por tempo de permanência tende a produzir conteúdo alongado artificialmente; otimizar apenas por cliques favorece títulos exagerados. Definir antes qual comportamento representa sucesso — entender um conceito, concluir um cadastro, encontrar uma informação — mantém a avaliação honesta e evita que a métrica passe a governar o conteúdo.",
-    },
     { id: "multimidia-heading-limites", type: "heading", text: "Limites e armadilhas" },
     {
       id: "multimidia-limites-1",
       type: "paragraph",
-      text: "A primeira armadilha é confundir quantidade com qualidade. Uma página que abre vídeo automaticamente, toca música de fundo, exibe animações contínuas e ainda mostra texto longo não é rica: é cansativa. A segunda é ignorar o custo de acesso, tratando conexão rápida e aparelho recente como padrão. A terceira é a acessibilidade tardia, que transforma legendas e descrições em uma correção de última hora, feita às pressas e com qualidade baixa.",
-    },
-    {
-      id: "multimidia-limites-2",
-      type: "paragraph",
-      text: "Existe ainda uma armadilha específica do meio acadêmico: usar multimídia como enfeite de um trabalho cujo conteúdo não se sustenta. Vídeos bem editados não corrigem um argumento frágil, e infográficos bonitos não salvam dados mal coletados. A regra de ouro continua sendo a mesma: cada formato deve resolver um problema de comunicação real. Quando essa pergunta é respondida com honestidade, o projeto quase sempre fica mais simples e mais forte.",
+      text: "A primeira armadilha é confundir quantidade com qualidade: vídeo automático, música de fundo e animações contínuas cansam. A segunda é tratar conexão rápida e aparelho novo como padrão. A terceira é deixar legendas e descrições para a última hora. E, no meio acadêmico, há uma quarta: usar recursos vistosos para enfeitar um argumento frágil.",
     },
     { id: "multimidia-heading-conclusao", type: "heading", text: "Para fechar" },
     {
       id: "multimidia-conclusao",
       type: "paragraph",
-      text: "Multimídia é integração com propósito: cada elemento entra porque faz algo que os outros não fariam tão bem. Entender os limites da atenção humana, respeitar as condições técnicas de quem acessa e planejar antes de produzir são os três hábitos que separam uma experiência coerente de um amontoado de recursos. O passo seguinte é observar o que acontece quando esses elementos deixam de seguir uma ordem fixa e passam a ser conectados por links, permitindo que cada pessoa monte o próprio percurso — o território da hipermídia.",
+      text: "Multimídia é integração com propósito: cada elemento entra porque faz algo que os outros não fariam tão bem. O passo seguinte é ver o que acontece quando esses elementos passam a ser conectados por links, e cada pessoa monta o próprio percurso — o território da hipermídia.",
     },
     { id: "multimidia-heading-links", type: "heading", text: "Links para continuar" },
     {
