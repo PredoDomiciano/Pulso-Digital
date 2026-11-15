@@ -17,7 +17,7 @@ export const postFundamentosDaImagem: Post = {
   reading_time: 16,
   published_at: "2026-11-12T12:00:00.000Z",
   created_at: "2026-11-12T12:00:00.000Z",
-  updated_at: "2026-11-12T12:00:00.000Z",
+  updated_at: "2026-11-15T12:00:00.000Z",
   content: [
     {
       id: "img-intro",
@@ -219,34 +219,12 @@ export const postFundamentosDaImagem: Post = {
     {
       id: "img-pixel-2",
       type: "paragraph",
-      text: "Cada pixel guarda um número por canal de cor. Com 8 bits por canal, cada canal vai de 0 a 255, o que dá 256 níveis de vermelho, 256 de verde e 256 de azul — combinados, cerca de 16,7 milhões de cores. Essa é a profundidade de cor padrão da web. Fotografia profissional e vídeo em HDR usam 10, 12 ou mais bits por canal, o que evita faixas visíveis em degradês suaves, como o céu ao entardecer. O trecho abaixo mostra, em Python, que uma foto não passa de uma tabela de números.",
-    },
-    {
-      id: "img-codigo",
-      type: "code",
-      language: "python",
-      text: `# uma imagem é uma matriz: altura x largura x canais
-# requer: pip install pillow numpy
-from PIL import Image
-import numpy as np
-
-foto = np.array(Image.open("por-do-sol.jpg").convert("RGB"))
-
-altura, largura, canais = foto.shape
-print(f"{largura} x {altura} pixels, {canais} canais")
-
-# cor do pixel no centro da imagem (valores de 0 a 255)
-r, g, b = foto[altura // 2, largura // 2]
-print(f"centro: vermelho={r}, verde={g}, azul={b}")
-
-# quanto ocuparia sem nenhuma compressão (1 byte por canal)
-bytes_brutos = altura * largura * canais
-print(f"sem compressão: {bytes_brutos / 1_000_000:.1f} MB")`,
+      text: "Cada pixel guarda um número por canal de cor. Com 8 bits por canal, cada canal vai de 0 a 255, o que dá 256 níveis de vermelho, 256 de verde e 256 de azul — combinados, cerca de 16,7 milhões de cores. Essa é a profundidade de cor padrão da web. Fotografia profissional e vídeo em HDR usam 10, 12 ou mais bits por canal, o que evita faixas visíveis em degradês suaves, como o céu ao entardecer. No fim das contas, uma foto não passa de uma tabela de números: altura vezes largura vezes três canais.",
     },
     {
       id: "img-pixel-3",
       type: "paragraph",
-      text: "Rodando esse código em uma foto de 12 megapixels, a última linha mostra 36 megabytes. Mas o arquivo JPEG da mesma foto costuma ter entre 3 e 5 megabytes. A diferença é o trabalho da compressão — e é aí que os formatos de arquivo deixam de ser detalhe técnico e passam a ser decisão de projeto.",
+      text: "Essa conta dá o peso de uma foto sem compressão: uma imagem de 12 megapixels, com 3 canais de 1 byte cada, ocuparia 36 megabytes. Mas o arquivo JPEG da mesma foto costuma ter entre 3 e 5 megabytes. A diferença é o trabalho da compressão — e é aí que os formatos de arquivo deixam de ser detalhe técnico e passam a ser decisão de projeto.",
     },
     { id: "img-heading-raster", type: "heading", text: "Mapa de bits ou vetor: dois jeitos de descrever uma imagem" },
     {

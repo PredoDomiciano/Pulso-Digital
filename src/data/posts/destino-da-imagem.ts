@@ -8,7 +8,7 @@ export const postDestinoDaImagem: Post = {
   excerpt:
     "Uma mesma imagem pode virar post, vídeo, outdoor, mapa de desmatamento ou dado para um algoritmo. Como proporção, quadros por segundo, RGB, CMYK, bandas espectrais e processamento digital decidem o que cada destino exige.",
   category: "Imagem Digital",
-  tags: ["imagem digital", "redes sociais", "vídeo", "impressão", "sensoriamento remoto", "visão computacional", "OpenCV"],
+  tags: ["imagem digital", "redes sociais", "vídeo", "impressão", "sensoriamento remoto", "visão computacional", "Python"],
   cover_url:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Rond%C3%B4nia_Deforestation_%2825_July_2016%29%2C_Brazil_%2834296310700%29.jpg/1280px-Rond%C3%B4nia_Deforestation_%2825_July_2016%29%2C_Brazil_%2834296310700%29.jpg",
   status: "published",
@@ -17,7 +17,7 @@ export const postDestinoDaImagem: Post = {
   reading_time: 17,
   published_at: "2026-11-12T13:00:00.000Z",
   created_at: "2026-11-12T13:00:00.000Z",
-  updated_at: "2026-11-12T13:00:00.000Z",
+  updated_at: "2026-11-15T13:00:00.000Z",
   content: [
     {
       id: "dst-intro",
@@ -156,28 +156,6 @@ export const postDestinoDaImagem: Post = {
       text: "Um índice resume bem a lógica das bandas. A vegetação saudável absorve quase todo o vermelho, que usa na fotossíntese, e reflete fortemente o infravermelho próximo. O NDVI, índice de vegetação por diferença normalizada, explora esse contraste calculando, pixel a pixel, a diferença entre as duas bandas dividida pela soma delas. O resultado vai de −1 a 1: valores altos indicam vegetação densa e vigorosa, valores próximos de zero indicam solo exposto ou área urbana, e valores negativos indicam água. É uma conta de uma linha, aplicada a milhões de pixels.",
     },
     {
-      id: "dst-codigo-ndvi",
-      type: "code",
-      language: "python",
-      text: `# NDVI: índice de vegetação a partir de duas bandas de satélite
-# requer: pip install numpy rasterio
-import numpy as np
-import rasterio
-
-# bandas do Landsat 8/9: B4 = vermelho, B5 = infravermelho próximo
-with rasterio.open("LC09_B4.TIF") as f:
-    vermelho = f.read(1).astype("float32")
-with rasterio.open("LC09_B5.TIF") as f:
-    infravermelho = f.read(1).astype("float32")
-
-soma = infravermelho + vermelho
-ndvi = np.where(soma == 0, 0, (infravermelho - vermelho) / soma)
-
-vegetacao_densa = (ndvi > 0.6).mean() * 100
-print(f"NDVI médio: {ndvi.mean():.2f}")
-print(f"área com vegetação densa: {vegetacao_densa:.1f}%")`,
-    },
-    {
       id: "dst-video-satelite",
       type: "video",
       url: "https://www.youtube.com/watch?v=80vkvtxVvXg",
@@ -206,50 +184,65 @@ print(f"área com vegetação densa: {vegetacao_densa:.1f}%")`,
       url: "https://www.youtube.com/watch?v=T9V_axU6jU8",
       caption: "O que é uma imagem? — primeiro episódio da série Processamento de Imagens, do canal Programação Dinâmica.",
     },
-    { id: "dst-heading-opencv", type: "heading", text: "Na prática: Python e OpenCV" },
+    { id: "dst-heading-editor", type: "heading", text: "Na prática: um editor de imagens em Python" },
     {
-      id: "dst-opencv-1",
+      id: "dst-editor-1",
       type: "paragraph",
-      text: "A biblioteca mais usada para processamento de imagens e visão computacional é a OpenCV, de código aberto, criada no início dos anos 2000 e hoje com milhares de algoritmos acessíveis em Python, C++ e outras linguagens. Ela se integra à NumPy, de modo que uma imagem carregada é diretamente uma matriz que pode ser manipulada. O exemplo abaixo resolve uma tarefa comum na agricultura: estimar quanto de uma foto tirada por drone é planta, isolando os tons de verde.",
+      text: "Para ver essas operações funcionando, montamos um pequeno editor de imagens em Python. É uma janela em que você abre uma foto do computador e aplica efeitos com cliques. A janela é desenhada com o Tkinter, que já vem com o Python, e os efeitos usam a Pillow, a biblioteca de imagem mais usada na linguagem. Cada clique aplica o efeito mais uma vez, então os ajustes se acumulam. Dá para desfazer um passo, voltar à foto original, segurar um botão para comparar o antes e o depois e salvar o resultado em PNG, JPEG, WebP ou BMP.",
     },
     {
-      id: "dst-codigo-opencv",
-      type: "code",
-      language: "python",
-      text: `# separa a vegetação de uma foto aérea pela cor
-# requer: pip install opencv-python numpy
-import cv2
-import numpy as np
-
-foto = cv2.imread("lavoura-drone.jpg")         # a OpenCV lê em BGR, não RGB
-hsv = cv2.cvtColor(foto, cv2.COLOR_BGR2HSV)    # matiz, saturação e brilho
-
-# faixa de verdes no espaço HSV (matiz de 0 a 179 na OpenCV)
-verde_min = np.array([35, 40, 40])
-verde_max = np.array([85, 255, 255])
-mascara = cv2.inRange(hsv, verde_min, verde_max)
-
-# limpa pontinhos isolados com uma abertura morfológica
-nucleo = np.ones((5, 5), np.uint8)
-mascara = cv2.morphologyEx(mascara, cv2.MORPH_OPEN, nucleo)
-
-cobertura = cv2.countNonZero(mascara) / mascara.size * 100
-print(f"cobertura vegetal: {cobertura:.1f}%")
-
-contornos, _ = cv2.findContours(mascara, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-print(f"manchas de vegetação: {len(contornos)}")
-cv2.imwrite("mascara.png", mascara)`,
+      id: "dst-image-editor",
+      type: "image",
+      url: "/posts/destino-da-imagem/editor-de-imagem.png",
+      alt: "Janela do editor de imagem com uma foto aberta no centro e, à esquerda, botões de efeitos agrupados em Cor, Luz, Filtros e Tamanho e forma",
+      caption:
+        "O editor de imagem do Pulso Digital: os efeitos ficam agrupados à esquerda, e a lista de efeitos aplicados mostra o caminho até o resultado.",
     },
     {
-      id: "dst-opencv-2",
+      id: "dst-editor-2",
       type: "paragraph",
-      text: "Três detalhes desse código ilustram armadilhas reais. A OpenCV guarda os canais na ordem azul, verde e vermelho, herança de câmeras antigas, e esquecer isso troca cores. A conversão para HSV separa a cor do brilho, o que torna a seleção de verdes muito mais robusta à sombra do que comparar valores RGB. E a abertura morfológica remove ruídos de poucos pixels antes da contagem. É uma técnica simples, que funciona bem em condições controladas — e começa a falhar com sombras fortes, solo esverdeado ou iluminação diferente, que é exatamente onde entra a visão computacional moderna.",
+      text: "Cada botão é uma das operações descritas na seção anterior. Preto e branco, brilho, contraste e negativo são operações pontuais, que mexem em cada pixel sem olhar para os vizinhos. O preto e branco não tira simplesmente a média dos canais. Ele soma cerca de 30% do vermelho, 59% do verde e 11% do azul, porque o olho percebe o verde como mais claro que as outras cores. O brilho multiplica todos os valores por um fator, o contraste afasta cada valor do cinza médio da imagem e o negativo troca cada valor v por 255 − v.",
+    },
+    {
+      id: "dst-editor-3",
+      type: "paragraph",
+      text: "Nitidez, desfoque e bordas são filtros de vizinhança, feitos por convolução. O desfoque troca cada pixel por uma média ponderada dos vizinhos. A nitidez faz o caminho contrário, com uma técnica chamada máscara de nitidez: ela compara a foto com uma cópia desfocada, encontra onde as duas diferem, que são justamente as bordas, e reforça essa diferença. Por isso, exagerar na nitidez cria halos claros em volta dos contornos.",
+    },
+    {
+      id: "dst-editor-4",
+      type: "paragraph",
+      text: "O botão de diminuir a resolução mostra na prática a amostragem. Cada clique corta a largura e a altura pela metade, então a imagem fica com um quarto dos pixels. O editor continua exibindo a foto no mesmo tamanho na janela, e assim cada pixel restante vira um quadradinho visível. Depois de quatro ou cinco cliques, sobra uma imagem de poucas dezenas de pixels de lado, e dá para ver que uma foto é mesmo uma grade de amostras. A barra de status mostra a resolução e a contagem de pixels a cada passo. Diferente dos outros efeitos, essa perda não tem volta: aplicar nitidez depois não recupera o detalhe que foi descartado.",
+    },
+    {
+      id: "dst-image-editor-resolucao",
+      type: "image",
+      url: "/posts/destino-da-imagem/editor-baixa-resolucao.png",
+      alt: "A mesma foto no editor depois de várias reduções de resolução, agora formada por blocos grandes de cor",
+      caption:
+        "Depois de cinco cliques em “− Resolução”, a foto fica com cerca de 1/1000 dos pixels originais (40 × 41), e cada amostra aparece como um bloco de cor.",
+    },
+    {
+      id: "dst-editor-5",
+      type: "paragraph",
+      text: "Para usar o editor, instale o Python 3 pelo site python.org. No Windows, marque a opção “Add python.exe to PATH” durante a instalação. Depois, abra o terminal e instale a Pillow com o comando pip install pillow. Por fim, baixe o arquivo abaixo e rode python editor_de_imagem.py na pasta em que ele foi salvo. O editor funciona no Windows, no macOS e no Linux. Em algumas distribuições Linux, é preciso instalar o Tkinter à parte, pelo pacote python3-tk.",
+    },
+    {
+      id: "dst-link-editor",
+      type: "link",
+      title: "Baixar o editor de imagem (editor_de_imagem.py)",
+      url: "/downloads/editor_de_imagem.py",
+      caption: "Um único arquivo em Python, com comentários em português explicando cada efeito. Requer Python 3 e a biblioteca Pillow.",
+    },
+    {
+      id: "dst-editor-6",
+      type: "paragraph",
+      text: "Para tarefas maiores, a biblioteca mais usada é a OpenCV, de código aberto, criada no início dos anos 2000 e com milhares de algoritmos acessíveis em Python, C++ e outras linguagens. Ela vai além dos ajustes do editor e permite isolar objetos pela cor, contar regiões e acompanhar movimentos em vídeo. Mas todos os botões do editor têm algo em comum: são regras fixas, que tratam todas as fotos do mesmo jeito. É exatamente esse limite que a visão computacional moderna tenta superar.",
     },
     { id: "dst-heading-visao", type: "heading", text: "Máquinas que enxergam: visão computacional" },
     {
       id: "dst-visao-1",
       type: "paragraph",
-      text: "Visão computacional é o campo que busca extrair significado de imagens: não só alterar pixels, mas responder perguntas sobre eles. As tarefas mais comuns são a classificação, que diz o que a imagem contém; a detecção, que localiza cada objeto com uma caixa; e a segmentação, que marca a quais pixels cada objeto pertence. Durante décadas, essas tarefas dependiam de regras escritas à mão, como as do exemplo anterior. A virada aconteceu por volta de 2012, quando redes neurais convolucionais treinadas com milhões de imagens rotuladas passaram a superar com folga os métodos tradicionais em competições de reconhecimento.",
+      text: "Visão computacional é o campo que busca extrair significado de imagens: não só alterar pixels, mas responder perguntas sobre eles. As tarefas mais comuns são a classificação, que diz o que a imagem contém; a detecção, que localiza cada objeto com uma caixa; e a segmentação, que marca a quais pixels cada objeto pertence. Durante décadas, essas tarefas dependiam de regras escritas à mão, como as dos botões do editor. A virada aconteceu por volta de 2012, quando redes neurais convolucionais treinadas com milhões de imagens rotuladas passaram a superar com folga os métodos tradicionais em competições de reconhecimento.",
     },
     {
       id: "dst-visao-2",
@@ -331,11 +324,11 @@ cv2.imwrite("mascara.png", mascara)`,
       caption: "Plataforma pública do INPE com mapas e taxas de desmatamento obtidos por satélite.",
     },
     {
-      id: "dst-link-opencv",
+      id: "dst-link-pillow",
       type: "link",
-      title: "OpenCV — tutorial de espaços de cor em Python",
-      url: "https://docs.opencv.org/4.x/df/d9d/tutorial_py_colorspaces.html",
-      caption: "Documentação oficial das funções cvtColor e inRange usadas no exemplo.",
+      title: "Pillow — documentação oficial",
+      url: "https://pillow.readthedocs.io/en/stable/",
+      caption: "Referência dos módulos ImageEnhance, ImageFilter e ImageOps, usados nos efeitos do editor.",
     },
     { id: "dst-heading-references", type: "heading", text: "Fontes e referências" },
     {
@@ -362,9 +355,9 @@ cv2.imwrite("mascara.png", mascara)`,
     {
       id: "dst-ref-4",
       type: "link",
-      title: "OpenCV — Changing Colorspaces",
-      url: "https://docs.opencv.org/4.x/df/d9d/tutorial_py_colorspaces.html",
-      caption: "Documentação da conversão para HSV e do isolamento de cores.",
+      title: "Python — documentação do Tkinter",
+      url: "https://docs.python.org/pt-br/3/library/tkinter.html",
+      caption: "Documentação da biblioteca que desenha a janela do editor.",
     },
     {
       id: "dst-ref-5",

@@ -45,9 +45,10 @@ export function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
         );
         if (block.type === "link" && block.url) {
           const external = /^https?:\/\//i.test(block.url);
+          const download = block.url.startsWith("/downloads/");
           return (
-            <a className="resource-link" href={block.url} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} key={block.id}>
-              <span><small>{external ? "Link externo" : "No Pulso Digital"}</small><strong>{block.title || block.url}</strong>{block.caption && <em>{block.caption}</em>}</span>
+            <a className="resource-link" href={block.url} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} download={download || undefined} key={block.id}>
+              <span><small>{download ? "Download" : external ? "Link externo" : "No Pulso Digital"}</small><strong>{block.title || block.url}</strong>{block.caption && <em>{block.caption}</em>}</span>
               <ExternalIcon width={19} height={19}/>
             </a>
           );
