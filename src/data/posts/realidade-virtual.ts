@@ -17,7 +17,7 @@ export const postRealidadeVirtual: Post = {
   reading_time: 17,
   published_at: "2026-09-09T12:00:00.000Z",
   created_at: "2026-09-09T12:00:00.000Z",
-  updated_at: "2026-09-10T12:00:00.000Z",
+  updated_at: "2026-11-15T14:00:00.000Z",
   content: [
     {
       id: "rv-intro",
@@ -99,24 +99,18 @@ export const postRealidadeVirtual: Post = {
     {
       id: "rv-codigo-1",
       type: "paragraph",
-      text: "Assim como acontece com a realidade aumentada, o navegador já é capaz de apresentar ambientes virtuais sem instalação de aplicativo. O exemplo abaixo descreve uma cena mínima: um piso, um objeto, uma fonte de luz e uma câmera que responde ao movimento da cabeça. Quem abre a página no computador navega com mouse e teclado; quem abre em um aparelho compatível entra no modo imersivo pelo botão que a própria biblioteca adiciona.",
-    },
-    {
-      id: "rv-codigo",
-      type: "code",
-      language: "html",
-      text: '<!-- cena de realidade virtual em WebXR com A-Frame -->\n<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>\n\n<a-scene>\n  <!-- ambiente: ceu e piso -->\n  <a-sky color="#0f172a"></a-sky>\n  <a-plane rotation="-90 0 0" width="30" height="30" color="#1f2937"></a-plane>\n\n  <!-- objeto observavel a 3 metros de distancia -->\n  <a-torus-knot position="0 1.6 -3" radius="0.6" radius-tubular="0.06"\n                color="#38bdf8"></a-torus-knot>\n\n  <!-- som espacial preso ao objeto -->\n  <a-entity position="0 1.6 -3"\n            sound="src: url(/audio/ambiente.mp3); autoplay: true; positional: true">\n  </a-entity>\n\n  <!-- camera na altura media dos olhos, com controles de cabeca -->\n  <a-camera position="0 1.6 0" look-controls wasd-controls></a-camera>\n</a-scene>',
+      text: "Assim como acontece com a realidade aumentada, o navegador já é capaz de apresentar ambientes virtuais sem instalação de aplicativo. Com uma biblioteca como a A-Frame, uma cena mínima cabe em poucas linhas: um céu, um piso, um objeto a três metros de distância, um som preso a esse objeto e uma câmera na altura dos olhos, que responde ao movimento da cabeça. Quem abre a página no computador navega com mouse e teclado; quem abre em um aparelho compatível entra no modo imersivo pelo botão que a própria biblioteca adiciona.",
     },
     {
       id: "rv-codigo-2",
       type: "paragraph",
-      text: "Repare na altura da câmera: um metro e sessenta, aproximadamente a altura dos olhos de uma pessoa em pé. Em realidade virtual, esse número deixa de ser detalhe estético e vira decisão de projeto, porque escala errada destrói a sensação de presença — um ambiente construído em escala equivocada faz o usuário se sentir criança ou gigante sem entender por quê. Projetar para RV é, em boa medida, projetar para um corpo com medidas.",
+      text: "O número mais importante dessa cena é a altura da câmera: um metro e sessenta, aproximadamente a altura dos olhos de uma pessoa em pé. Em realidade virtual, esse número deixa de ser detalhe estético e vira decisão de projeto, porque escala errada destrói a sensação de presença — um ambiente construído em escala equivocada faz o usuário se sentir criança ou gigante sem entender por quê. Projetar para RV é, em boa medida, projetar para um corpo com medidas.",
     },
     { id: "rv-heading-explorer", type: "heading", text: "Experimente: AR Explorer, um exercício nosso" },
     {
       id: "rv-explorer-1",
       type: "paragraph",
-      text: "Uma cena como a do exemplo acima não precisa ficar no papel. Desenvolvemos o AR Explorer, um mini-jogo em primeira pessoa que roda direto no navegador, sem instalação e sem óculos. Você fica parado no centro de um cenário e gira o próprio celular para olhar ao redor; uma mira no centro da tela funciona como cursor, e encarar um objeto por alguns instantes revela um cartão com sua descrição. Setas no chão levam de um cenário a outro. No computador, o mesmo controle é feito arrastando o mouse.",
+      text: "Uma cena como essa não precisa ficar no papel. Desenvolvemos o AR Explorer, um mini-jogo em primeira pessoa que roda direto no navegador, sem instalação e sem óculos. Você fica parado no centro de um cenário e gira o próprio celular para olhar ao redor; uma mira no centro da tela funciona como cursor, e encarar um objeto por alguns instantes revela um cartão com sua descrição. Setas no chão levam de um cenário a outro. No computador, o mesmo controle é feito arrastando o mouse.",
     },
     {
       id: "rv-explorer-2",

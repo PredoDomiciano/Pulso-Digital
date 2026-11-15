@@ -17,7 +17,7 @@ export const postRealidadeAumentada: Post = {
   reading_time: 16,
   published_at: "2026-09-08T12:00:00.000Z",
   created_at: "2026-09-08T12:00:00.000Z",
-  updated_at: "2026-09-10T12:00:00.000Z",
+  updated_at: "2026-11-15T14:00:00.000Z",
   content: [
     {
       id: "ra-intro",
@@ -117,18 +117,12 @@ export const postRealidadeAumentada: Post = {
     {
       id: "ra-codigo-1",
       type: "paragraph",
-      text: "Durante anos, qualquer experiência de realidade aumentada exigia instalar um aplicativo. Isso mudou com a padronização de uma interface de programação para dispositivos imersivos na web, que permite ao navegador acessar câmera, sensores e detecção de superfícies com a permissão do usuário. Bibliotecas de alto nível reduziram bastante o esforço: o trecho abaixo é suficiente para exibir um objeto tridimensional ancorado no ambiente a partir de uma página comum.",
-    },
-    {
-      id: "ra-codigo",
-      type: "code",
-      language: "html",
-      text: '<!-- cena WebXR minima usando a biblioteca A-Frame -->\n<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>\n\n<a-scene\n  webxr="optionalFeatures: hit-test, dom-overlay"\n  ar-mode-ui="enabled: true">\n\n  <!-- luz ambiente para o objeto reagir a cena -->\n  <a-light type="ambient" intensity="0.9"></a-light>\n\n  <!-- objeto ancorado 1,5 m a frente e 1 m abaixo da camera -->\n  <a-box position="0 -1 -1.5" width="0.4" height="0.4" depth="0.4"\n         color="#2f6fed" shadow="cast: true"></a-box>\n\n</a-scene>',
+      text: "Durante anos, qualquer experiência de realidade aumentada exigia instalar um aplicativo. Isso mudou com a padronização de uma interface de programação para dispositivos imersivos na web, que permite ao navegador acessar câmera, sensores e detecção de superfícies com a permissão do usuário. Bibliotecas de alto nível, como a A-Frame, reduziram bastante o esforço: poucas linhas bastam para exibir, a partir de uma página comum, um objeto tridimensional posicionado no ambiente — por exemplo, um cubo um metro e meio à frente da câmera e um metro abaixo dela.",
     },
     {
       id: "ra-codigo-2",
       type: "paragraph",
-      text: "Duas coisas merecem atenção nesse exemplo. A primeira é a permissão: o navegador só entrega acesso à câmera e aos sensores depois de um pedido explícito, e o usuário pode recusar. A segunda é a posição, expressa em metros a partir da câmera — na computação espacial, as coordenadas deixam de ser pixels e passam a ser medidas do mundo físico. Essa mudança de unidade resume bem a diferença entre projetar para uma tela e projetar para um espaço.",
+      text: "Duas coisas merecem atenção nesse tipo de cena. A primeira é a permissão: o navegador só entrega acesso à câmera e aos sensores depois de um pedido explícito, e o usuário pode recusar. A segunda é a posição, expressa em metros a partir da câmera — na computação espacial, as coordenadas deixam de ser pixels e passam a ser medidas do mundo físico. Essa mudança de unidade resume bem a diferença entre projetar para uma tela e projetar para um espaço.",
     },
     { id: "ra-heading-video-1", type: "heading", text: "Veja o conceito em vídeo" },
     {

@@ -17,7 +17,7 @@ export const postDestinoDaImagem: Post = {
   reading_time: 17,
   published_at: "2026-11-12T13:00:00.000Z",
   created_at: "2026-11-12T13:00:00.000Z",
-  updated_at: "2026-11-15T13:00:00.000Z",
+  updated_at: "2026-11-15T15:00:00.000Z",
   content: [
     {
       id: "dst-intro",
@@ -184,19 +184,18 @@ export const postDestinoDaImagem: Post = {
       url: "https://www.youtube.com/watch?v=T9V_axU6jU8",
       caption: "O que é uma imagem? — primeiro episódio da série Processamento de Imagens, do canal Programação Dinâmica.",
     },
-    { id: "dst-heading-editor", type: "heading", text: "Na prática: um editor de imagens em Python" },
+    { id: "dst-heading-editor", type: "heading", text: "Na prática: um editor de imagens em Python, aqui no navegador" },
     {
       id: "dst-editor-1",
       type: "paragraph",
-      text: "Para ver essas operações funcionando, montamos um pequeno editor de imagens em Python. É uma janela em que você abre uma foto do computador e aplica efeitos com cliques. A janela é desenhada com o Tkinter, que já vem com o Python, e os efeitos usam a Pillow, a biblioteca de imagem mais usada na linguagem. Cada clique aplica o efeito mais uma vez, então os ajustes se acumulam. Dá para desfazer um passo, voltar à foto original, segurar um botão para comparar o antes e o depois e salvar o resultado em PNG, JPEG, WebP ou BMP.",
+      text: "Para ver essas operações funcionando, montamos um pequeno editor de imagens em Python que roda aqui mesmo, dentro deste post. Não é preciso instalar nada: na primeira vez que você abre uma imagem, a página carrega o Pyodide, uma versão do Python compilada para WebAssembly que funciona dentro do navegador, junto com a Pillow, a biblioteca de imagem mais usada na linguagem. Os efeitos são funções em Python que recebem os pixels da foto, alteram os números e devolvem uma nova imagem. Tudo acontece no seu próprio computador, e a foto não é enviada para nenhum servidor. Cada clique aplica o efeito mais uma vez, então os ajustes se acumulam. Dá para desfazer um passo, voltar à foto original, segurar um botão para comparar o antes e o depois e salvar o resultado em PNG.",
     },
     {
-      id: "dst-image-editor",
-      type: "image",
-      url: "/posts/destino-da-imagem/editor-de-imagem.png",
-      alt: "Janela do editor de imagem com uma foto aberta no centro e, à esquerda, botões de efeitos agrupados em Cor, Luz, Filtros e Tamanho e forma",
-      caption:
-        "O editor de imagem do Pulso Digital: os efeitos ficam agrupados à esquerda, e a lista de efeitos aplicados mostra o caminho até o resultado.",
+      id: "dst-editor-app",
+      type: "embed",
+      title: "Editor de imagem em Python",
+      url: "/ferramentas/editor-de-imagem",
+      caption: "Abra uma foto do seu computador ou use a de exemplo, uma imagem de satélite de Rondônia (Overview/Wikimedia Commons, CC BY 2.0). O primeiro carregamento baixa o Python para o navegador e pode levar alguns segundos.",
     },
     {
       id: "dst-editor-2",
@@ -211,27 +210,7 @@ export const postDestinoDaImagem: Post = {
     {
       id: "dst-editor-4",
       type: "paragraph",
-      text: "O botão de diminuir a resolução mostra na prática a amostragem. Cada clique corta a largura e a altura pela metade, então a imagem fica com um quarto dos pixels. O editor continua exibindo a foto no mesmo tamanho na janela, e assim cada pixel restante vira um quadradinho visível. Depois de quatro ou cinco cliques, sobra uma imagem de poucas dezenas de pixels de lado, e dá para ver que uma foto é mesmo uma grade de amostras. A barra de status mostra a resolução e a contagem de pixels a cada passo. Diferente dos outros efeitos, essa perda não tem volta: aplicar nitidez depois não recupera o detalhe que foi descartado.",
-    },
-    {
-      id: "dst-image-editor-resolucao",
-      type: "image",
-      url: "/posts/destino-da-imagem/editor-baixa-resolucao.png",
-      alt: "A mesma foto no editor depois de várias reduções de resolução, agora formada por blocos grandes de cor",
-      caption:
-        "Depois de cinco cliques em “− Resolução”, a foto fica com cerca de 1/1000 dos pixels originais (40 × 41), e cada amostra aparece como um bloco de cor.",
-    },
-    {
-      id: "dst-editor-5",
-      type: "paragraph",
-      text: "Para usar o editor, instale o Python 3 pelo site python.org. No Windows, marque a opção “Add python.exe to PATH” durante a instalação. Depois, abra o terminal e instale a Pillow com o comando pip install pillow. Por fim, baixe o arquivo abaixo e rode python editor_de_imagem.py na pasta em que ele foi salvo. O editor funciona no Windows, no macOS e no Linux. Em algumas distribuições Linux, é preciso instalar o Tkinter à parte, pelo pacote python3-tk.",
-    },
-    {
-      id: "dst-link-editor",
-      type: "link",
-      title: "Baixar o editor de imagem (editor_de_imagem.py)",
-      url: "/downloads/editor_de_imagem.py",
-      caption: "Um único arquivo em Python, com comentários em português explicando cada efeito. Requer Python 3 e a biblioteca Pillow.",
+      text: "O botão de diminuir a resolução mostra na prática a amostragem. Cada clique corta a largura e a altura pela metade, então a imagem fica com um quarto dos pixels. O editor continua exibindo a foto no mesmo tamanho na tela, e assim cada pixel restante vira um quadradinho visível. Na foto de exemplo, que tem 970 × 1.000 pixels, cinco cliques deixam só 30 × 31, cerca de um milésimo das amostras originais, e dá para ver que uma foto é mesmo uma grade de números. A linha abaixo da imagem mostra a resolução e a contagem de pixels a cada passo. Diferente dos outros efeitos, essa perda não tem volta: aplicar nitidez depois não recupera o detalhe que foi descartado.",
     },
     {
       id: "dst-editor-6",
@@ -330,6 +309,13 @@ export const postDestinoDaImagem: Post = {
       url: "https://pillow.readthedocs.io/en/stable/",
       caption: "Referência dos módulos ImageEnhance, ImageFilter e ImageOps, usados nos efeitos do editor.",
     },
+    {
+      id: "dst-link-pyodide",
+      type: "link",
+      title: "Pyodide — Python no navegador",
+      url: "https://pyodide.org/en/stable/",
+      caption: "Projeto que compila o Python e bibliotecas como a Pillow para WebAssembly; é ele que faz o editor rodar nesta página.",
+    },
     { id: "dst-heading-references", type: "heading", text: "Fontes e referências" },
     {
       id: "dst-ref-1",
@@ -355,9 +341,9 @@ export const postDestinoDaImagem: Post = {
     {
       id: "dst-ref-4",
       type: "link",
-      title: "Python — documentação do Tkinter",
-      url: "https://docs.python.org/pt-br/3/library/tkinter.html",
-      caption: "Documentação da biblioteca que desenha a janela do editor.",
+      title: "Pyodide — documentação oficial",
+      url: "https://pyodide.org/en/stable/usage/quickstart.html",
+      caption: "Como o Pyodide carrega o Python e seus pacotes dentro de uma página web.",
     },
     {
       id: "dst-ref-5",

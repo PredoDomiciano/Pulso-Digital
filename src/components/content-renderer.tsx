@@ -2,8 +2,12 @@
 
 import { useState } from "react";
 import { CopyIcon, ExternalIcon } from "@/components/icons";
+import { ImageEditor } from "@/components/image-editor";
 import { youtubeEmbed } from "@/lib/utils";
 import type { ContentBlock } from "@/types/post";
+
+// bloco "incorporar" com este endereço vira o editor de imagem interativo, rodando no próprio post
+const IMAGE_EDITOR_URL = "/ferramentas/editor-de-imagem";
 
 function CodeBlock({ block }: { block: ContentBlock }) {
   const [copied, setCopied] = useState(false);
@@ -45,14 +49,14 @@ export function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
         );
         if (block.type === "link" && block.url) {
           const external = /^https?:\/\//i.test(block.url);
-          const download = block.url.startsWith("/downloads/");
           return (
-            <a className="resource-link" href={block.url} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} download={download || undefined} key={block.id}>
-              <span><small>{download ? "Download" : external ? "Link externo" : "No Pulso Digital"}</small><strong>{block.title || block.url}</strong>{block.caption && <em>{block.caption}</em>}</span>
+            <a className="resource-link" href={block.url} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} key={block.id}>
+              <span><small>{external ? "Link externo" : "No Pulso Digital"}</small><strong>{block.title || block.url}</strong>{block.caption && <em>{block.caption}</em>}</span>
               <ExternalIcon width={19} height={19}/>
             </a>
           );
         }
+        if (block.type === "embed" && block.url === IMAGE_EDITOR_URL) return <figure key={block.id}><ImageEditor/>{block.caption && <figcaption>{block.caption}</figcaption>}</figure>;
         if (block.type === "embed") return <figure key={block.id}>{block.url && <div className="embed-wrap"><iframe src={block.url} title={block.title || "Conteúdo incorporado"} loading="lazy" /></div>}{block.caption && <figcaption>{block.caption}</figcaption>}{block.url && <a className="read-link" href={block.url} target="_blank" rel="noreferrer" style={{ marginTop: 10 }}>Abrir conteúdo <ExternalIcon width={16} height={16}/></a>}</figure>;
         return null;
       })}

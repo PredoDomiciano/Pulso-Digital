@@ -17,7 +17,7 @@ export const postRealidadeMista: Post = {
   reading_time: 16,
   published_at: "2026-09-10T12:00:00.000Z",
   created_at: "2026-09-10T12:00:00.000Z",
-  updated_at: "2026-09-10T12:00:00.000Z",
+  updated_at: "2026-11-15T14:00:00.000Z",
   content: [
     {
       id: "rm-intro",
@@ -100,24 +100,18 @@ export const postRealidadeMista: Post = {
     {
       id: "rm-codigo-1",
       type: "paragraph",
-      text: "No navegador, esse comportamento aparece em duas funcionalidades complementares: o teste de interseção, que descobre onde um raio lançado a partir do dispositivo encontra uma superfície real, e as âncoras, que fixam um ponto do espaço para que o conteúdo permaneça estável. O trecho abaixo mostra a estrutura essencial desse fluxo em JavaScript, simplificada para leitura.",
-    },
-    {
-      id: "rm-codigo",
-      type: "code",
-      language: "javascript",
-      text: "// sessao imersiva com deteccao de superficies e ancoras\nconst sessao = await navigator.xr.requestSession(\"immersive-ar\", {\n  requiredFeatures: [\"hit-test\", \"anchors\", \"local-floor\"],\n});\n\nconst espaco = await sessao.requestReferenceSpace(\"local-floor\");\nconst fonteDeTeste = await sessao.requestHitTestSource({ space: espaco });\n\nfunction aoRenderizar(tempo, frame) {\n  const resultados = frame.getHitTestResults(fonteDeTeste);\n\n  if (resultados.length > 0) {\n    const pose = resultados[0].getPose(espaco);\n    // cria uma ancora: o conteudo fica preso a este ponto do ambiente\n    resultados[0].createAnchor().then((ancora) => {\n      posicionarObjeto(ancora, pose.transform.position);\n    });\n  }\n\n  sessao.requestAnimationFrame(aoRenderizar);\n}\n\nsessao.requestAnimationFrame(aoRenderizar);",
+      text: "No navegador, esse comportamento aparece em duas funcionalidades complementares: o teste de interseção, que descobre onde um raio lançado a partir do dispositivo encontra uma superfície real, e as âncoras, que fixam um ponto do espaço para que o conteúdo permaneça estável. Em linhas gerais, o fluxo é este: a página abre uma sessão imersiva pedindo essas duas funcionalidades; a cada quadro, lança um raio a partir do aparelho e verifica se ele tocou alguma superfície; quando toca, cria uma âncora naquele ponto e posiciona o objeto virtual nela.",
     },
     {
       id: "rm-codigo-2",
       type: "paragraph",
-      text: "O detalhe conceitual está na linha da âncora. Sem ela, o objeto seria posicionado em coordenadas relativas ao aparelho e derivaria conforme o rastreamento acumulasse pequenos erros. Com ela, o sistema assume a responsabilidade de manter aquele ponto fixo em relação ao mundo, corrigindo a posição sempre que o mapa interno do ambiente for refinado. É uma diferença invisível no código e decisiva na experiência.",
+      text: "O detalhe conceitual está na âncora. Sem ela, o objeto seria posicionado em coordenadas relativas ao aparelho e derivaria conforme o rastreamento acumulasse pequenos erros. Com ela, o sistema assume a responsabilidade de manter aquele ponto fixo em relação ao mundo, corrigindo a posição sempre que o mapa interno do ambiente for refinado. É uma diferença invisível para quem usa e decisiva na experiência.",
     },
     { id: "rm-heading-experimente", type: "heading", text: "Experimente: plante um objeto na sua sala" },
     {
       id: "rm-experimente-1",
       type: "paragraph",
-      text: "Esse código não precisa ficar na teoria. O grupo que mantém os padrões de web imersiva publica exemplos oficiais que rodam sem instalação, e um deles é exatamente uma demonstração de teste de interseção. Abra a página em um celular Android com Chrome atualizado e suporte a ARCore, toque em iniciar, aponte a câmera para o chão e mova o aparelho devagar por alguns segundos. Um retículo aparece grudado na superfície real; toque na tela e uma flor virtual é plantada ali.",
+      text: "Esse fluxo não precisa ficar na teoria. O grupo que mantém os padrões de web imersiva publica exemplos oficiais que rodam sem instalação, e um deles é exatamente uma demonstração de teste de interseção. Abra a página em um celular Android com Chrome atualizado e suporte a ARCore, toque em iniciar, aponte a câmera para o chão e mova o aparelho devagar por alguns segundos. Um retículo aparece grudado na superfície real; toque na tela e uma flor virtual é plantada ali.",
     },
     {
       id: "rm-experimente-2",

@@ -16,7 +16,7 @@ export const postMidia: Post = {
   reading_time: 15,
   published_at: "2026-08-10T12:00:00.000Z",
   created_at: "2026-08-10T12:00:00.000Z",
-  updated_at: "2026-09-10T12:00:00.000Z",
+  updated_at: "2026-11-15T14:00:00.000Z",
   content: [
     {
       id: "midia-intro",
@@ -115,18 +115,12 @@ export const postMidia: Post = {
     {
       id: "midia-tecnica-1",
       type: "paragraph",
-      text: "Na web, os diferentes tipos de mídia são declarados por marcações específicas, e cada uma delas carrega decisões de acessibilidade e desempenho. Uma imagem precisa de texto alternativo para quem usa leitor de tela. Um áudio precisa de controles visíveis para que o usuário decida quando ouvir. Um vídeo hospedado em outro serviço entra por um elemento incorporado, o que significa depender das regras desse serviço. O trecho abaixo mostra, de forma resumida, como o navegador é informado sobre cada tipo de conteúdo.",
-    },
-    {
-      id: "midia-code",
-      type: "code",
-      language: "html",
-      text: '<!-- imagem com texto alternativo para leitores de tela -->\n<figure>\n  <img src="/imagens/estudio.jpg" alt="Microfones em um estudio de radio">\n  <figcaption>Estudio de radio: o som como meio principal.</figcaption>\n</figure>\n\n<!-- audio com controles e carregamento sob demanda -->\n<audio src="/audio/episodio.mp3" controls preload="metadata">\n  Seu navegador nao oferece suporte ao player de audio.\n</audio>\n\n<!-- video hospedado em outro servico, incorporado por iframe -->\n<iframe\n  src="https://www.youtube.com/embed/ID_DO_VIDEO"\n  title="Video explicativo sobre midia"\n  allowfullscreen>\n</iframe>',
+      text: "Na web, os diferentes tipos de mídia são declarados por marcações específicas, e cada uma delas carrega decisões de acessibilidade e desempenho. Uma imagem precisa de texto alternativo para quem usa leitor de tela. Um áudio precisa de controles visíveis para que o usuário decida quando ouvir. Um vídeo hospedado em outro serviço entra por um elemento incorporado, o que significa depender das regras desse serviço. Para cada tipo de conteúdo, o navegador recebe uma instrução diferente: a imagem chega acompanhada de uma descrição em texto, o áudio vem com controles e só carrega o arquivo quando o usuário pede, e o vídeo de outra plataforma entra por uma janela incorporada.",
     },
     {
       id: "midia-tecnica-2",
       type: "paragraph",
-      text: "Repare que cada elemento resolve um problema diferente. A imagem depende de uma descrição textual para não excluir parte do público. O áudio usa carregamento sob demanda para não consumir dados de quem não vai ouvir. O vídeo incorporado transfere para outra empresa a responsabilidade pela entrega, o que traz economia de infraestrutura e, ao mesmo tempo, dependência. Escolher uma mídia sempre implica escolher uma cadeia técnica com consequências práticas.",
+      text: "Cada uma dessas instruções resolve um problema diferente. A imagem depende de uma descrição textual para não excluir parte do público. O áudio usa carregamento sob demanda para não consumir dados de quem não vai ouvir. O vídeo incorporado transfere para outra empresa a responsabilidade pela entrega, o que traz economia de infraestrutura e, ao mesmo tempo, dependência. Escolher uma mídia sempre implica escolher uma cadeia técnica com consequências práticas.",
     },
     { id: "midia-heading-videos", type: "heading", text: "Dois olhares em vídeo" },
     {

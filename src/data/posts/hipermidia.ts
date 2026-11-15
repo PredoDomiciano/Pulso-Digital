@@ -17,7 +17,7 @@ export const postHipermidia: Post = {
   reading_time: 15,
   published_at: "2026-08-08T12:00:00.000Z",
   created_at: "2026-08-08T12:00:00.000Z",
-  updated_at: "2026-09-10T12:00:00.000Z",
+  updated_at: "2026-11-15T14:00:00.000Z",
   content: [
     {
       id: "hipermidia-intro",
@@ -87,15 +87,9 @@ export const postHipermidia: Post = {
       text: "Existe também uma diferença importante entre ligação interna e externa. A interna mantém o leitor dentro do mesmo conjunto de conteúdos e constrói percurso; a externa reconhece uma fonte, mas entrega o leitor a outro ambiente. Em conteúdo acadêmico, a ligação externa cumpre um papel próximo ao da citação bibliográfica: permite verificar a afirmação. Por isso ela deve apontar para a fonte primária sempre que possível, e não para um comentário sobre a fonte.",
     },
     {
-      id: "hipermidia-code",
-      type: "code",
-      language: "html",
-      text: '<!-- ancora descritiva: diz o destino mesmo fora de contexto -->\n<a href="/publicacoes/multimidia-integracao-de-formatos">\n  Leia o artigo sobre integracao de formatos multimidia\n</a>\n\n<!-- link externo: abre em nova aba e protege a janela de origem -->\n<a href="https://www.w3.org/History/1989/proposal.html"\n   target="_blank" rel="noreferrer">\n  Proposta original da World Wide Web (1989)\n</a>\n\n<!-- ancora interna: leva a um ponto especifico da propria pagina -->\n<a href="#fontes">Ir para as fontes e referencias</a>',
-    },
-    {
       id: "hipermidia-anatomia-3",
       type: "paragraph",
-      text: "O terceiro exemplo do trecho acima é o mais esquecido: a âncora interna, que liga pontos dentro do mesmo documento. Em textos longos como este, ela transforma uma leitura linear em uma leitura navegável, permitindo pular direto para a seção de fontes ou voltar para uma definição. É hipermídia em escala pequena, e resolve um problema real de quem consulta o material em vez de lê-lo do início ao fim.",
+      text: "Na prática, essas escolhas aparecem em três tipos de link. O primeiro é a âncora descritiva, cujo texto diz para onde o link leva mesmo fora de contexto — “leia o artigo sobre integração de formatos multimídia” em vez de “clique aqui”. O segundo é o link externo, que costuma abrir em uma nova aba e proteger a página de origem. O terceiro é o mais esquecido: a âncora interna, que liga pontos dentro do mesmo documento. Em textos longos como este, ela transforma uma leitura linear em uma leitura navegável, permitindo pular direto para a seção de fontes ou voltar para uma definição. É hipermídia em escala pequena, e resolve um problema real de quem consulta o material em vez de lê-lo do início ao fim.",
     },
     { id: "hipermidia-heading-exemplos", type: "heading", text: "Exemplos que usamos todos os dias" },
     {

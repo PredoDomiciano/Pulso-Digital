@@ -18,7 +18,7 @@ export const postGrandmasterAlchemist: Post = {
   reading_time: 17,
   published_at: "2026-11-12T14:00:00.000Z",
   created_at: "2026-11-12T14:00:00.000Z",
-  updated_at: "2026-11-12T14:00:00.000Z",
+  updated_at: "2026-11-15T14:00:00.000Z",
   content: [
     {
       id: "ga-intro",
@@ -107,36 +107,7 @@ export const postGrandmasterAlchemist: Post = {
     {
       id: "ga-fazenda-3",
       type: "paragraph",
-      text: "Esse comportamento é implementado de forma bem direta. O relógio do jogo anuncia a virada do dia como um evento, e quem se interessa por ele reage sem conhecer o relógio. O trecho abaixo, do código do próprio jogo, é o que cada planta executa nesse momento — inclusive a regra das plantas espirituais, que só contam o dia se tiverem recebido água carregada de Qi.",
-    },
-    {
-      id: "ga-codigo",
-      type: "code",
-      language: "csharp",
-      text: `// Crop.cs (trecho simplificado) — executado em cada planta quando o dia vira
-public void ProcessNewDay()
-{
-    if (cropData == null || IsMature)
-    {
-        return;
-    }
-
-    bool wasWatered = farmManager.IsCellWatered(cellPosition);
-    // Planta espiritual: água comum não basta, precisa da água de Qi.
-    if (cropData.Espiritual && !farmManager.IsCellQi(cellPosition))
-    {
-        wasWatered = false;
-    }
-
-    if (wasWatered)
-    {
-        wateredGrowthDays++;
-        UpdateGrowthStage();
-        if (IsMature) TentarMutar();
-    }
-
-    farmManager.ResetCellToDry(cellPosition);
-}`,
+      text: "Esse comportamento é implementado de forma bem direta. O relógio do jogo anuncia a virada do dia como um evento, e quem se interessa por ele reage sem conhecer o relógio. Quando o dia vira, cada planta que ainda não amadureceu confere se o seu canteiro foi regado. As plantas espirituais têm uma regra extra: só contam o dia se tiverem recebido água carregada de Qi. Se a rega valeu, a planta soma um dia de crescimento, atualiza o seu estágio e, ao amadurecer, tem uma chance de sofrer mutação. Em seguida, o canteiro volta a ficar seco, e a rega precisa ser repetida no dia seguinte.",
     },
     {
       id: "ga-image-dia-noite",

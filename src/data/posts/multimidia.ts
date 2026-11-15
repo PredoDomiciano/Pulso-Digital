@@ -17,7 +17,7 @@ export const postMultimidia: Post = {
   reading_time: 15,
   published_at: "2026-08-09T12:00:00.000Z",
   created_at: "2026-08-09T12:00:00.000Z",
-  updated_at: "2026-09-10T12:00:00.000Z",
+  updated_at: "2026-11-15T14:00:00.000Z",
   content: [
     {
       id: "multimidia-intro",
@@ -115,18 +115,12 @@ export const postMultimidia: Post = {
     {
       id: "multimidia-tecnica-1",
       type: "paragraph",
-      text: "Do ponto de vista técnico, montar uma página multimídia é combinar elementos que o navegador entende nativamente. O exemplo abaixo mostra três decisões comuns: oferecer o mesmo vídeo em mais de um formato para aumentar a compatibilidade, incluir uma faixa de legendas e carregar imagens de forma preguiçosa, para que só sejam baixadas quando estiverem perto da área visível.",
-    },
-    {
-      id: "multimidia-code",
-      type: "code",
-      language: "html",
-      text: '<!-- video com fontes alternativas e legendas -->\n<video controls preload="metadata" poster="/imagens/capa-aula.jpg">\n  <source src="/video/aula.webm" type="video/webm">\n  <source src="/video/aula.mp4" type="video/mp4">\n  <track kind="captions" src="/video/aula-pt.vtt" srclang="pt" label="Portugues" default>\n  Seu navegador nao reproduz video incorporado.\n</video>\n\n<!-- imagem responsiva com carregamento sob demanda -->\n<img\n  src="/imagens/infografico-800.jpg"\n  srcset="/imagens/infografico-800.jpg 800w, /imagens/infografico-1600.jpg 1600w"\n  sizes="(max-width: 700px) 100vw, 700px"\n  loading="lazy"\n  alt="Infografico comparando os elementos da multimidia">',
+      text: "Do ponto de vista técnico, montar uma página multimídia é combinar elementos que o navegador entende nativamente. Três decisões são comuns: oferecer o mesmo vídeo em mais de um formato para aumentar a compatibilidade, incluir uma faixa de legendas e carregar imagens de forma preguiçosa, para que só sejam baixadas quando estiverem perto da área visível.",
     },
     {
       id: "multimidia-tecnica-2",
       type: "paragraph",
-      text: "Cada linha desse trecho responde a uma restrição do mundo real. Formatos alternativos existem porque nem todo navegador reproduz o mesmo codec. Legendas existem porque parte do público não ouve ou não pode ativar o som. Imagens em vários tamanhos existem porque enviar um arquivo de dois mil pixels para uma tela de celular desperdiça dados e bateria. Multimídia bem executada é, em grande medida, um exercício de respeito às condições de quem está do outro lado.",
+      text: "Cada uma dessas decisões responde a uma restrição do mundo real. Formatos alternativos existem porque nem todo navegador reproduz o mesmo codec. Legendas existem porque parte do público não ouve ou não pode ativar o som. Imagens em vários tamanhos existem porque enviar um arquivo de dois mil pixels para uma tela de celular desperdiça dados e bateria. Multimídia bem executada é, em grande medida, um exercício de respeito às condições de quem está do outro lado.",
     },
     { id: "multimidia-heading-aplicacoes", type: "heading", text: "Onde encontramos multimídia?" },
     {

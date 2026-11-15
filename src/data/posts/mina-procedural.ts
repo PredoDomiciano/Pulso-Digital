@@ -18,7 +18,7 @@ export const postMinaProcedural: Post = {
   reading_time: 16,
   published_at: "2026-11-12T15:00:00.000Z",
   created_at: "2026-11-12T15:00:00.000Z",
-  updated_at: "2026-11-12T15:00:00.000Z",
+  updated_at: "2026-11-15T14:00:00.000Z",
   content: [
     {
       id: "pcg-intro",
@@ -70,25 +70,6 @@ export const postMinaProcedural: Post = {
       text: "Para comparar técnicas de forma justa, separamos o gerador em duas partes. A primeira, que muda de técnica para técnica, decide apenas quais células da grade viram chão. A segunda é comum a todas: escolher entrada e saída, validar o andar e posicionar minérios, inimigos e baús. Isso é o padrão de projeto Strategy: algoritmos intercambiáveis atrás de uma mesma interface. Trocar a técnica é trocar uma linha de código, e as diferenças medidas nos testes vêm só da escavação.",
     },
     {
-      id: "pcg-codigo-interface",
-      type: "code",
-      language: "csharp",
-      text: `// Strategy: cada técnica de geração só decide quais células viram chão.
-// Entrada, saída, validação e posicionamento de elementos são comuns a todas,
-// o que deixa a comparação entre técnicas justa.
-public interface IGeradorMasmorra
-{
-    string Nome { get; }
-    void Escavar(MapaMasmorra mapa, System.Random rng, ParametrosAndar p);
-}
-
-// Técnica escolhida para o jogo (ver comparação nos testes).
-public static IGeradorMasmorra Padrao()
-{
-    return new GeradorHibrido();
-}`,
-    },
-    {
       id: "pcg-strategy-2",
       type: "paragraph",
       text: "A caminhada aleatória é a mais simples: um escavador parte do centro da grade e anda em direções sorteadas, abrindo chão por onde passa, até atingir a área desejada. Tudo o que ele escava está conectado por construção, já que é o mesmo caminho. O resultado tende a ser uma mancha central com galerias curtas.",
@@ -101,34 +82,7 @@ public static IGeradorMasmorra Padrao()
     {
       id: "pcg-strategy-4",
       type: "paragraph",
-      text: "O autômato celular começa com ruído: cada célula vira rocha com uma certa probabilidade, perto de 45%. Depois, aplica várias vezes uma regra local: uma célula vira rocha se ela e suas oito vizinhas somam cinco ou mais rochas, e vira chão caso contrário. A cada passada, o ruído se organiza em formas orgânicas, com paredes arredondadas e salões irregulares — exatamente o aspecto de uma caverna natural. A técnica foi avaliada por Johnson, Yannakakis e Togelius para gerar cavernas infinitas em tempo real.",
-    },
-    {
-      id: "pcg-codigo-automato",
-      type: "code",
-      language: "csharp",
-      text: `// Autômato celular (trecho simplificado de GeradoresMasmorra.cs)
-// 1. ruído inicial: cada célula vira rocha com probabilidade chanceRocha
-for (int x = 1; x < largura - 1; x++)
-    for (int y = 1; y < altura - 1; y++)
-        mapa.Chao[x, y] = rng.NextDouble() >= chanceRocha;
-
-// 2. seis passadas da regra de vizinhança
-var novo = new bool[largura, altura];
-for (int iteracao = 0; iteracao < 6; iteracao++)
-{
-    for (int x = 1; x < largura - 1; x++)
-        for (int y = 1; y < altura - 1; y++)
-        {
-            // rochas entre as 8 vizinhas, mais a própria célula
-            int paredes = mapa.ParedesVizinhas8(x, y) + (mapa.Chao[x, y] ? 0 : 1);
-            novo[x, y] = paredes < 5;   // 5 ou mais rochas: vira rocha
-        }
-
-    for (int x = 1; x < largura - 1; x++)
-        for (int y = 1; y < altura - 1; y++)
-            mapa.Chao[x, y] = novo[x, y];
-}`,
+      text: "O autômato celular começa com ruído: cada célula vira rocha com uma certa probabilidade, perto de 45%. Depois, aplica seis vezes seguidas uma regra local: uma célula vira rocha se ela e suas oito vizinhas somam cinco ou mais rochas, e vira chão caso contrário. A cada passada, o ruído se organiza em formas orgânicas, com paredes arredondadas e salões irregulares — exatamente o aspecto de uma caverna natural. A técnica foi avaliada por Johnson, Yannakakis e Togelius para gerar cavernas infinitas em tempo real.",
     },
     {
       id: "pcg-strategy-5",
@@ -169,22 +123,6 @@ for (int iteracao = 0; iteracao < 6; iteracao++)
       text: "Para comparar as técnicas, uma rotina automatizada no editor da Unity gerou mil andares com cada uma, todos com seeds distintas e na profundidade fixa do andar 50, em uma grade de 96 por 69 células. Para cada andar, a rotina registrou se ele foi válido na primeira tentativa, quantas tentativas foram necessárias, o tempo de geração, a área escavada, a distância entre entrada e saída, os becos sem saída e a conformidade ao level design. Os testes rodaram em um computador com processador AMD Ryzen 5 4500, 32 GB de memória e Windows 11, em uma única thread.",
     },
     {
-      id: "pcg-tabela",
-      type: "code",
-      language: "text",
-      text: `Andar 50, grade 96 x 69, 1.000 andares por técnica
-
-Técnica              Válidos 1ª  Tentativas   Tempo médio  Área     Entrada-saída  Becos   Conformes
-                     tentativa   (méd/máx)    (ms)         (cél.)   (passos)       (méd.)
--------------------  ----------  -----------  -----------  -------  -------------  ------  ---------
-Caminhada aleatória  100,0%      1,00 / 1      3,44        2.517    121,8          30,3    100,0%
-Autômato celular      83,6%      1,20 / 5     10,93        3.689    159,8          82,2     77,7%
-BSP                  100,0%      1,00 / 1      3,07        2.837    208,1          41,3    100,0%
-Híbrido (adotado)    100,0%      1,00 / 1     11,45        4.409    151,1          70,8    100,0%
-
-Todas as técnicas terminaram com 100% de andares válidos após as novas tentativas.`,
-    },
-    {
       id: "pcg-image-tecnicas",
       type: "image",
       url: `${pasta}/andar-50-quatro-tecnicas.jpg`,
@@ -201,12 +139,12 @@ Todas as técnicas terminaram com 100% de andares válidos após as novas tentat
     {
       id: "pcg-resultados-2",
       type: "paragraph",
-      text: "A caminhada aleatória e o BSP foram os mais rápidos, com cerca de 3 milissegundos, e sempre válidos. O custo apareceu na forma: escavaram menos área e abriram menos galerias, com 30,3 e 41,3 becos sem saída em média. Becos, aqui, não são defeito: são os cantos onde ficam baús e minérios e que tornam a exploração interessante. O BSP, além disso, produz a planta regular de salas e corredores que destoa de uma mina natural.",
+      text: "A caminhada aleatória e o BSP foram os mais rápidos, com 3,44 e 3,07 milissegundos em média, e sempre válidos. O custo apareceu na forma: escavaram menos área, 2.517 e 2.837 células, e abriram menos galerias, com 30,3 e 41,3 becos sem saída em média. Becos, aqui, não são defeito: são os cantos onde ficam baús e minérios e que tornam a exploração interessante. O BSP, além disso, produz a planta regular de salas e corredores que destoa de uma mina natural, e afasta demais a entrada da saída: 208,1 passos em média, contra 121,8 na caminhada aleatória e cerca de 150 nas técnicas de caverna.",
     },
     {
       id: "pcg-resultados-3",
       type: "paragraph",
-      text: "A técnica híbrida reuniu o melhor dos dois lados: validade de 100% já na primeira tentativa, conformidade de 100%, a maior área escavada e uma quantidade de galerias próxima à do autômato. Seu custo foi o maior tempo médio, 11,45 milissegundos — ainda assim muito baixo para uma geração feita durante a transição entre andares, quando a tela já está escurecendo. Por esses resultados, o híbrido é a técnica usada no jogo.",
+      text: "A técnica híbrida reuniu o melhor dos dois lados: validade de 100% já na primeira tentativa, conformidade de 100%, a maior área escavada, com 4.409 células contra 3.689 do autômato, e uma quantidade de galerias próxima à dele, com 70,8 becos em média contra 82,2. Seu custo foi o maior tempo médio, 11,45 milissegundos, contra 10,93 do autômato — ainda assim muito baixo para uma geração feita durante a transição entre andares, quando a tela já está escurecendo. Por esses resultados, o híbrido é a técnica usada no jogo.",
     },
     { id: "pcg-heading-validacao-final", type: "heading", text: "Do andar 1 ao andar 100" },
     {
@@ -217,19 +155,7 @@ Todas as técnicas terminaram com 100% de andares válidos após as novas tentat
     {
       id: "pcg-final-2",
       type: "paragraph",
-      text: "Todos os mil foram válidos na primeira tentativa e conformes ao level design, sem nenhuma seed inválida. O tempo médio foi de 11,43 milissegundos, com mínimo de 5,91 e máximo de 29,90. Mesmo o pior caso equivale a menos de dois quadros de um jogo rodando a 60 quadros por segundo — nenhuma interrupção perceptível. Somando a comparação e a validação final, a técnica adotada passou por 2.000 gerações sem precisar de uma única segunda tentativa.",
-    },
-    {
-      id: "pcg-tabela-2",
-      type: "code",
-      language: "text",
-      text: `Técnica híbrida por profundidade (10 seeds por andar)
-
-Andar   Grade      Minérios  Inimigos  Baús   Tempo médio
------   --------   --------  --------  ----   -----------
-1       72 x 54    12        5         1       6,49 ms
-50      96 x 69    24        15        3      12,13 ms
-100     120 x 84   37        20        5      17,27 ms`,
+      text: "Todos os mil foram válidos na primeira tentativa e conformes ao level design, sem nenhuma seed inválida. O tempo médio foi de 11,43 milissegundos, com mínimo de 5,91 e máximo de 29,90, e cresceu com o tamanho da grade: 6,49 milissegundos em média no andar 1, 12,13 no andar 50 e 17,27 no andar 100. Mesmo o pior caso equivale a menos de dois quadros de um jogo rodando a 60 quadros por segundo — nenhuma interrupção perceptível. Somando a comparação e a validação final, a técnica adotada passou por 2.000 gerações sem precisar de uma única segunda tentativa.",
     },
     {
       id: "pcg-image-andares",
