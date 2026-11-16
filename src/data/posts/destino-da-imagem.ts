@@ -10,7 +10,7 @@ export const postDestinoDaImagem: Post = {
   category: "Imagem Digital",
   tags: ["imagem digital", "redes sociais", "vídeo", "impressão", "sensoriamento remoto", "visão computacional", "Python"],
   cover_url:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Rond%C3%B4nia_Deforestation_%2825_July_2016%29%2C_Brazil_%2834296310700%29.jpg/1280px-Rond%C3%B4nia_Deforestation_%2825_July_2016%29%2C_Brazil_%2834296310700%29.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/FHD_LED_Videowall.png/1280px-FHD_LED_Videowall.png",
   status: "published",
   featured: false,
   author: siteConfig.author,
@@ -51,10 +51,10 @@ export const postDestinoDaImagem: Post = {
     {
       id: "dst-image-rgb",
       type: "image",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/AdditiveColor.svg/1280px-AdditiveColor.svg.png",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/AdditiveColorMixing.svg/1280px-AdditiveColorMixing.svg.png",
       alt: "Três círculos de luz vermelho, verde e azul sobrepostos; as interseções formam ciano, magenta, amarelo e, no centro, branco",
       caption:
-        "Síntese aditiva (RGB): a soma das três luzes primárias resulta em branco. Imagem: SharkD/Wikimedia Commons, domínio público.",
+        "Síntese aditiva (RGB): a soma das três luzes primárias resulta em branco. Imagem: Quark67/Wikimedia Commons, CC BY-SA 3.0.",
     },
     {
       id: "dst-cor-2",
@@ -64,10 +64,10 @@ export const postDestinoDaImagem: Post = {
     {
       id: "dst-image-cmyk",
       type: "image",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/CMYK_subtractive_color_mixing.svg/1280px-CMYK_subtractive_color_mixing.svg.png",
-      alt: "Três círculos de tinta ciano, magenta e amarelo sobrepostos; as interseções formam vermelho, verde, azul e, no centro, um tom escuro",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Subtractive_color_synthesis_CMYK.jpg/1280px-Subtractive_color_synthesis_CMYK.jpg",
+      alt: "A mesma fotografia de uma tulipa separada em ciano, magenta, amarelo e preto, e o resultado colorido final",
       caption:
-        "Síntese subtrativa (CMY): cada tinta remove uma faixa da luz refletida pelo papel. Imagem: SharkD/Wikimedia Commons, CC0.",
+        "Síntese subtrativa na prática: a foto é separada em ciano, magenta, amarelo e preto, e as quatro tintas, sobrepostas no papel, reconstroem a imagem. Imagem: Magica/Wikimedia Commons, CC BY-SA 4.0.",
     },
     {
       id: "dst-cor-3",
@@ -95,10 +95,10 @@ export const postDestinoDaImagem: Post = {
     {
       id: "dst-image-rondonia",
       type: "image",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Rond%C3%B4nia_Deforestation_%2825_July_2016%29%2C_Brazil_%2834296310700%29.jpg/1280px-Rond%C3%B4nia_Deforestation_%2825_July_2016%29%2C_Brazil_%2834296310700%29.jpg",
-      alt: "Imagem de satélite de Rondônia com faixas de floresta cortadas por estradas e áreas desmatadas em padrão de espinha de peixe",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mato_Grosso%2C_Brazil_%28ASTER%29.jpg/1280px-Mato_Grosso%2C_Brazil_%28ASTER%29.jpg",
+      alt: "Duas imagens de satélite da mesma região de Mato Grosso, uma com floresta quase contínua e outra recortada em lotes desmatados",
       caption:
-        "Desmatamento em Rondônia visto do espaço (julho de 2016): as estradas abrem um padrão de espinha de peixe na floresta. Imagem: Overview/Wikimedia Commons, CC BY 2.0.",
+        "A mesma região de Mato Grosso em 1992 e em 2006: o desmatamento passou de cerca de 25% para mais de 80% da área, e é a comparação entre datas que torna isso mensurável. Imagem: NASA/METI/AIST/Japan Space Systems e equipe científica ASTER/Wikimedia Commons, domínio público.",
     },
     {
       id: "dst-satelite-4",
@@ -269,17 +269,24 @@ export const postDestinoDaImagem: Post = {
       caption: "Texto da lei que classifica o dado biométrico como dado pessoal sensível (art. 5º, II).",
     },
     {
+      id: "dst-ref-capa",
+      type: "link",
+      title: "Wikimedia Commons — FHD LED Videowall",
+      url: "https://commons.wikimedia.org/wiki/File:FHD_LED_Videowall.png",
+      caption: "Fonte da imagem de capa: fotografia de LEDEXPERT, licença CC BY-SA 4.0.",
+    },
+    {
       id: "dst-ref-7",
       type: "link",
-      title: "Wikimedia Commons — Rondônia Deforestation (25 July 2016)",
-      url: "https://commons.wikimedia.org/wiki/File:Rond%C3%B4nia_Deforestation_(25_July_2016),_Brazil_(34296310700).jpg",
-      caption: "Fonte da imagem de satélite usada na capa e no corpo da matéria.",
+      title: "Wikimedia Commons — Mato Grosso, Brazil (ASTER)",
+      url: "https://commons.wikimedia.org/wiki/File:Mato_Grosso,_Brazil_(ASTER).jpg",
+      caption: "Fonte da comparação de imagens de satélite usada na matéria.",
     },
     {
       id: "dst-ref-8",
       type: "link",
-      title: "Wikimedia Commons — AdditiveColor.svg e CMYK subtractive color mixing.svg",
-      url: "https://commons.wikimedia.org/wiki/File:AdditiveColor.svg",
+      title: "Wikimedia Commons — AdditiveColorMixing.svg e Subtractive color synthesis CMYK.jpg",
+      url: "https://commons.wikimedia.org/wiki/File:AdditiveColorMixing.svg",
       caption: "Fontes dos diagramas de síntese aditiva e subtrativa.",
     },
     {

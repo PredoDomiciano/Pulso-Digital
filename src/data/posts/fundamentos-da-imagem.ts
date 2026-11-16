@@ -10,7 +10,7 @@ export const postFundamentosDaImagem: Post = {
   category: "Imagem Digital",
   tags: ["imagem digital", "fotografia", "pixel", "sensor", "formatos de arquivo", "visão humana"],
   cover_url:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/View_from_the_Window_at_Le_Gras%2C_Joseph_Nic%C3%A9phore_Ni%C3%A9pce.jpg/1280px-View_from_the_Window_at_Le_Gras%2C_Joseph_Nic%C3%A9phore_Ni%C3%A9pce.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Boulevard_du_Temple_by_Daguerre.jpg/1280px-Boulevard_du_Temple_by_Daguerre.jpg",
   status: "published",
   featured: false,
   author: siteConfig.author,
@@ -45,10 +45,10 @@ export const postFundamentosDaImagem: Post = {
     {
       id: "img-image-lascaux",
       type: "image",
-      url: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Lascaux_painting.jpg",
-      alt: "Pintura rupestre de animais na caverna de Lascaux, na França",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Pinturas_Rupestres_Serra_da_Capivara_Piau%C3%AD.jpg/1280px-Pinturas_Rupestres_Serra_da_Capivara_Piau%C3%AD.jpg",
+      alt: "Painel de pinturas rupestres em vermelho sobre a rocha, com figuras humanas e animais",
       caption:
-        "Animais pintados na caverna de Lascaux, na França, há cerca de 17 mil anos: imagem feita à mão, no paradigma pré-fotográfico. Imagem: Wikimedia Commons, domínio público.",
+        "No Brasil, a Serra da Capivara, no Piauí, reúne milhares de pinturas rupestres: imagem feita à mão, no paradigma pré-fotográfico. Imagem: Josias de Melo Xavier/Wikimedia Commons, CC BY-SA 4.0.",
     },
     {
       id: "img-cavernas-2",
@@ -58,10 +58,10 @@ export const postFundamentosDaImagem: Post = {
     {
       id: "img-image-camara",
       type: "image",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/001_a01_camera_obscura_abrazolas.jpg/1280px-001_a01_camera_obscura_abrazolas.jpg",
-      alt: "Gravura antiga mostrando uma pessoa do lado de fora de uma caixa escura e sua imagem projetada de cabeça para baixo dentro dela",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/1646_Athanasius_Kircher_-_Camera_obscura.jpg/1280px-1646_Athanasius_Kircher_-_Camera_obscura.jpg",
+      alt: "Gravura do século XVII mostrando uma câmara escura do tamanho de um cômodo, com a cena externa projetada nas paredes internas",
       caption:
-        "O princípio da câmara escura: a luz que passa por um pequeno orifício projeta a cena invertida na parede oposta. Imagem: autor desconhecido/Wikimedia Commons, domínio público.",
+        "Câmara escura em gravura de Athanasius Kircher (1646): a luz entra por pequenos orifícios e projeta a cena de fora nas paredes de dentro. Imagem: Athanasius Kircher/Wikimedia Commons, domínio público.",
     },
     { id: "img-heading-fotografia", type: "heading", text: "Fixar a luz: o nascimento da fotografia" },
     {
@@ -72,10 +72,10 @@ export const postFundamentosDaImagem: Post = {
     {
       id: "img-image-legras",
       type: "image",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/View_from_the_Window_at_Le_Gras%2C_Joseph_Nic%C3%A9phore_Ni%C3%A9pce.jpg/1280px-View_from_the_Window_at_Le_Gras%2C_Joseph_Nic%C3%A9phore_Ni%C3%A9pce.jpg",
-      alt: "Imagem borrada em tons de cinza mostrando telhados vistos de uma janela",
+      url: "https://upload.wikimedia.org/wikipedia/commons/5/52/Daguerreotype_Daguerre_Atelier_1837.jpg",
+      alt: "Daguerreótipo em tons de cinza mostrando gessos, um cesto de vime e um quadro no ateliê do fotógrafo",
       caption:
-        "Vista da janela em Le Gras (c. 1826–1827), de Niépce: a fotografia mais antiga que sobreviveu, registrada em placa com betume da Judeia. Imagem: Joseph Nicéphore Niépce/Wikimedia Commons, domínio público.",
+        "O ateliê do artista (1837), de Daguerre: um dos primeiros daguerreótipos, com nitidez muito acima da heliografia de Niépce feita uma década antes. Imagem: Louis Daguerre/Wikimedia Commons, domínio público.",
     },
     {
       id: "img-video-historia",
@@ -92,10 +92,10 @@ export const postFundamentosDaImagem: Post = {
     {
       id: "img-image-olho",
       type: "image",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Schematic_diagram_of_the_human_eye_en.svg/1280px-Schematic_diagram_of_the_human_eye_en.svg.png",
-      alt: "Diagrama em corte do olho humano com córnea, íris, cristalino, retina, fóvea e nervo óptico",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Schematic_diagram_of_the_human_eye_pt.svg/1280px-Schematic_diagram_of_the_human_eye_pt.svg.png",
+      alt: "Diagrama em corte do olho humano, com córnea, íris, cristalino, retina, fóvea e nervo óptico identificados em português",
       caption:
-        "Corte esquemático do olho humano (rótulos em inglês): córnea, íris, cristalino, retina, fóvea e nervo óptico. Imagem: Rhcastilhos e Jmarchn/Wikimedia Commons, CC BY-SA 3.0.",
+        "Corte esquemático do olho humano: córnea, íris, cristalino, retina, fóvea e nervo óptico. Imagem: Rhcastilhos e Jmarchn/Wikimedia Commons, CC BY-SA 3.0.",
     },
     { id: "img-heading-cones", type: "heading", text: "Cones, bastonetes e a origem do RGB" },
     {
@@ -123,10 +123,10 @@ export const postFundamentosDaImagem: Post = {
     {
       id: "img-image-bayer",
       type: "image",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Bayer_pattern_on_sensor.svg/1280px-Bayer_pattern_on_sensor.svg.png",
-      alt: "Esquema do filtro de Bayer: grade de quadrados vermelhos, verdes e azuis sobre a grade de células do sensor",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Bayer_pattern_on_sensor_profile.svg/1280px-Bayer_pattern_on_sensor_profile.svg.png",
+      alt: "Esquema da luz atravessando uma camada de filtros vermelho, verde e azul antes de atingir o sensor, com o padrão resultante de cada cor",
       caption:
-        "O filtro de Bayer sobre o sensor: cada célula recebe só uma cor, com o dobro de células verdes. Imagem: Cburnett/Wikimedia Commons, CC BY-SA 3.0.",
+        "O filtro de Bayer visto de perfil: cada célula do sensor recebe só uma cor, e o padrão resultante tem o dobro de células verdes. Imagem: Cburnett/Wikimedia Commons, CC BY-SA 3.0.",
     },
     { id: "img-heading-pixel", type: "heading", text: "Pixel, resolução e profundidade de cor" },
     {
@@ -226,36 +226,43 @@ export const postFundamentosDaImagem: Post = {
     {
       id: "img-ref-6",
       type: "link",
-      title: "Wikimedia Commons — Lascaux painting",
-      url: "https://commons.wikimedia.org/wiki/File:Lascaux_painting.jpg",
-      caption: "Fonte da imagem das pinturas de Lascaux.",
+      title: "Wikimedia Commons — Pinturas rupestres da Serra da Capivara",
+      url: "https://commons.wikimedia.org/wiki/File:Pinturas_Rupestres_Serra_da_Capivara_Piau%C3%AD.jpg",
+      caption: "Fonte da fotografia das pinturas rupestres.",
     },
     {
       id: "img-ref-7",
       type: "link",
-      title: "Wikimedia Commons — Câmara escura (gravura)",
-      url: "https://commons.wikimedia.org/wiki/File:001_a01_camera_obscura_abrazolas.jpg",
+      title: "Wikimedia Commons — Camera obscura, de Athanasius Kircher (1646)",
+      url: "https://commons.wikimedia.org/wiki/File:1646_Athanasius_Kircher_-_Camera_obscura.jpg",
       caption: "Fonte da gravura que ilustra o princípio da câmara escura.",
     },
     {
       id: "img-ref-8",
       type: "link",
-      title: "Wikimedia Commons — View from the Window at Le Gras",
-      url: "https://commons.wikimedia.org/wiki/File:View_from_the_Window_at_Le_Gras,_Joseph_Nic%C3%A9phore_Ni%C3%A9pce.jpg",
-      caption: "Fonte da reprodução da heliografia de Niépce usada na capa.",
+      title: "Wikimedia Commons — Boulevard du Temple, de Daguerre (1838)",
+      url: "https://commons.wikimedia.org/wiki/File:Boulevard_du_Temple_by_Daguerre.jpg",
+      caption: "Fonte da imagem de capa, um dos primeiros daguerreótipos de rua.",
+    },
+    {
+      id: "img-ref-atelier",
+      type: "link",
+      title: "Wikimedia Commons — O ateliê do artista, de Daguerre (1837)",
+      url: "https://commons.wikimedia.org/wiki/File:Daguerreotype_Daguerre_Atelier_1837.jpg",
+      caption: "Fonte do daguerreótipo reproduzido na matéria.",
     },
     {
       id: "img-ref-9",
       type: "link",
-      title: "Wikimedia Commons — Schematic diagram of the human eye",
-      url: "https://commons.wikimedia.org/wiki/File:Schematic_diagram_of_the_human_eye_en.svg",
+      title: "Wikimedia Commons — Esquema do olho humano (em português)",
+      url: "https://commons.wikimedia.org/wiki/File:Schematic_diagram_of_the_human_eye_pt.svg",
       caption: "Fonte do diagrama do olho humano.",
     },
     {
       id: "img-ref-10",
       type: "link",
-      title: "Wikimedia Commons — Bayer pattern on sensor",
-      url: "https://commons.wikimedia.org/wiki/File:Bayer_pattern_on_sensor.svg",
+      title: "Wikimedia Commons — Bayer pattern on sensor profile",
+      url: "https://commons.wikimedia.org/wiki/File:Bayer_pattern_on_sensor_profile.svg",
       caption: "Fonte do esquema do filtro de Bayer.",
     },
     {
